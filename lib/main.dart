@@ -728,9 +728,9 @@ class Item {
     this.isExpanded = false,
   });
 
-  String expandedValue;
-  String headerValue;
-  bool isExpanded;
+  String? expandedValue;
+  String? headerValue;
+  bool? isExpanded;
 }
 
 List<Item> generateItems(int numberOfItems) {
@@ -747,7 +747,7 @@ List<Item> generateItems(int numberOfItems) {
 }
 
 class SoftwareWidget extends StatefulWidget {
-  SoftwareWidget({Key key}) : super(key: key);
+  SoftwareWidget({Key? key}) : super(key: key);
 
   @override
   _SoftwareWidgetState createState() => _SoftwareWidgetState();
@@ -776,17 +776,17 @@ class _SoftwareWidgetState extends State<SoftwareWidget> {
         return ExpansionPanel(
           headerBuilder: (BuildContext context, bool isExpanded) {
             return ListTile(
-              title: Text(item.headerValue),
+              title: Text(item.headerValue!),
             );
           },
           body: ListTile(
-              title: Text(item.expandedValue),
+              title: Text(item.expandedValue!),
               subtitle: Text('To view full license, tap the arrow'),
               trailing: Icon(Icons.arrow_right),
               onTap: () {
                 print("show licenese yes");
               }),
-          isExpanded: item.isExpanded,
+          isExpanded: item.isExpanded!,
         );
       }).toList(),
     );
