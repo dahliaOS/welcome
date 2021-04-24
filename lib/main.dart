@@ -103,6 +103,7 @@ Container feature(
                     fit: BoxFit.cover,
                     width: 64,
                     height: 64,
+                    package: "welcome",
                   ),
                 ),
               ),
@@ -150,6 +151,7 @@ class FirstScreen extends StatelessWidget {
           filterQuality: FilterQuality.medium,
           width: 300,
           height: 25,
+          package: "welcome",
         ),
       ),
       body: Center(
@@ -357,6 +359,7 @@ class BuildInfo extends StatelessWidget {
             filterQuality: FilterQuality.medium,
             width: 300,
             height: 52,
+            package: "welcome",
           ),
           Text(longName,
               style: TextStyle(
@@ -463,6 +466,7 @@ Container socialItem(String icon, String header, String main, context) {
                     fit: BoxFit.cover,
                     width: 64,
                     height: 64,
+                    package: "welcome",
                   ),
                 ),
               ),
