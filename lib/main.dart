@@ -365,7 +365,7 @@ class BuildInfo extends StatelessWidget {
               style: TextStyle(
                   fontSize: 14,
                   color: Theme.of(context).colorScheme.foregroundText)),
-          Text(kernel,
+          Text(kernel(),
               style: TextStyle(
                   fontSize: 14,
                   color: Theme.of(context).colorScheme.foregroundText)),
