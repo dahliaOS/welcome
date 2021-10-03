@@ -1,7 +1,7 @@
 [Desktop Entry]
-Name=Pangolin Mobile
-Exec=pangolin_mobile
+Name=Welcome
+Exec=welcome
 Terminal=false
-Icon=pangolin_mobile
+Icon=welcome
 Type=Application
 Categories=Utility;
