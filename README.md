@@ -1,16 +1,24 @@
-# welcome
+<p align="center">
+<a href="https://dahliaos.io">Website</a> ●
+<a href="https://dahliaos.io/discord">Discord</a> ●
+<a href="https://dahliaos.io/download">Releases</a> ●
+<a href="https://dahliaos.io/donate">Donate</a> ●
+<a href="https://docs.dahliaos.io">Documentation</a>
 
-A new Flutter project.
+# Welcome
 
-## Getting Started
+- **Welcome application** for the dahliaOS operating system
 
-This project is a starting point for a Flutter application.
+## Contribute
 
-A few resources to get you started if this is your first Flutter project:
+If you're wondering how to contribute to the project, please refer to [CONTRIBUTING.md](CONTRIBUTING.md)
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+## License
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<p align="left">
+  <img width="40%" src="https://github.com/dahliaOS/brand/blob/master/dahliaOS/svg/logotypeblacktext.svg"
+</p>
+
+Copyright @ 2019-2021 The dahliaOS Authors contact@dahliaos.io
+
+This project is licensed under the [Apache 2.0 license](LICENSE)

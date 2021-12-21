@@ -1,5 +1,5 @@
 /*
-Copyright 2019 The dahliaOS Authors
+Copyright 2019 - 2021 The dahliaOS Authors
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -14,14 +14,11 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-import 'dart:io';
-import 'dart:ui';
 import 'package:flutter/material.dart';
-import 'package:path/path.dart';
 import 'package:welcome/globals.dart';
 
 void main() {
-  runApp(new Welcome());
+  runApp(const Welcome());
 }
 
 extension CustomColorScheme on ColorScheme {
@@ -49,17 +46,19 @@ extension CustomColorScheme on ColorScheme {
 }
 
 class Welcome extends StatelessWidget {
+  const Welcome({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    return new MaterialApp(
+    return MaterialApp(
       title: 'Welcome',
-      theme: new ThemeData(
+      theme: ThemeData(
         brightness: Brightness.light,
         platform: TargetPlatform.fuchsia,
         primarySwatch: Colors.deepOrange,
-        canvasColor: const Color(0xFFfffffff),
+        canvasColor: const Color(0xFFFFFFFF),
       ),
-      darkTheme: new ThemeData(
+      darkTheme: ThemeData(
           brightness: Brightness.dark,
           platform: TargetPlatform.fuchsia,
           primarySwatch: Colors.deepOrange),
@@ -69,26 +68,26 @@ class Welcome extends StatelessWidget {
       initialRoute: '/',
       routes: {
         // When navigating to the "/" route, build the FirstScreen widget.
-        '/': (context) => FirstScreen(),
+        '/': (context) => const FirstScreen(),
         // When navigating to the "/second" route, build the SecondScreen widget.
-        '/info': (context) => BuildInfo(),
-        '/feedback': (context) => Feedback(),
-        '/social': (context) => SocialMedia(),
-        '/credits': (context) => Credits(),
-        '/software': (context) => Software(),
+        '/info': (context) => const BuildInfo(),
+        '/feedback': (context) => const Feedback(),
+        '/social': (context) => const SocialMedia(),
+        '/credits': (context) => const Credits(),
+        '/software': (context) => const Software(),
       },
     );
   }
 }
 
-Container feature(
+SizedBox feature(
     String icon, String header, String main, String target, context) {
-  return Container(
+  return SizedBox(
       width: 512,
       child: Card(
         color: Theme.of(context).colorScheme.cardColor,
         elevation: 0,
-        margin: EdgeInsets.all(25),
+        margin: const EdgeInsets.all(25),
         child: InkWell(
             onTap: () {
               Navigator.pushNamed(context, target);
@@ -97,13 +96,13 @@ Container feature(
             child: Row(children: [
               Center(
                 child: Container(
-                  margin: EdgeInsets.symmetric(horizontal: 10.0),
+                  margin: const EdgeInsets.symmetric(horizontal: 10.0),
                   child: Image.asset(
                     icon,
                     fit: BoxFit.cover,
                     width: 64,
                     height: 64,
-                    package: "welcome",
+                    package: package,
                   ),
                 ),
               ),
@@ -118,11 +117,11 @@ Container feature(
                         fontSize: 15,
                         color: Theme.of(context).colorScheme.lowerText))
               ]),
-              new Expanded(
-                child: new Container(),
+              Expanded(
+                child: Container(),
               ),
-              new Center(
-                child: new Icon(
+              Center(
+                child: Icon(
                   Icons.arrow_forward,
                   color: Theme.of(context).colorScheme.foregroundText,
                   size: 32,
@@ -133,6 +132,8 @@ Container feature(
 }
 
 class FirstScreen extends StatelessWidget {
+  const FirstScreen({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -151,21 +152,22 @@ class FirstScreen extends StatelessWidget {
           filterQuality: FilterQuality.medium,
           width: 300,
           height: 25,
-          package: "welcome",
+          package: package,
         ),
       ),
       body: Center(
-          child: new SingleChildScrollView(
-              padding: new EdgeInsets.only(left: 10.0, right: 10.0, top: 10.0),
+          child: SingleChildScrollView(
+              padding:
+                  const EdgeInsets.only(left: 10.0, right: 10.0, top: 10.0),
               scrollDirection: Axis.vertical,
-              child: new Column(
+              child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 mainAxisSize: MainAxisSize.max,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  new Text(
+                  Text(
                     "Welcome to dahliaOS!",
-                    style: new TextStyle(
+                    style: TextStyle(
                         fontSize: 36.0,
                         color: Theme.of(context).colorScheme.titleText,
                         fontWeight: FontWeight.w400,
@@ -224,14 +226,14 @@ class FirstScreen extends StatelessWidget {
           padding: EdgeInsets.zero,
           children: <Widget>[
             DrawerHeader(
-              child: Text('Welcome to dahliaOS!'),
+              child: const Text('Welcome to dahliaOS!'),
               decoration: BoxDecoration(
                 color: Colors.deepOrange[500],
               ),
             ),
             ListTile(
-              title: Text('Build Information'),
-              leading: Icon(Icons.info_outline),
+              title: const Text('Build Information'),
+              leading: const Icon(Icons.info_outline),
               onTap: () {
                 // Update the state of the app
                 // ...
@@ -241,8 +243,8 @@ class FirstScreen extends StatelessWidget {
               },
             ),
             ListTile(
-              title: Text('Feedback'),
-              leading: Icon(Icons.comment),
+              title: const Text('Feedback'),
+              leading: const Icon(Icons.comment),
               onTap: () {
                 // Update the state of the app
                 // ...
@@ -252,8 +254,8 @@ class FirstScreen extends StatelessWidget {
               },
             ),
             ListTile(
-              title: Text('Social Media'),
-              leading: Icon(Icons.share),
+              title: const Text('Social Media'),
+              leading: const Icon(Icons.share),
               onTap: () {
                 // Update the state of the app
                 // ...
@@ -263,8 +265,8 @@ class FirstScreen extends StatelessWidget {
               },
             ),
             ListTile(
-              title: Text('Credits'),
-              leading: Icon(Icons.people),
+              title: const Text('Credits'),
+              leading: const Icon(Icons.people),
               onTap: () {
                 // Update the state of the app
                 // ...
@@ -274,8 +276,8 @@ class FirstScreen extends StatelessWidget {
               },
             ),
             ListTile(
-              title: Text('Software'),
-              leading: Icon(Icons.developer_board),
+              title: const Text('Software'),
+              leading: const Icon(Icons.developer_board),
               onTap: () {
                 // Update the state of the app
                 // ...
@@ -289,33 +291,33 @@ class FirstScreen extends StatelessWidget {
       ),
       bottomNavigationBar: BottomAppBar(
           elevation: 0.0,
-          color: Color(0x00ffffff),
-          child: new SizedBox(
+          color: const Color(0x00ffffff),
+          child: SizedBox(
               height: 50,
               width: 15,
-              child: new Padding(
-                  padding: EdgeInsets.all(0),
+              child: Padding(
+                  padding: const EdgeInsets.all(0),
                   child: Card(
                     elevation: 0,
                     color: Colors.amber[500],
-                    child: new SingleChildScrollView(
+                    child: SingleChildScrollView(
                       scrollDirection: Axis.horizontal,
-                      child: new Row(
+                      child: Row(
                         children: [
-                          new Center(
-                              child: new Padding(
-                                  padding: EdgeInsets.all(8),
+                          Center(
+                              child: Padding(
+                                  padding: const EdgeInsets.all(8),
                                   child: Icon(
                                     Icons.warning,
                                     size: 25,
                                     color: Colors.grey[900],
                                   ))),
                           Center(
-                              child: new Padding(
-                                  padding: EdgeInsets.all(8),
-                                  child: new Text(
+                              child: Padding(
+                                  padding: const EdgeInsets.all(8),
+                                  child: Text(
                                     "WARNING: You are on a pre-release build of dahliaOS. Some features may not work as intended.",
-                                    style: new TextStyle(
+                                    style: TextStyle(
                                       color: Colors.grey[900],
                                       fontSize: 14,
                                       fontFamily: "Roboto",
@@ -332,6 +334,8 @@ class FirstScreen extends StatelessWidget {
 //double width = MediaQuery.of(context).size.width * MediaQuery.of(context).devicePixelRatio - 256;
 
 class BuildInfo extends StatelessWidget {
+  const BuildInfo({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -344,22 +348,22 @@ class BuildInfo extends StatelessWidget {
           ),
           backgroundColor: Theme.of(context).colorScheme.cardColor,
           shadowColor: const Color(0x00ffffff),
-          title: new Text(
+          title: Text(
             "Build Information",
-            style: new TextStyle(
-                color: Theme.of(context).colorScheme.foregroundText),
+            style:
+                TextStyle(color: Theme.of(context).colorScheme.foregroundText),
           ),
         ),
-        body: new Center(
+        body: Center(
             child:
                 Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-          new Image.asset(
+          Image.asset(
             Theme.of(context).colorScheme.logoMode,
             fit: BoxFit.fitHeight,
             filterQuality: FilterQuality.medium,
             width: 300,
             height: 52,
-            package: "welcome",
+            package: package,
           ),
           Text(longName,
               style: TextStyle(
@@ -373,11 +377,11 @@ class BuildInfo extends StatelessWidget {
               style: TextStyle(
                   fontSize: 14,
                   color: Theme.of(context).colorScheme.foregroundText)),
-          RaisedButton(
+          ElevatedButton(
               onPressed: () {
                 final snackBar = SnackBar(
                   behavior: SnackBarBehavior.floating,
-                  content: Text('See dahliaos.io for updates'),
+                  content: const Text('See dahliaos.io for updates'),
                   action: SnackBarAction(
                     label: 'OK',
                     onPressed: () {
@@ -385,20 +389,24 @@ class BuildInfo extends StatelessWidget {
                     },
                   ),
                   width: 300,
-                  padding: EdgeInsets.fromLTRB(15, 0, 5, 0),
+                  padding: const EdgeInsets.fromLTRB(15, 0, 5, 0),
                 );
 
-                Scaffold.of(context).showSnackBar(snackBar);
+                ScaffoldMessenger.of(context).showSnackBar(snackBar);
               },
-              elevation: 1,
-              color: Colors.deepOrange[600],
-              child: Text('RELEASE NOTES',
+              style: ElevatedButton.styleFrom(
+                primary: Colors.deepOrange[600],
+                elevation: 1,
+              ),
+              child: const Text('RELEASE NOTES',
                   style: TextStyle(fontSize: 14, color: Color(0xffffffff)))),
         ])));
   }
 }
 
 class Feedback extends StatelessWidget {
+  const Feedback({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -411,14 +419,13 @@ class Feedback extends StatelessWidget {
         ),
         backgroundColor: Theme.of(context).colorScheme.cardColor,
         shadowColor: const Color(0x00ffffff),
-        title: new Text(
+        title: Text(
           "Feedback",
-          style: new TextStyle(
-              color: Theme.of(context).colorScheme.foregroundText),
+          style: TextStyle(color: Theme.of(context).colorScheme.foregroundText),
         ),
       ),
       body: Center(
-          child: new Column(
+          child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           Text('We are always looking for ways we can improve!',
@@ -430,17 +437,17 @@ class Feedback extends StatelessWidget {
                   fontSize: 14,
                   color: Theme.of(context).colorScheme.foregroundText)),
           Text(
-              'Experienced a bug? Report an issue at github.com/dahlia-os/releases',
+              'Experienced a bug? Report an issue at github.com/dahliaOS/releases',
               style: TextStyle(
                   fontSize: 14,
                   color: Theme.of(context).colorScheme.foregroundText)),
-          RaisedButton(
+          ElevatedButton(
             onPressed: () {
               // Navigate back to the first screen by popping the current route
               // off the stack.
               Navigator.pop(context);
             },
-            child: Text('BACK'),
+            child: const Text('BACK'),
           ),
         ],
       )),
@@ -448,25 +455,25 @@ class Feedback extends StatelessWidget {
   }
 }
 
-Container socialItem(String icon, String header, String main, context) {
-  return Container(
+SizedBox socialItem(String icon, String header, String main, context) {
+  return SizedBox(
       width: 512,
       child: Card(
         color: Theme.of(context).colorScheme.cardColor,
         elevation: 0,
-        margin: EdgeInsets.all(25),
+        margin: const EdgeInsets.all(25),
         child: InkWell(
             splashColor: Colors.deepOrange.withAlpha(50),
             child: Row(children: [
               Center(
                 child: Container(
-                  margin: EdgeInsets.symmetric(horizontal: 10.0),
+                  margin: const EdgeInsets.symmetric(horizontal: 10.0),
                   child: Image.asset(
                     icon,
                     fit: BoxFit.cover,
                     width: 64,
                     height: 64,
-                    package: "welcome",
+                    package: package,
                   ),
                 ),
               ),
@@ -486,6 +493,8 @@ Container socialItem(String icon, String header, String main, context) {
 }
 
 class SocialMedia extends StatelessWidget {
+  const SocialMedia({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -498,17 +507,17 @@ class SocialMedia extends StatelessWidget {
         ),
         backgroundColor: Theme.of(context).colorScheme.cardColor,
         shadowColor: const Color(0x00ffffff),
-        title: new Text(
+        title: Text(
           "Social Media",
-          style: new TextStyle(
-              color: Theme.of(context).colorScheme.foregroundText),
+          style: TextStyle(color: Theme.of(context).colorScheme.foregroundText),
         ),
       ),
       body: Center(
-          child: new SingleChildScrollView(
-              padding: new EdgeInsets.only(left: 10.0, right: 10.0, top: 10.0),
+          child: SingleChildScrollView(
+              padding:
+                  const EdgeInsets.only(left: 10.0, right: 10.0, top: 10.0),
               scrollDirection: Axis.vertical,
-              child: new Wrap(
+              child: Wrap(
                 children: [
                   /* new Image.asset(
                       
@@ -528,7 +537,7 @@ class SocialMedia extends StatelessWidget {
                       "https://dahliaos.io/discord", context),
                   socialItem("assets/images/icons/PNG/facebook.png", "Facebook",
                       "https://dahliaos.io/facebook", context),
-                  socialItem("assets/images/icons/PNG/github.png", "Github",
+                  socialItem("assets/images/icons/PNG/github.png", "GitHub",
                       "https://dahliaos.io/github", context),
                   socialItem("assets/images/icons/PNG/instagram.png",
                       "Instagram", "https://dahliaos.io/instagram", context),
@@ -546,11 +555,11 @@ class SocialMedia extends StatelessWidget {
             Navigator.pushNamed(context, '/second');
           },
         ),*/
-                  new Text(
+                  const Text(
                     "    ",
-                    style: new TextStyle(
+                    style: TextStyle(
                         fontSize: 36.0,
-                        color: const Color(0xFF000000),
+                        color: Color(0xFF000000),
                         fontWeight: FontWeight.w400,
                         fontFamily: "Sulphur Point"),
                   ),
@@ -560,19 +569,19 @@ class SocialMedia extends StatelessWidget {
   }
 }
 
-Container person(String icon, String header, String main, context) {
-  return Container(
+SizedBox person(String icon, String header, String main, context) {
+  return SizedBox(
       width: 512,
       child: Card(
         color: Theme.of(context).colorScheme.cardColor,
         elevation: 0,
-        margin: EdgeInsets.all(25),
+        margin: const EdgeInsets.all(25),
         child: InkWell(
             splashColor: Colors.deepOrange.withAlpha(50),
             child: Row(children: [
               Center(
-                child: new Padding(
-                  padding: EdgeInsets.fromLTRB(0, 0, 15, 0),
+                child: Padding(
+                  padding: const EdgeInsets.fromLTRB(0, 0, 15, 0),
                   child: CircleAvatar(
                     radius: 32,
                     backgroundColor:
@@ -600,6 +609,8 @@ Container person(String icon, String header, String main, context) {
 }
 
 class Credits extends StatelessWidget {
+  const Credits({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -612,30 +623,30 @@ class Credits extends StatelessWidget {
           ),
           backgroundColor: Theme.of(context).colorScheme.cardColor,
           shadowColor: const Color(0x00ffffff),
-          title: new Text(
+          title: Text(
             "Credits",
-            style: new TextStyle(
-                color: Theme.of(context).colorScheme.foregroundText),
+            style:
+                TextStyle(color: Theme.of(context).colorScheme.foregroundText),
           ),
         ),
-        body: new SingleChildScrollView(
-            padding: new EdgeInsets.only(left: 10.0, right: 10.0, top: 10.0),
+        body: SingleChildScrollView(
+            padding: const EdgeInsets.only(left: 10.0, right: 10.0, top: 10.0),
             scrollDirection: Axis.vertical,
-            child: new Column(children: <Widget>[
+            child: Column(children: <Widget>[
               Text("Thank you to everyone who made this dream come true!",
                   style: TextStyle(
                       fontSize: 14,
                       color: Theme.of(context).colorScheme.foregroundText)),
-              Text("Want to help out? Find us at https://github.com/dahlia-os",
+              Text("Want to help out? Find us at https://github.com/dahliaOS",
                   style: TextStyle(
                       fontSize: 14,
                       color: Theme.of(context).colorScheme.foregroundText)),
-              new Center(
-                child: new SingleChildScrollView(
-                    padding:
-                        new EdgeInsets.only(left: 10.0, right: 10.0, top: 10.0),
+              Center(
+                child: SingleChildScrollView(
+                    padding: const EdgeInsets.only(
+                        left: 10.0, right: 10.0, top: 10.0),
                     scrollDirection: Axis.vertical,
-                    child: new Wrap(children: <Widget>[
+                    child: Wrap(children: <Widget>[
                       person("assets/images/credits/profiles/bleonard.png",
                           "Blake Leonard", "bleonard252", context),
                       person("assets/images/credits/profiles/noah.jpeg",
@@ -713,10 +724,6 @@ class Item {
 List<Item> generateItems(int numberOfItems) {
   return List.generate(numberOfItems, (int index) {
     return Item(
-      headerValue: 'Flutter',
-      expandedValue: 'BSD 3-Clause "New" or "Revised" License',
-    );
-    return Item(
       headerValue: 'Hive',
       expandedValue: 'Apache 2.0',
     );
@@ -724,14 +731,14 @@ List<Item> generateItems(int numberOfItems) {
 }
 
 class SoftwareWidget extends StatefulWidget {
-  SoftwareWidget({Key? key}) : super(key: key);
+  const SoftwareWidget({Key? key}) : super(key: key);
 
   @override
   _SoftwareWidgetState createState() => _SoftwareWidgetState();
 }
 
 class _SoftwareWidgetState extends State<SoftwareWidget> {
-  List<Item> _data = generateItems(8);
+  final List<Item> _data = generateItems(8);
 
   @override
   Widget build(BuildContext context) {
@@ -758,11 +765,9 @@ class _SoftwareWidgetState extends State<SoftwareWidget> {
           },
           body: ListTile(
               title: Text(item.expandedValue!),
-              subtitle: Text('To view full license, tap the arrow'),
-              trailing: Icon(Icons.arrow_right),
-              onTap: () {
-                print("show licenese yes");
-              }),
+              subtitle: const Text('To view full license, tap the arrow'),
+              trailing: const Icon(Icons.arrow_right),
+              onTap: () {}),
           isExpanded: item.isExpanded!,
         );
       }).toList(),
@@ -771,6 +776,8 @@ class _SoftwareWidgetState extends State<SoftwareWidget> {
 }
 
 class Software extends StatelessWidget {
+  const Software({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -783,14 +790,13 @@ class Software extends StatelessWidget {
         ),
         backgroundColor: Theme.of(context).colorScheme.cardColor,
         shadowColor: const Color(0x00ffffff),
-        title: new Text(
+        title: Text(
           "Software",
-          style: new TextStyle(
-              color: Theme.of(context).colorScheme.foregroundText),
+          style: TextStyle(color: Theme.of(context).colorScheme.foregroundText),
         ),
       ),
-      body: Center(
-          child: new SizedBox(
+      body: const Center(
+          child: SizedBox(
         width: 800,
         child: SoftwareWidget(),
       )),

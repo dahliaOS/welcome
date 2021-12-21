@@ -21,3 +21,4 @@ String kernel = "5.10.1";
 String pangolinCommit = "Pangolin f624938c1d8bf35c7033be89fb9c3d462f7f5bfd";
 String fullPangolinVersion =
     "Pangolin 201215; HASH: f624938c1d8bf35c7033be89fb9c3d462f7f5bfd";
+String package = "welcome";
