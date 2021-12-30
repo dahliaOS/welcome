@@ -40,7 +40,7 @@ class Landing extends StatelessWidget {
           filterQuality: FilterQuality.medium,
           width: 300,
           height: 25,
-          package: null,
+          package: package,
         ),
       ),
       body: Center(

@@ -15,6 +15,7 @@ limitations under the License.
 */
 
 import 'package:flutter/material.dart';
+import 'package:welcome/constants/constants.dart';
 import 'package:welcome/main.dart';
 
 SizedBox socialItem(String icon, String header, String main, context) {
@@ -35,7 +36,7 @@ SizedBox socialItem(String icon, String header, String main, context) {
                     fit: BoxFit.cover,
                     width: 64,
                     height: 64,
-                    package: null,
+                    package: package,
                   ),
                 ),
               ),

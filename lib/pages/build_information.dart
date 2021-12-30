@@ -46,7 +46,7 @@ class BuildInfo extends StatelessWidget {
             filterQuality: FilterQuality.medium,
             width: 300,
             height: 52,
-            package: null,
+            package: package,
           ),
           Text(longName,
               style: TextStyle(

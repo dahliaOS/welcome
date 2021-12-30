@@ -15,6 +15,7 @@ limitations under the License.
 */
 
 import 'package:flutter/material.dart';
+import 'package:welcome/constants/constants.dart';
 import 'package:welcome/main.dart';
 
 SizedBox person(String icon, String header, String main, context) {
@@ -36,7 +37,7 @@ SizedBox person(String icon, String header, String main, context) {
                         Theme.of(context).colorScheme.foregroundText,
                     child: CircleAvatar(
                       radius: 30,
-                      backgroundImage: AssetImage(icon, package: "welcome"),
+                      backgroundImage: AssetImage(icon, package: package),
                     ),
                   ),
                 ),
