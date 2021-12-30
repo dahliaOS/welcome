@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Welcome
+Exec=welcome
+Terminal=false
+Icon=welcome
+Type=Application
+Categories=Utility;
