@@ -15,15 +15,7 @@ limitations under the License.
 */
 
 import 'package:flutter/material.dart';
-
-const dummyNameSource = <String>['one', 'two', 'three', 'four', 'five'];
-const dummyDescriptionSource = <String>[
-  'does this',
-  'does that',
-  "doesn't work",
-  'very good',
-  'decent'
-];
+import 'package:welcome/constants/constants.dart';
 
 class Software extends StatelessWidget {
   const Software({Key? key}) : super(key: key);

@@ -15,21 +15,7 @@ limitations under the License.
 */
 
 import 'package:flutter/material.dart';
-
-const dummyContributorsList = <String>[
-  'Ivan',
-  'Makarije',
-  'Marko',
-  'Dženad',
-  'Jasmina',
-  'Jovan',
-  'Marija',
-  'Nevena',
-  'Domagoj',
-  'Slaven',
-  'Ipče',
-  'Stojan'
-];
+import 'package:welcome/constants/constants.dart';
 
 class Contributors extends StatelessWidget {
   const Contributors({Key? key}) : super(key: key);
