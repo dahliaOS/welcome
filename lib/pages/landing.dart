@@ -29,7 +29,7 @@ class Landing extends StatelessWidget {
         centerTitle: Theme.of(context).appBarTheme.centerTitle,
         elevation: Theme.of(context).appBarTheme.elevation,
         title: Text(
-          'Getting started',
+          'Welcome to dahliaOS',
           style: TextStyle(
               color: Theme.of(context).appBarTheme.titleTextStyle?.color,
               fontWeight:
