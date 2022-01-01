@@ -16,13 +16,15 @@ limitations under the License.
 
 import 'package:flutter/material.dart';
 
-TextFormField form(String label, String hintText, context) {
-  return TextFormField(
-      decoration: InputDecoration(
-          hintText: hintText,
-          labelText: label,
-          labelStyle: Theme.of(context).inputDecorationTheme.labelStyle,
-          hintStyle: Theme.of(context).inputDecorationTheme.hintStyle,
-          enabledBorder: Theme.of(context).inputDecorationTheme.enabledBorder,
-          focusedBorder: Theme.of(context).inputDecorationTheme.focusedBorder));
+class ThemeProvider with ChangeNotifier {
+  ThemeData _themeData;
+
+  ThemeProvider(this._themeData);
+
+  getTheme() => _themeData;
+
+  setTheme(ThemeData themeData) async {
+    _themeData = themeData;
+    notifyListeners();
+  }
 }

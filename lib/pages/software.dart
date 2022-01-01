@@ -27,7 +27,7 @@ class Software extends StatelessWidget {
           leading: Builder(
             builder: (BuildContext context) {
               return IconButton(
-                color: Colors.black,
+                color: Theme.of(context).iconTheme.color,
                 icon: const Icon(Icons.navigate_before),
                 onPressed: () {
                   Navigator.pop(context);
@@ -37,11 +37,18 @@ class Software extends StatelessWidget {
             },
           ),
           backgroundColor: Theme.of(context).canvasColor,
-          centerTitle: true,
-          elevation: 1,
-          title: const Text(
+          centerTitle: Theme.of(context).appBarTheme.centerTitle,
+          elevation: Theme.of(context).appBarTheme.elevation,
+          title: Text(
             'Software',
-            style: TextStyle(color: Colors.black),
+            style: TextStyle(
+                color: Theme.of(context).appBarTheme.titleTextStyle?.color,
+                fontWeight:
+                    Theme.of(context).appBarTheme.titleTextStyle?.fontWeight,
+                fontSize:
+                    Theme.of(context).appBarTheme.titleTextStyle?.fontSize,
+                overflow:
+                    Theme.of(context).appBarTheme.titleTextStyle?.overflow),
           ),
         ),
         body: ScrollConfiguration(
@@ -56,16 +63,28 @@ class Software extends StatelessWidget {
                   isThreeLine: true,
                   title: Text(
                     dummyNameSource[index],
-                    overflow: TextOverflow.ellipsis,
+                    style: TextStyle(
+                      color: Theme.of(context).textTheme.headline2?.color,
+                      fontSize: Theme.of(context).textTheme.headline2?.fontSize,
+                      fontWeight:
+                          Theme.of(context).textTheme.headline2?.fontWeight,
+                      overflow: Theme.of(context).textTheme.headline2?.overflow,
+                    ),
                   ),
                   subtitle: Text(
                     dummyDescriptionSource[index],
-                    overflow: TextOverflow.ellipsis,
+                    style: TextStyle(
+                      color: Theme.of(context).textTheme.subtitle1?.color,
+                      fontSize: Theme.of(context).textTheme.subtitle1?.fontSize,
+                      fontWeight:
+                          Theme.of(context).textTheme.subtitle1?.fontWeight,
+                      overflow: Theme.of(context).textTheme.subtitle1?.overflow,
+                    ),
                   ),
-                  iconColor: Colors.black,
-                  textColor: Colors.black,
-                  tileColor: Colors.grey.shade300,
-                  hoverColor: Colors.deepOrange,
+                  iconColor: Theme.of(context).iconTheme.color,
+                  textColor: Theme.of(context).textTheme.headline1?.color,
+                  tileColor: Theme.of(context).backgroundColor,
+                  hoverColor: Theme.of(context).hoverColor,
                   onTap: () {},
                 );
               }),

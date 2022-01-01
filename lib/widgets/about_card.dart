@@ -20,17 +20,16 @@ SizedBox aboutCard(
   String name,
   String description,
   IconData icon,
+  context,
 ) {
   return SizedBox(
       width: 500,
       height: 80,
       child: Card(
-        color: Colors.grey.shade200,
-        shape: const RoundedRectangleBorder(
-            borderRadius: BorderRadius.zero,
-            side: BorderSide(color: Colors.deepOrange, width: 0.5)),
-        elevation: 0,
-        margin: const EdgeInsets.all(4),
+        color: Theme.of(context).cardTheme.color,
+        shape: Theme.of(context).cardTheme.shape,
+        elevation: Theme.of(context).cardTheme.elevation,
+        margin: Theme.of(context).cardTheme.margin,
         child: Row(
           children: <Widget>[
             Container(
@@ -39,7 +38,7 @@ SizedBox aboutCard(
                   child: Icon(
                     icon,
                     size: 30,
-                    color: Colors.deepOrange,
+                    color: Theme.of(context).iconTheme.color,
                   ),
                 )),
             Expanded(
@@ -49,22 +48,26 @@ SizedBox aboutCard(
               children: <Widget>[
                 Text(
                   name,
-                  style: const TextStyle(
-                      fontSize: 13,
-                      fontWeight: FontWeight.w600,
-                      color: Colors.black,
-                      overflow: TextOverflow.ellipsis),
+                  style: TextStyle(
+                      fontSize: Theme.of(context).textTheme.headline2?.fontSize,
+                      fontWeight:
+                          Theme.of(context).textTheme.headline2?.fontWeight,
+                      color: Theme.of(context).textTheme.headline2?.color,
+                      overflow:
+                          Theme.of(context).textTheme.headline2?.overflow),
                 ),
                 const SizedBox(
                   height: 3,
                 ),
                 Text(
                   description,
-                  style: const TextStyle(
-                      fontSize: 13,
-                      fontWeight: FontWeight.w300,
-                      color: Colors.black,
-                      overflow: TextOverflow.ellipsis),
+                  style: TextStyle(
+                      fontSize: Theme.of(context).textTheme.subtitle2?.fontSize,
+                      fontWeight:
+                          Theme.of(context).textTheme.subtitle2?.fontWeight,
+                      color: Theme.of(context).textTheme.subtitle2?.color,
+                      overflow:
+                          Theme.of(context).textTheme.subtitle2?.overflow),
                 )
               ],
             ))

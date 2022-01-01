@@ -1,0 +1,139 @@
+import 'package:flutter/material.dart';
+
+final darkTheme = ThemeData(
+    hoverColor: Colors.white24,
+    primaryColor: Colors.deepOrange,
+    backgroundColor: Colors.white10,
+    colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.deepOrange)
+        .copyWith(secondary: Colors.white),
+    iconTheme: const IconThemeData(color: Colors.deepOrange),
+    textTheme: const TextTheme(
+        button: TextStyle(
+            color: Colors.white,
+            fontSize: 13,
+            fontWeight: FontWeight.normal,
+            overflow: TextOverflow.ellipsis),
+        headline1: TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.w500,
+            fontSize: 15,
+            overflow: TextOverflow.ellipsis),
+        subtitle1: TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.normal,
+            fontSize: 15,
+            overflow: TextOverflow.ellipsis),
+        headline2: TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.w500,
+            fontSize: 14,
+            overflow: TextOverflow.ellipsis),
+        subtitle2: TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.normal,
+            fontSize: 14,
+            overflow: TextOverflow.ellipsis)),
+    canvasColor: const Color(0xFF212121),
+    cardTheme: const CardTheme(
+        color: Colors.white10,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.zero,
+        )),
+    inputDecorationTheme: const InputDecorationTheme(
+        labelStyle: TextStyle(color: Colors.white),
+        hintStyle: TextStyle(color: Colors.white),
+        enabledBorder: OutlineInputBorder(
+            borderSide: BorderSide(color: Colors.white),
+            borderRadius: BorderRadius.zero),
+        focusedBorder: OutlineInputBorder(
+            borderSide: BorderSide(color: Colors.deepOrangeAccent),
+            borderRadius: BorderRadius.all(Radius.circular(5)))),
+    appBarTheme: const AppBarTheme(
+      elevation: 0,
+      titleTextStyle: TextStyle(
+          color: Colors.white,
+          fontSize: 15,
+          fontWeight: FontWeight.w500,
+          overflow: TextOverflow.ellipsis),
+      centerTitle: true,
+    ),
+    elevatedButtonTheme: ElevatedButtonThemeData(
+      style: ButtonStyle(
+          fixedSize: MaterialStateProperty.all<Size>(const Size(120, 40)),
+          backgroundColor: MaterialStateProperty.all<Color>(Colors.deepOrange),
+          elevation: MaterialStateProperty.all(0),
+          shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+              const RoundedRectangleBorder(
+            borderRadius: BorderRadius.zero,
+          ))),
+    ));
+
+final lightTheme = ThemeData(
+    hoverColor: Colors.grey.shade400,
+    primaryColor: Colors.deepOrange,
+    backgroundColor: Colors.grey.shade200,
+    colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.deepOrange)
+        .copyWith(secondary: Colors.white),
+    iconTheme: const IconThemeData(color: Colors.deepOrange),
+    textTheme: const TextTheme(
+        button: TextStyle(
+            color: Colors.white,
+            fontSize: 13,
+            fontWeight: FontWeight.normal,
+            overflow: TextOverflow.ellipsis),
+        headline1: TextStyle(
+            color: Colors.black,
+            fontWeight: FontWeight.w500,
+            fontSize: 15,
+            overflow: TextOverflow.ellipsis),
+        subtitle1: TextStyle(
+            color: Colors.black,
+            fontWeight: FontWeight.normal,
+            fontSize: 15,
+            overflow: TextOverflow.ellipsis),
+        headline2: TextStyle(
+            color: Colors.black,
+            fontWeight: FontWeight.w500,
+            fontSize: 14,
+            overflow: TextOverflow.ellipsis),
+        subtitle2: TextStyle(
+            color: Colors.black,
+            fontWeight: FontWeight.normal,
+            fontSize: 14,
+            overflow: TextOverflow.ellipsis)),
+    canvasColor: const Color.fromRGBO(255, 255, 255, 1),
+    cardTheme: CardTheme(
+        color: Colors.grey.shade200,
+        elevation: 0,
+        shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.zero,
+        ),
+        margin: const EdgeInsets.all(5)),
+    inputDecorationTheme: const InputDecorationTheme(
+        labelStyle: TextStyle(color: Colors.black),
+        hintStyle: TextStyle(color: Colors.black),
+        enabledBorder: OutlineInputBorder(
+            borderSide: BorderSide(color: Colors.black),
+            borderRadius: BorderRadius.zero),
+        focusedBorder: OutlineInputBorder(
+            borderSide: BorderSide(color: Colors.deepOrangeAccent),
+            borderRadius: BorderRadius.all(Radius.circular(5)))),
+    appBarTheme: const AppBarTheme(
+      elevation: 0,
+      titleTextStyle: TextStyle(
+          color: Colors.black,
+          fontSize: 15,
+          fontWeight: FontWeight.w500,
+          overflow: TextOverflow.ellipsis),
+      centerTitle: true,
+    ),
+    elevatedButtonTheme: ElevatedButtonThemeData(
+      style: ButtonStyle(
+          fixedSize: MaterialStateProperty.all<Size>(const Size(120, 40)),
+          backgroundColor: MaterialStateProperty.all<Color>(Colors.deepOrange),
+          elevation: MaterialStateProperty.all(0),
+          shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+              const RoundedRectangleBorder(
+            borderRadius: BorderRadius.zero,
+          ))),
+    ));

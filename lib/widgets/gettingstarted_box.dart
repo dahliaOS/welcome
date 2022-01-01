@@ -19,27 +19,36 @@ import 'package:flutter/material.dart';
 SizedBox boxes(
   String name,
   IconData icon,
+  context,
 ) {
   return SizedBox(
     width: 100,
     height: 100,
     child: Card(
-      color: Colors.grey.shade200,
-      shape: const RoundedRectangleBorder(borderRadius: BorderRadius.zero),
-      elevation: 0,
-      margin: const EdgeInsets.all(5),
+      color: Theme.of(context).cardTheme.color,
+      shape: Theme.of(context).cardTheme.shape,
+      elevation: Theme.of(context).cardTheme.elevation,
+      margin: Theme.of(context).cardTheme.margin,
       child: InkWell(
           onTap: () {},
-          splashColor: Colors.deepOrange,
+          splashColor: Theme.of(context).primaryColor,
           child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
-                Icon(icon),
+                Icon(
+                  icon,
+                  color: Theme.of(context).iconTheme.color,
+                ),
                 const SizedBox(height: 15),
                 Text(
                   name,
-                  overflow: TextOverflow.ellipsis,
+                  style: TextStyle(
+                      fontSize: Theme.of(context).textTheme.headline2?.fontSize,
+                      color: Theme.of(context).textTheme.headline2?.color,
+                      fontWeight:
+                          Theme.of(context).textTheme.headline2?.fontWeight),
+                  overflow: Theme.of(context).textTheme.headline2?.overflow,
                 )
               ])),
     ),

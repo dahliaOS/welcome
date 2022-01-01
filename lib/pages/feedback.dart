@@ -27,7 +27,7 @@ class Feedback extends StatelessWidget {
         leading: Builder(
           builder: (BuildContext context) {
             return IconButton(
-              color: Colors.black,
+              color: Theme.of(context).iconTheme.color,
               icon: const Icon(Icons.navigate_before),
               onPressed: () {
                 Navigator.pop(context);
@@ -37,11 +37,16 @@ class Feedback extends StatelessWidget {
           },
         ),
         backgroundColor: Theme.of(context).canvasColor,
-        centerTitle: true,
-        elevation: 1,
-        title: const Text(
+        centerTitle: Theme.of(context).appBarTheme.centerTitle,
+        elevation: Theme.of(context).appBarTheme.elevation,
+        title: Text(
           'Feedback',
-          style: TextStyle(color: Colors.black),
+          style: TextStyle(
+              color: Theme.of(context).appBarTheme.titleTextStyle?.color,
+              fontWeight:
+                  Theme.of(context).appBarTheme.titleTextStyle?.fontWeight,
+              fontSize: Theme.of(context).appBarTheme.titleTextStyle?.fontSize,
+              overflow: Theme.of(context).appBarTheme.titleTextStyle?.overflow),
         ),
       ),
       body: Center(
@@ -49,10 +54,9 @@ class Feedback extends StatelessWidget {
           width: 700,
           height: 500,
           child: Card(
-            color: Colors.grey.shade200,
-            elevation: 0,
-            shape:
-                const RoundedRectangleBorder(borderRadius: BorderRadius.zero),
+            color: Theme.of(context).cardTheme.color,
+            elevation: Theme.of(context).cardTheme.elevation,
+            shape: Theme.of(context).cardTheme.shape,
             child: Padding(
               padding: const EdgeInsets.all(40),
               child: Column(
@@ -61,32 +65,59 @@ class Feedback extends StatelessWidget {
                   Wrap(
                     runSpacing: 25,
                     children: <Widget>[
-                      const Text(
+                      Text(
                         'Report a bug',
-                        overflow: TextOverflow.ellipsis,
                         style: TextStyle(
-                            color: Colors.black, fontWeight: FontWeight.w600),
+                            color: Theme.of(context).textTheme.headline1?.color,
+                            fontWeight: Theme.of(context)
+                                .textTheme
+                                .headline1
+                                ?.fontWeight,
+                            fontSize: Theme.of(context)
+                                .textTheme
+                                .headline1
+                                ?.fontSize),
+                        overflow:
+                            Theme.of(context).textTheme.headline1?.overflow,
                       ),
-                      form('Name', 'Your name'),
-                      form('Email', 'Your email address'),
-                      form('Bug', 'Describe the bug'),
+                      form('Name', 'Your name', context),
+                      form('Email', 'Your email address', context),
+                      form('Bug', 'Describe the bug', context),
                       ElevatedButton(
                           style: ButtonStyle(
-                              fixedSize: MaterialStateProperty.all<Size>(
-                                  const Size(100, 40)),
-                              backgroundColor: MaterialStateProperty.all<Color>(
-                                  Colors.deepOrange),
-                              elevation: MaterialStateProperty.all(0),
-                              shape: MaterialStateProperty.all<
-                                      RoundedRectangleBorder>(
-                                  const RoundedRectangleBorder(
-                                borderRadius: BorderRadius.zero,
-                              ))),
+                              fixedSize: Theme.of(context)
+                                  .elevatedButtonTheme
+                                  .style
+                                  ?.fixedSize,
+                              backgroundColor: Theme.of(context)
+                                  .elevatedButtonTheme
+                                  .style
+                                  ?.backgroundColor,
+                              elevation: Theme.of(context)
+                                  .elevatedButtonTheme
+                                  .style
+                                  ?.elevation,
+                              shape: Theme.of(context)
+                                  .elevatedButtonTheme
+                                  .style
+                                  ?.shape),
                           onPressed: () {},
-                          child: const Text(
-                            'Submit',
-                            overflow: TextOverflow.ellipsis,
-                          ))
+                          child: Text('Submit',
+                              style: TextStyle(
+                                  color:
+                                      Theme.of(context).textTheme.button?.color,
+                                  fontWeight: Theme.of(context)
+                                      .textTheme
+                                      .button
+                                      ?.fontWeight,
+                                  fontSize: Theme.of(context)
+                                      .textTheme
+                                      .button
+                                      ?.fontSize,
+                                  overflow: Theme.of(context)
+                                      .textTheme
+                                      .button
+                                      ?.overflow)))
                     ],
                   )
                 ],

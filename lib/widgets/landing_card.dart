@@ -27,15 +27,15 @@ SizedBox landingCard(
       width: 600,
       height: 100,
       child: Card(
-          color: Colors.grey.shade200,
-          shape: const RoundedRectangleBorder(borderRadius: BorderRadius.zero),
-          elevation: 0,
-          margin: const EdgeInsets.all(5),
+          color: Theme.of(context).cardTheme.color,
+          shape: Theme.of(context).cardTheme.shape,
+          elevation: Theme.of(context).cardTheme.elevation,
+          margin: Theme.of(context).cardTheme.margin,
           child: InkWell(
             onTap: () {
               Navigator.pushNamed(context, route);
             },
-            splashColor: Colors.deepOrange,
+            splashColor: Theme.of(context).primaryColor,
             child: Row(
               children: <Widget>[
                 Container(
@@ -44,7 +44,7 @@ SizedBox landingCard(
                       child: Icon(
                         icon,
                         size: 50,
-                        color: Colors.deepOrange,
+                        color: Theme.of(context).iconTheme.color,
                       ),
                     )),
                 Expanded(
@@ -54,18 +54,26 @@ SizedBox landingCard(
                     children: <Widget>[
                       Text(
                         name,
-                        style: const TextStyle(
-                            fontSize: 15,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.black,
+                        style: TextStyle(
+                            fontSize:
+                                Theme.of(context).textTheme.headline1?.fontSize,
+                            fontWeight: Theme.of(context)
+                                .textTheme
+                                .headline1
+                                ?.fontWeight,
+                            color: Theme.of(context).textTheme.headline1?.color,
                             overflow: TextOverflow.ellipsis),
                       ),
                       Text(
                         description,
-                        style: const TextStyle(
-                            fontSize: 15,
-                            fontWeight: FontWeight.normal,
-                            color: Colors.black,
+                        style: TextStyle(
+                            fontSize:
+                                Theme.of(context).textTheme.subtitle1?.fontSize,
+                            fontWeight: Theme.of(context)
+                                .textTheme
+                                .subtitle1
+                                ?.fontWeight,
+                            color: Theme.of(context).textTheme.subtitle1?.color,
                             overflow: TextOverflow.ellipsis),
                       )
                     ],

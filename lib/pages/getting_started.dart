@@ -27,7 +27,7 @@ class GettingStarted extends StatelessWidget {
           leading: Builder(
             builder: (BuildContext context) {
               return IconButton(
-                color: Colors.black,
+                color: Theme.of(context).iconTheme.color,
                 icon: const Icon(Icons.navigate_before),
                 onPressed: () {
                   Navigator.pop(context);
@@ -37,11 +37,18 @@ class GettingStarted extends StatelessWidget {
             },
           ),
           backgroundColor: Theme.of(context).canvasColor,
-          centerTitle: true,
-          elevation: 1,
-          title: const Text(
+          centerTitle: Theme.of(context).appBarTheme.centerTitle,
+          elevation: Theme.of(context).appBarTheme.elevation,
+          title: Text(
             'Getting started',
-            style: TextStyle(color: Colors.black),
+            style: TextStyle(
+                color: Theme.of(context).appBarTheme.titleTextStyle?.color,
+                fontWeight:
+                    Theme.of(context).appBarTheme.titleTextStyle?.fontWeight,
+                fontSize:
+                    Theme.of(context).appBarTheme.titleTextStyle?.fontSize,
+                overflow:
+                    Theme.of(context).appBarTheme.titleTextStyle?.overflow),
           ),
         ),
         body: Center(
@@ -56,34 +63,42 @@ class GettingStarted extends StatelessWidget {
               boxes(
                 'Customization',
                 Icons.dashboard_customize,
+                context,
               ),
               boxes(
                 'Personalization',
                 Icons.palette,
+                context,
               ),
               boxes(
                 'Something',
                 Icons.info,
+                context,
               ),
               boxes(
                 'Something',
                 Icons.info,
+                context,
               ),
               boxes(
                 'Something',
                 Icons.info,
+                context,
               ),
               boxes(
                 'Something',
                 Icons.info,
+                context,
               ),
               boxes(
                 'Something',
                 Icons.info,
+                context,
               ),
               boxes(
                 'Something',
                 Icons.info,
+                context,
               ),
             ],
           ),

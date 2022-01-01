@@ -27,7 +27,7 @@ class Contributors extends StatelessWidget {
         leading: Builder(
           builder: (BuildContext context) {
             return IconButton(
-              color: Colors.black,
+              color: Theme.of(context).iconTheme.color,
               icon: const Icon(Icons.navigate_before),
               onPressed: () {
                 Navigator.pop(context);
@@ -37,11 +37,16 @@ class Contributors extends StatelessWidget {
           },
         ),
         backgroundColor: Theme.of(context).canvasColor,
-        centerTitle: true,
-        elevation: 1,
-        title: const Text(
+        centerTitle: Theme.of(context).appBarTheme.centerTitle,
+        elevation: Theme.of(context).appBarTheme.elevation,
+        title: Text(
           'Contributors',
-          style: TextStyle(color: Colors.black),
+          style: TextStyle(
+              color: Theme.of(context).appBarTheme.titleTextStyle?.color,
+              fontWeight:
+                  Theme.of(context).appBarTheme.titleTextStyle?.fontWeight,
+              fontSize: Theme.of(context).appBarTheme.titleTextStyle?.fontSize,
+              overflow: Theme.of(context).appBarTheme.titleTextStyle?.overflow),
         ),
       ),
       body: ScrollConfiguration(
@@ -54,15 +59,27 @@ class Contributors extends StatelessWidget {
               itemBuilder: (context, index) {
                 return Column(
                   children: <Widget>[
-                    const CircleAvatar(
-                      backgroundColor: Colors.deepOrange,
-                      foregroundColor: Colors.white,
-                      child: Icon(Icons.person),
+                    CircleAvatar(
+                      backgroundColor: Theme.of(context).primaryColor,
+                      child: const Icon(
+                        Icons.person,
+                        color: Colors.white,
+                      ),
                     ),
                     const SizedBox(
                       height: 10,
                     ),
-                    Text(dummyContributorsList[index]),
+                    Text(
+                      dummyContributorsList[index],
+                      style: TextStyle(
+                          color: Theme.of(context).textTheme.subtitle2?.color,
+                          fontWeight:
+                              Theme.of(context).textTheme.subtitle2?.fontWeight,
+                          fontSize:
+                              Theme.of(context).textTheme.subtitle2?.fontSize,
+                          overflow:
+                              Theme.of(context).textTheme.subtitle2?.overflow),
+                    ),
                   ],
                 );
               })),

@@ -27,7 +27,7 @@ class Support extends StatelessWidget {
           leading: Builder(
             builder: (BuildContext context) {
               return IconButton(
-                color: Colors.black,
+                color: Theme.of(context).iconTheme.color,
                 icon: const Icon(Icons.navigate_before),
                 onPressed: () {
                   Navigator.pop(context);
@@ -37,11 +37,18 @@ class Support extends StatelessWidget {
             },
           ),
           backgroundColor: Theme.of(context).canvasColor,
-          centerTitle: true,
-          elevation: 1,
-          title: const Text(
+          centerTitle: Theme.of(context).appBarTheme.centerTitle,
+          elevation: Theme.of(context).appBarTheme.elevation,
+          title: Text(
             'Support',
-            style: TextStyle(color: Colors.black),
+            style: TextStyle(
+                color: Theme.of(context).appBarTheme.titleTextStyle?.color,
+                fontWeight:
+                    Theme.of(context).appBarTheme.titleTextStyle?.fontWeight,
+                fontSize:
+                    Theme.of(context).appBarTheme.titleTextStyle?.fontSize,
+                overflow:
+                    Theme.of(context).appBarTheme.titleTextStyle?.overflow),
           ),
         ),
         body: Center(
@@ -54,21 +61,21 @@ class Support extends StatelessWidget {
             shrinkWrap: true,
             children: <Widget>[
               socialBox('Website', 'assets/logos/dahliaOS/dahliaOS.png',
-                  'https://dahliaos.io/'),
+                  'https://dahliaos.io/', context),
               socialBox('GitHub', 'assets/logos/socialmedia/github.png',
-                  'https://dahliaos.io/github'),
+                  'https://dahliaos.io/github', context),
               socialBox('Discord', 'assets/logos/socialmedia/discord.png',
-                  'https://dahliaos.io/discord'),
+                  'https://dahliaos.io/discord', context),
               socialBox('Telegram', 'assets/logos/socialmedia/telegram.png',
-                  'https://dahliaos.io/telegram'),
+                  'https://dahliaos.io/telegram', context),
               socialBox('Twitter', 'assets/logos/socialmedia/twitter.png',
-                  'https://dahliaos.io/twitter'),
+                  'https://dahliaos.io/twitter', context),
               socialBox('Instagram', 'assets/logos/socialmedia/instagram.png',
-                  'https://dahliaos.io/instagram'),
+                  'https://dahliaos.io/instagram', context),
               socialBox('Reddit', 'assets/logos/socialmedia/reddit.png',
-                  'https://dahliaos.io/reddit'),
+                  'https://dahliaos.io/reddit', context),
               socialBox('Facebook', 'assets/logos/socialmedia/facebook.png',
-                  'https://dahliaos.io/facebook'),
+                  'https://dahliaos.io/facebook', context),
             ],
           ),
         ));

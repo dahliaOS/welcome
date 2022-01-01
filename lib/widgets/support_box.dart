@@ -21,18 +21,19 @@ SizedBox socialBox(
   String name,
   String imageName,
   String link,
+  context,
 ) {
   return SizedBox(
       width: 100,
       height: 100,
       child: Card(
-        color: Colors.grey.shade200,
-        shape: const RoundedRectangleBorder(borderRadius: BorderRadius.zero),
-        elevation: 0,
-        margin: const EdgeInsets.all(5),
+        color: Theme.of(context).cardTheme.color,
+        shape: Theme.of(context).cardTheme.shape,
+        elevation: Theme.of(context).cardTheme.elevation,
+        margin: Theme.of(context).cardTheme.margin,
         child: InkWell(
           onTap: () => launch(link),
-          splashColor: Colors.deepOrange,
+          splashColor: Theme.of(context).primaryColor,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -45,7 +46,12 @@ SizedBox socialBox(
               const SizedBox(height: 15),
               Text(
                 name,
-                overflow: TextOverflow.ellipsis,
+                style: TextStyle(
+                    color: Theme.of(context).textTheme.headline2?.color,
+                    fontSize: Theme.of(context).textTheme.headline2?.fontSize,
+                    fontWeight:
+                        Theme.of(context).textTheme.headline2?.fontWeight),
+                overflow: Theme.of(context).textTheme.headline2?.overflow,
               )
             ],
           ),

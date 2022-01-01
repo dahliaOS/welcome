@@ -27,7 +27,7 @@ class About extends StatelessWidget {
           leading: Builder(
             builder: (BuildContext context) {
               return IconButton(
-                color: Colors.black,
+                color: Theme.of(context).iconTheme.color,
                 icon: const Icon(Icons.navigate_before),
                 onPressed: () {
                   Navigator.pop(context);
@@ -37,11 +37,18 @@ class About extends StatelessWidget {
             },
           ),
           backgroundColor: Theme.of(context).canvasColor,
-          centerTitle: true,
-          elevation: 1,
-          title: const Text(
+          centerTitle: Theme.of(context).appBarTheme.centerTitle,
+          elevation: Theme.of(context).appBarTheme.elevation,
+          title: Text(
             'About',
-            style: TextStyle(color: Colors.black),
+            style: TextStyle(
+                color: Theme.of(context).appBarTheme.titleTextStyle?.color,
+                fontWeight:
+                    Theme.of(context).appBarTheme.titleTextStyle?.fontWeight,
+                fontSize:
+                    Theme.of(context).appBarTheme.titleTextStyle?.fontSize,
+                overflow:
+                    Theme.of(context).appBarTheme.titleTextStyle?.overflow),
           ),
         ),
         body: Center(
@@ -55,13 +62,23 @@ class About extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
-                        const Text(
+                        Text(
                           'System information',
                           style: TextStyle(
-                              color: Colors.black,
-                              fontWeight: FontWeight.w500,
-                              fontSize: 13,
-                              overflow: TextOverflow.ellipsis),
+                              color:
+                                  Theme.of(context).textTheme.headline1?.color,
+                              fontWeight: Theme.of(context)
+                                  .textTheme
+                                  .headline1
+                                  ?.fontWeight,
+                              fontSize: Theme.of(context)
+                                  .textTheme
+                                  .headline1
+                                  ?.fontSize,
+                              overflow: Theme.of(context)
+                                  .textTheme
+                                  .headline1
+                                  ?.overflow),
                         ),
                         const SizedBox(
                           height: 10,
@@ -70,24 +87,36 @@ class About extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.center,
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
-                            aboutCard(
-                                'Operating system', 'dahliaOS', Icons.computer),
+                            aboutCard('Operating system', 'dahliaOS',
+                                Icons.computer, context),
                             aboutCard('Architecture', 'ARMv8.4-A',
-                                Icons.architecture),
-                            aboutCard('Build info', '21XXXX', Icons.build),
-                            aboutCard('Kernel version', '5.11.1', Icons.update),
+                                Icons.architecture, context),
+                            aboutCard(
+                                'Build info', '21XXXX', Icons.build, context),
+                            aboutCard('Kernel version', '5.11.1', Icons.update,
+                                context),
                           ],
                         ),
                         const SizedBox(
                           height: 10,
                         ),
-                        const Text(
+                        Text(
                           'Hardware information',
                           style: TextStyle(
-                              color: Colors.black,
-                              fontWeight: FontWeight.w500,
-                              fontSize: 13,
-                              overflow: TextOverflow.ellipsis),
+                              color:
+                                  Theme.of(context).textTheme.headline1?.color,
+                              fontWeight: Theme.of(context)
+                                  .textTheme
+                                  .headline1
+                                  ?.fontWeight,
+                              fontSize: Theme.of(context)
+                                  .textTheme
+                                  .headline1
+                                  ?.fontSize,
+                              overflow: Theme.of(context)
+                                  .textTheme
+                                  .headline1
+                                  ?.overflow),
                         ),
                         const SizedBox(
                           height: 10,
@@ -97,11 +126,12 @@ class About extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
                             aboutCard('CPU', 'Apple M1',
-                                Icons.settings_input_component),
+                                Icons.settings_input_component, context),
+                            aboutCard('GPU', 'Apple M1',
+                                Icons.settings_input_hdmi, context),
+                            aboutCard('RAM', '8GB', Icons.memory, context),
                             aboutCard(
-                                'GPU', 'Apple M1', Icons.settings_input_hdmi),
-                            aboutCard('RAM', '8GB', Icons.memory),
-                            aboutCard('Storage', '512GB', Icons.storage),
+                                'Storage', '512GB', Icons.storage, context),
                           ],
                         ),
                       ]),
