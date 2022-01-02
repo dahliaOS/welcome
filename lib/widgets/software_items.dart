@@ -60,10 +60,11 @@ class _SoftwareWidgetState extends State<SoftwareWidget> {
             );
           },
           body: ListTile(
-              title: Text(item.expandedValue!),
-              subtitle: const Text('To view full license, tap the arrow'),
-              trailing: const Icon(Icons.arrow_right),
-              onTap: () {}),
+            title: Text(item.expandedValue!),
+            subtitle: const Text('To view full license, tap the arrow'),
+            trailing: const Icon(Icons.arrow_right),
+            onTap: () {},
+          ),
           isExpanded: item.isExpanded!,
         );
       }).toList(),

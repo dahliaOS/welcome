@@ -37,41 +37,72 @@ class SocialMedia extends StatelessWidget {
         ),
       ),
       body: Center(
-          child: SingleChildScrollView(
-              padding:
-                  const EdgeInsets.only(left: 10.0, right: 10.0, top: 10.0),
-              scrollDirection: Axis.vertical,
-              child: Wrap(
-                children: [
-                  socialItem(
-                      "assets/images/logos/dahliaOS/PNG/dahliaOS_logo_drop_shadow.png",
-                      "Official Website",
-                      "https://dahliaos.io",
-                      context),
-                  socialItem("assets/images/icons/PNG/discord.png", "Discord",
-                      "https://dahliaos.io/discord", context),
-                  socialItem("assets/images/icons/PNG/facebook.png", "Facebook",
-                      "https://dahliaos.io/facebook", context),
-                  socialItem("assets/images/icons/PNG/github.png", "GitHub",
-                      "https://dahliaos.io/github", context),
-                  socialItem("assets/images/icons/PNG/instagram.png",
-                      "Instagram", "https://dahliaos.io/instagram", context),
-                  socialItem("assets/images/icons/PNG/reddit.png", "Reddit",
-                      "https://dahliaos.io/reddit", context),
-                  socialItem("assets/images/icons/PNG/telegram.png", "Telegram",
-                      "https://dahliaos.io/telegram", context),
-                  socialItem("assets/images/icons/PNG/twitter.png", "Twitter",
-                      "https://dahliaos.io/twitter", context),
-                  const Text(
-                    "    ",
-                    style: TextStyle(
-                        fontSize: 36.0,
-                        color: Color(0xFF000000),
-                        fontWeight: FontWeight.w400,
-                        fontFamily: "Sulphur Point"),
-                  ),
-                ],
-              ))),
+        child: SingleChildScrollView(
+          padding: const EdgeInsets.only(left: 10.0, right: 10.0, top: 10.0),
+          scrollDirection: Axis.vertical,
+          child: Wrap(
+            children: [
+              socialItem(
+                "assets/images/logos/dahliaOS/PNG/dahliaOS_logo_drop_shadow.png",
+                "Official Website",
+                "https://dahliaos.io",
+                context,
+              ),
+              socialItem(
+                "assets/images/icons/PNG/discord.png",
+                "Discord",
+                "https://dahliaos.io/discord",
+                context,
+              ),
+              socialItem(
+                "assets/images/icons/PNG/facebook.png",
+                "Facebook",
+                "https://dahliaos.io/facebook",
+                context,
+              ),
+              socialItem(
+                "assets/images/icons/PNG/github.png",
+                "GitHub",
+                "https://dahliaos.io/github",
+                context,
+              ),
+              socialItem(
+                "assets/images/icons/PNG/instagram.png",
+                "Instagram",
+                "https://dahliaos.io/instagram",
+                context,
+              ),
+              socialItem(
+                "assets/images/icons/PNG/reddit.png",
+                "Reddit",
+                "https://dahliaos.io/reddit",
+                context,
+              ),
+              socialItem(
+                "assets/images/icons/PNG/telegram.png",
+                "Telegram",
+                "https://dahliaos.io/telegram",
+                context,
+              ),
+              socialItem(
+                "assets/images/icons/PNG/twitter.png",
+                "Twitter",
+                "https://dahliaos.io/twitter",
+                context,
+              ),
+              const Text(
+                "    ",
+                style: TextStyle(
+                  fontSize: 36.0,
+                  color: Color(0xFF000000),
+                  fontWeight: FontWeight.w400,
+                  fontFamily: "Sulphur Point",
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }

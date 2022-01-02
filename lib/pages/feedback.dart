@@ -36,30 +36,39 @@ class Feedback extends StatelessWidget {
         ),
       ),
       body: Center(
-          child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          Text('We are always looking for ways we can improve!',
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Text(
+              'We are always looking for ways we can improve!',
               style: TextStyle(
-                  fontSize: 14,
-                  color: Theme.of(context).colorScheme.foregroundText)),
-          Text('Please submit feedback to contact+feedback@dahliaos.io',
+                fontSize: 14,
+                color: Theme.of(context).colorScheme.foregroundText,
+              ),
+            ),
+            Text(
+              'Please submit feedback to contact+feedback@dahliaos.io',
               style: TextStyle(
-                  fontSize: 14,
-                  color: Theme.of(context).colorScheme.foregroundText)),
-          Text(
+                fontSize: 14,
+                color: Theme.of(context).colorScheme.foregroundText,
+              ),
+            ),
+            Text(
               'Experienced a bug? Report an issue at github.com/dahliaOS/releases',
               style: TextStyle(
-                  fontSize: 14,
-                  color: Theme.of(context).colorScheme.foregroundText)),
-          ElevatedButton(
-            onPressed: () {
-              Navigator.pop(context);
-            },
-            child: const Text('BACK'),
-          ),
-        ],
-      )),
+                fontSize: 14,
+                color: Theme.of(context).colorScheme.foregroundText,
+              ),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              child: const Text('BACK'),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }

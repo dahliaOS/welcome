@@ -44,57 +44,72 @@ class Landing extends StatelessWidget {
         ),
       ),
       body: Center(
-          child: SingleChildScrollView(
-              padding:
-                  const EdgeInsets.only(left: 10.0, right: 10.0, top: 10.0),
-              scrollDirection: Axis.vertical,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                mainAxisSize: MainAxisSize.max,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Text(
-                    "Welcome to dahliaOS!",
-                    style: TextStyle(
-                        fontSize: 36.0,
-                        color: Theme.of(context).colorScheme.titleText,
-                        fontWeight: FontWeight.w400,
-                        fontFamily: "Sulphur Point"),
-                  ),
-                  feature(
-                      "assets/images/icons/PNG/welcome-info.png",
-                      "Build Information",
-                      headingFeatureString,
-                      "/info",
-                      context),
-                  feature("assets/images/icons/PNG/messages.png", "Feedback",
-                      "Have an issue or a suggestion?", "/feedback", context),
-                  feature(
-                      "assets/images/icons/PNG/social.png",
-                      "Social media",
-                      "Check us out on nearly every platform!",
-                      "/social",
-                      context),
-                  feature(
-                      "assets/images/icons/PNG/credits.png",
-                      "Credits",
-                      "Here's everyone who helped make this happen!",
-                      "/credits",
-                      context),
-                  feature(
-                      "assets/images/icons/PNG/software-shared.png",
-                      "Software",
-                      "View information about third-party software...",
-                      "/software",
-                      context),
-                  feature(
-                      "assets/images/icons/PNG/software-shared.png",
-                      "Getting started",
-                      "Get started with dahliaOS",
-                      "/getting_started",
-                      context)
-                ],
-              ))),
+        child: SingleChildScrollView(
+          padding: const EdgeInsets.only(left: 10.0, right: 10.0, top: 10.0),
+          scrollDirection: Axis.vertical,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisSize: MainAxisSize.max,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Text(
+                "Welcome to dahliaOS!",
+                style: TextStyle(
+                  fontSize: 36.0,
+                  color: Theme.of(context).colorScheme.titleText,
+                  fontWeight: FontWeight.w400,
+                  fontFamily: "Sulphur Point",
+                ),
+              ),
+              Image.asset(
+                "assets/images/icons/PNG/welcome-info.png",
+              ),
+              feature(
+                "assets/images/icons/PNG/welcome-info.png",
+                "Build Information",
+                headingFeatureString,
+                "/info",
+                context,
+              ),
+              feature(
+                "assets/images/icons/PNG/messages.png",
+                "Feedback",
+                "Have an issue or a suggestion?",
+                "/feedback",
+                context,
+              ),
+              feature(
+                "assets/images/icons/PNG/social.png",
+                "Social media",
+                "Check us out on nearly every platform!",
+                "/social",
+                context,
+              ),
+              feature(
+                "assets/images/icons/PNG/credits.png",
+                "Credits",
+                "Here's everyone who helped make this happen!",
+                "/credits",
+                context,
+              ),
+              feature(
+                "assets/images/icons/PNG/software-shared.png",
+                "Software",
+                "View information about third-party software...",
+                "/software",
+                context,
+              ),
+              feature(
+                "assets/images/icons/PNG/software-shared.png",
+                "Getting started",
+                "Get started with dahliaOS",
+                "/getting_started",
+                context,
+              )
+            ],
+          ),
+        ),
+      ),
       drawer: Drawer(
         child: ListView(
           padding: EdgeInsets.zero,
@@ -157,43 +172,50 @@ class Landing extends StatelessWidget {
         ),
       ),
       bottomNavigationBar: BottomAppBar(
-          elevation: 0.0,
-          color: const Color(0x00ffffff),
-          child: SizedBox(
-              height: 50,
-              width: 15,
-              child: Padding(
-                  padding: const EdgeInsets.all(0),
-                  child: Card(
-                    elevation: 0,
-                    color: Colors.amber[500],
-                    child: SingleChildScrollView(
-                      scrollDirection: Axis.horizontal,
-                      child: Row(
-                        children: [
-                          Center(
-                              child: Padding(
-                                  padding: const EdgeInsets.all(8),
-                                  child: Icon(
-                                    Icons.warning,
-                                    size: 25,
-                                    color: Colors.grey[900],
-                                  ))),
-                          Center(
-                              child: Padding(
-                                  padding: const EdgeInsets.all(8),
-                                  child: Text(
-                                    "WARNING: You are on a pre-release build of dahliaOS. Some features may not work as intended.",
-                                    style: TextStyle(
-                                      color: Colors.grey[900],
-                                      fontSize: 14,
-                                      fontFamily: "Roboto",
-                                    ),
-                                  ))),
-                        ],
+        elevation: 0.0,
+        color: const Color(0x00ffffff),
+        child: SizedBox(
+          height: 50,
+          width: 15,
+          child: Padding(
+            padding: const EdgeInsets.all(0),
+            child: Card(
+              elevation: 0,
+              color: Colors.amber[500],
+              child: SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  children: [
+                    Center(
+                      child: Padding(
+                        padding: const EdgeInsets.all(8),
+                        child: Icon(
+                          Icons.warning,
+                          size: 25,
+                          color: Colors.grey[900],
+                        ),
                       ),
                     ),
-                  )))),
+                    Center(
+                      child: Padding(
+                        padding: const EdgeInsets.all(8),
+                        child: Text(
+                          "WARNING: You are on a pre-release build of dahliaOS. Some features may not work as intended.",
+                          style: TextStyle(
+                            color: Colors.grey[900],
+                            fontSize: 14,
+                            fontFamily: "Roboto",
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+        ),
+      ),
     );
   }
 }

@@ -37,10 +37,11 @@ class Software extends StatelessWidget {
         ),
       ),
       body: const Center(
-          child: SizedBox(
-        width: 800,
-        child: SoftwareWidget(),
-      )),
+        child: SizedBox(
+          width: 800,
+          child: SoftwareWidget(),
+        ),
+      ),
     );
   }
 }

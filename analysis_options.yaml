@@ -10,8 +10,12 @@ linter:
     implementation_imports: false
     use_build_context_synchronously: false
     avoid_multiple_declarations_per_line: false
+    require_trailing_commas: true
 
 analyzer:
   exclude:
     - lib/**/*.g.dart
     - lib/generated_plugin_registrant.dart
+
+  errors:
+    require_trailing_commas: error
