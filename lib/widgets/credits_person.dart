@@ -20,39 +20,51 @@ import 'package:welcome/main.dart';
 
 SizedBox person(String icon, String header, String main, context) {
   return SizedBox(
-      width: 512,
-      child: Card(
-        color: Theme.of(context).colorScheme.cardColor,
-        elevation: 0,
-        margin: const EdgeInsets.all(25),
-        child: InkWell(
-            splashColor: Colors.deepOrange.withAlpha(50),
-            child: Row(children: [
-              Center(
-                child: Padding(
-                  padding: const EdgeInsets.fromLTRB(0, 0, 15, 0),
+    width: 512,
+    child: Card(
+      color: Theme.of(context).colorScheme.cardColor,
+      elevation: 0,
+      margin: const EdgeInsets.all(25),
+      child: InkWell(
+        splashColor: Colors.deepOrange.withAlpha(50),
+        child: Row(
+          children: [
+            Center(
+              child: Padding(
+                padding: const EdgeInsets.fromLTRB(0, 0, 15, 0),
+                child: CircleAvatar(
+                  radius: 32,
+                  backgroundColor: Theme.of(context).colorScheme.foregroundText,
                   child: CircleAvatar(
-                    radius: 32,
-                    backgroundColor:
-                        Theme.of(context).colorScheme.foregroundText,
-                    child: CircleAvatar(
-                      radius: 30,
-                      backgroundImage: AssetImage(icon, package: package),
-                    ),
+                    radius: 30,
+                    backgroundImage: AssetImage(icon, package: package),
                   ),
                 ),
               ),
-              Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                Text(header,
-                    style: TextStyle(
-                        fontSize: 18,
-                        color: Theme.of(context).colorScheme.foregroundText,
-                        fontWeight: FontWeight.w600)),
-                Text(main,
-                    style: TextStyle(
-                        fontSize: 15,
-                        color: Theme.of(context).colorScheme.lowerText))
-              ]),
-            ])),
-      ));
+            ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  header,
+                  style: TextStyle(
+                    fontSize: 18,
+                    color: Theme.of(context).colorScheme.foregroundText,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+                Text(
+                  main,
+                  style: TextStyle(
+                    fontSize: 15,
+                    color: Theme.of(context).colorScheme.lowerText,
+                  ),
+                )
+              ],
+            ),
+          ],
+        ),
+      ),
+    ),
+  );
 }

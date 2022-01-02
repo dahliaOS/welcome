@@ -36,21 +36,25 @@ class GettingStarted extends StatelessWidget {
         ),
       ),
       body: Center(
-          child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          Text('Tips on getting started with dahliaOS',
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Text(
+              'Tips on getting started with dahliaOS',
               style: TextStyle(
-                  fontSize: 14,
-                  color: Theme.of(context).colorScheme.foregroundText)),
-          ElevatedButton(
-            onPressed: () {
-              Navigator.pop(context);
-            },
-            child: const Text('BACK'),
-          ),
-        ],
-      )),
+                fontSize: 14,
+                color: Theme.of(context).colorScheme.foregroundText,
+              ),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              child: const Text('BACK'),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }

@@ -20,37 +20,50 @@ import 'package:welcome/main.dart';
 
 SizedBox socialItem(String icon, String header, String main, context) {
   return SizedBox(
-      width: 512,
-      child: Card(
-        color: Theme.of(context).colorScheme.cardColor,
-        elevation: 0,
-        margin: const EdgeInsets.all(25),
-        child: InkWell(
-            splashColor: Colors.deepOrange.withAlpha(50),
-            child: Row(children: [
-              Center(
-                child: Container(
-                  margin: const EdgeInsets.symmetric(horizontal: 10.0),
-                  child: Image.asset(
-                    icon,
-                    fit: BoxFit.cover,
-                    width: 64,
-                    height: 64,
-                    package: package,
-                  ),
+    width: 512,
+    child: Card(
+      color: Theme.of(context).colorScheme.cardColor,
+      elevation: 0,
+      margin: const EdgeInsets.all(25),
+      child: InkWell(
+        splashColor: Colors.deepOrange.withAlpha(50),
+        child: Row(
+          children: [
+            Center(
+              child: Container(
+                margin: const EdgeInsets.symmetric(horizontal: 10.0),
+                child: Image.asset(
+                  icon,
+                  fit: BoxFit.cover,
+                  width: 64,
+                  height: 64,
+                  package: package,
                 ),
               ),
-              Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                Text(header,
-                    style: TextStyle(
-                        fontSize: 18,
-                        color: Theme.of(context).colorScheme.foregroundText,
-                        fontWeight: FontWeight.w600)),
-                Text(main,
-                    style: TextStyle(
-                        fontSize: 15,
-                        color: Theme.of(context).colorScheme.lowerText))
-              ]),
-            ])),
-      ));
+            ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  header,
+                  style: TextStyle(
+                    fontSize: 18,
+                    color: Theme.of(context).colorScheme.foregroundText,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+                Text(
+                  main,
+                  style: TextStyle(
+                    fontSize: 15,
+                    color: Theme.of(context).colorScheme.lowerText,
+                  ),
+                )
+              ],
+            ),
+          ],
+        ),
+      ),
+    ),
+  );
 }

@@ -31,21 +31,27 @@ extension CustomColorScheme on ColorScheme {
   Color get titleText => brightness == Brightness.light
       ? const Color(0xFF000000)
       : const Color(0xFFffffff);
+
   Color get foregroundText => brightness == Brightness.light
       ? const Color(0xFF222222)
       : const Color(0xFFffffff);
+
   String get logoMode => brightness == Brightness.light
       ? "assets/images/logos/dahliaOS/PNG/dahliaOS_logo_with_text_drop_shadow.png"
       : "assets/images/logos/dahliaOS/PNG/logo-white.png";
+
   Color get lowerText => brightness == Brightness.light
       ? const Color(0xFF333333)
       : const Color(0xFFffffff);
+
   Color get cardColor => brightness == Brightness.light
       ? const Color(0xFFffffff)
       : const Color(0xFF303030);
+
   Color get barIconColor => brightness == Brightness.light
       ? const Color(0xFF454545)
       : const Color(0xFFffffff);
+
   Color get barColor => brightness == Brightness.light
       ? const Color(0xFFe0e0e0)
       : const Color(0xFF333333);
@@ -65,9 +71,10 @@ class Welcome extends StatelessWidget {
         canvasColor: const Color(0xFFFFFFFF),
       ),
       darkTheme: ThemeData(
-          brightness: Brightness.dark,
-          platform: TargetPlatform.fuchsia,
-          primarySwatch: Colors.deepOrange),
+        brightness: Brightness.dark,
+        platform: TargetPlatform.fuchsia,
+        primarySwatch: Colors.deepOrange,
+      ),
       /*themeMode: Pangolin.settingsBox.get("darkMode")
           ? ThemeMode.dark
           : ThemeMode.light,*/

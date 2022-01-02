@@ -15,8 +15,8 @@ limitations under the License.
 */
 
 import 'package:flutter/material.dart';
-import 'package:welcome/main.dart';
 import 'package:welcome/constants/constants.dart';
+import 'package:welcome/main.dart';
 
 class BuildInfo extends StatelessWidget {
   const BuildInfo({Key? key}) : super(key: key);
@@ -24,43 +24,52 @@ class BuildInfo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          centerTitle: true,
-          iconTheme: IconThemeData(
-            color: Theme.of(context).colorScheme.foregroundText,
-          ),
-          backgroundColor: Theme.of(context).colorScheme.cardColor,
-          shadowColor: const Color(0x00ffffff),
-          title: Text(
-            "Build Information",
-            style:
-                TextStyle(color: Theme.of(context).colorScheme.foregroundText),
-          ),
+      appBar: AppBar(
+        centerTitle: true,
+        iconTheme: IconThemeData(
+          color: Theme.of(context).colorScheme.foregroundText,
         ),
-        body: Center(
-            child:
-                Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-          Image.asset(
-            Theme.of(context).colorScheme.logoMode,
-            fit: BoxFit.fitHeight,
-            filterQuality: FilterQuality.medium,
-            width: 300,
-            height: 52,
-            package: package,
-          ),
-          Text(longName,
+        backgroundColor: Theme.of(context).colorScheme.cardColor,
+        shadowColor: const Color(0x00ffffff),
+        title: Text(
+          "Build Information",
+          style: TextStyle(color: Theme.of(context).colorScheme.foregroundText),
+        ),
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image.asset(
+              Theme.of(context).colorScheme.logoMode,
+              fit: BoxFit.fitHeight,
+              filterQuality: FilterQuality.medium,
+              width: 300,
+              height: 52,
+              package: package,
+            ),
+            Text(
+              longName,
               style: TextStyle(
-                  fontSize: 14,
-                  color: Theme.of(context).colorScheme.foregroundText)),
-          Text(kernel,
+                fontSize: 14,
+                color: Theme.of(context).colorScheme.foregroundText,
+              ),
+            ),
+            Text(
+              kernel,
               style: TextStyle(
-                  fontSize: 14,
-                  color: Theme.of(context).colorScheme.foregroundText)),
-          Text(pangolinCommit,
+                fontSize: 14,
+                color: Theme.of(context).colorScheme.foregroundText,
+              ),
+            ),
+            Text(
+              pangolinCommit,
               style: TextStyle(
-                  fontSize: 14,
-                  color: Theme.of(context).colorScheme.foregroundText)),
-          ElevatedButton(
+                fontSize: 14,
+                color: Theme.of(context).colorScheme.foregroundText,
+              ),
+            ),
+            ElevatedButton(
               onPressed: () {
                 final snackBar = SnackBar(
                   behavior: SnackBarBehavior.floating,
@@ -79,8 +88,17 @@ class BuildInfo extends StatelessWidget {
                 primary: Colors.deepOrange[600],
                 elevation: 1,
               ),
-              child: const Text('RELEASE NOTES',
-                  style: TextStyle(fontSize: 14, color: Color(0xffffffff)))),
-        ])));
+              child: const Text(
+                'RELEASE NOTES',
+                style: TextStyle(
+                  fontSize: 14,
+                  color: Color(0xffffffff),
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }
