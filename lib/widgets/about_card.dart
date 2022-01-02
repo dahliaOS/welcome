@@ -20,41 +20,42 @@ SizedBox aboutCard(
   String name,
   String description,
   IconData icon,
-  context,
+  BuildContext context,
 ) {
   return SizedBox(
-      width: 500,
-      height: 80,
-      child: Card(
-        color: Theme.of(context).cardTheme.color,
-        shape: Theme.of(context).cardTheme.shape,
-        elevation: Theme.of(context).cardTheme.elevation,
-        margin: Theme.of(context).cardTheme.margin,
-        child: Row(
-          children: <Widget>[
-            Container(
-                margin: const EdgeInsets.symmetric(horizontal: 20),
-                child: Center(
-                  child: Icon(
-                    icon,
-                    size: 30,
-                    color: Theme.of(context).iconTheme.color,
-                  ),
-                )),
-            Expanded(
-                child: Column(
+    width: 500,
+    height: 80,
+    child: Card(
+      color: Theme.of(context).cardTheme.color,
+      shape: Theme.of(context).cardTheme.shape,
+      elevation: Theme.of(context).cardTheme.elevation,
+      margin: Theme.of(context).cardTheme.margin,
+      child: Row(
+        children: <Widget>[
+          Container(
+            margin: const EdgeInsets.symmetric(horizontal: 20),
+            child: Center(
+              child: Icon(
+                icon,
+                size: 30,
+                color: Theme.of(context).iconTheme.color,
+              ),
+            ),
+          ),
+          Expanded(
+            child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 Text(
                   name,
                   style: TextStyle(
-                      fontSize: Theme.of(context).textTheme.headline2?.fontSize,
-                      fontWeight:
-                          Theme.of(context).textTheme.headline2?.fontWeight,
-                      color: Theme.of(context).textTheme.headline2?.color,
-                      overflow:
-                          Theme.of(context).textTheme.headline2?.overflow),
+                    fontSize: Theme.of(context).textTheme.headline2?.fontSize,
+                    fontWeight:
+                        Theme.of(context).textTheme.headline2?.fontWeight,
+                    color: Theme.of(context).textTheme.headline2?.color,
+                    overflow: Theme.of(context).textTheme.headline2?.overflow,
+                  ),
                 ),
                 const SizedBox(
                   height: 3,
@@ -62,16 +63,18 @@ SizedBox aboutCard(
                 Text(
                   description,
                   style: TextStyle(
-                      fontSize: Theme.of(context).textTheme.subtitle2?.fontSize,
-                      fontWeight:
-                          Theme.of(context).textTheme.subtitle2?.fontWeight,
-                      color: Theme.of(context).textTheme.subtitle2?.color,
-                      overflow:
-                          Theme.of(context).textTheme.subtitle2?.overflow),
+                    fontSize: Theme.of(context).textTheme.subtitle2?.fontSize,
+                    fontWeight:
+                        Theme.of(context).textTheme.subtitle2?.fontWeight,
+                    color: Theme.of(context).textTheme.subtitle2?.color,
+                    overflow: Theme.of(context).textTheme.subtitle2?.overflow,
+                  ),
                 )
               ],
-            ))
-          ],
-        ),
-      ));
+            ),
+          )
+        ],
+      ),
+    ),
+  );
 }

@@ -26,120 +26,95 @@ class Settings extends StatelessWidget {
   Widget build(BuildContext context) {
     final _themeprovider = Provider.of<ThemeProvider>(context);
     return Scaffold(
-        appBar: AppBar(
-          leading: Builder(
-            builder: (BuildContext context) {
-              return IconButton(
-                color: Theme.of(context).iconTheme.color,
-                icon: const Icon(Icons.navigate_before),
-                onPressed: () {
-                  Navigator.pop(context);
-                },
-                tooltip: MaterialLocalizations.of(context).backButtonTooltip,
-              );
-            },
-          ),
-          backgroundColor: Theme.of(context).canvasColor,
-          centerTitle: Theme.of(context).appBarTheme.centerTitle,
-          elevation: Theme.of(context).appBarTheme.elevation,
-          title: Text(
-            'Settings',
-            style: TextStyle(
-                color: Theme.of(context).appBarTheme.titleTextStyle?.color,
-                fontWeight:
-                    Theme.of(context).appBarTheme.titleTextStyle?.fontWeight,
-                fontSize:
-                    Theme.of(context).appBarTheme.titleTextStyle?.fontSize,
-                overflow:
-                    Theme.of(context).appBarTheme.titleTextStyle?.overflow),
+      appBar: AppBar(
+        leading: Builder(
+          builder: (BuildContext context) {
+            return IconButton(
+              color: Theme.of(context).iconTheme.color,
+              icon: const Icon(Icons.navigate_before),
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              tooltip: MaterialLocalizations.of(context).backButtonTooltip,
+            );
+          },
+        ),
+        backgroundColor: Theme.of(context).canvasColor,
+        centerTitle: Theme.of(context).appBarTheme.centerTitle,
+        elevation: Theme.of(context).appBarTheme.elevation,
+        title: Text(
+          'Settings',
+          style: TextStyle(
+            color: Theme.of(context).appBarTheme.titleTextStyle?.color,
+            fontWeight:
+                Theme.of(context).appBarTheme.titleTextStyle?.fontWeight,
+            fontSize: Theme.of(context).appBarTheme.titleTextStyle?.fontSize,
+            overflow: Theme.of(context).appBarTheme.titleTextStyle?.overflow,
           ),
         ),
-        body: Center(
-            child: Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 30, vertical: 30),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: <Widget>[
-                    ElevatedButton(
-                        style: ButtonStyle(
-                            fixedSize: Theme.of(context)
-                                .elevatedButtonTheme
-                                .style
-                                ?.fixedSize,
-                            backgroundColor: Theme.of(context)
-                                .elevatedButtonTheme
-                                .style
-                                ?.backgroundColor,
-                            elevation: Theme.of(context)
-                                .elevatedButtonTheme
-                                .style
-                                ?.elevation,
-                            shape: Theme.of(context)
-                                .elevatedButtonTheme
-                                .style
-                                ?.shape),
-                        onPressed: () {
-                          _themeprovider.setTheme(darkTheme);
-                        },
-                        child: Text('Dark theme',
-                            style: TextStyle(
-                                color:
-                                    Theme.of(context).textTheme.button?.color,
-                                fontWeight: Theme.of(context)
-                                    .textTheme
-                                    .button
-                                    ?.fontWeight,
-                                fontSize: Theme.of(context)
-                                    .textTheme
-                                    .button
-                                    ?.fontSize,
-                                overflow: Theme.of(context)
-                                    .textTheme
-                                    .button
-                                    ?.overflow))),
-                    const SizedBox(
-                      height: 30,
-                    ),
-                    ElevatedButton(
-                        style: ButtonStyle(
-                            fixedSize: Theme.of(context)
-                                .elevatedButtonTheme
-                                .style
-                                ?.fixedSize,
-                            backgroundColor: Theme.of(context)
-                                .elevatedButtonTheme
-                                .style
-                                ?.backgroundColor,
-                            elevation: Theme.of(context)
-                                .elevatedButtonTheme
-                                .style
-                                ?.elevation,
-                            shape: Theme.of(context)
-                                .elevatedButtonTheme
-                                .style
-                                ?.shape),
-                        onPressed: () {
-                          _themeprovider.setTheme(lightTheme);
-                        },
-                        child: Text('Light theme',
-                            style: TextStyle(
-                                color:
-                                    Theme.of(context).textTheme.button?.color,
-                                fontWeight: Theme.of(context)
-                                    .textTheme
-                                    .button
-                                    ?.fontWeight,
-                                fontSize: Theme.of(context)
-                                    .textTheme
-                                    .button
-                                    ?.fontSize,
-                                overflow: Theme.of(context)
-                                    .textTheme
-                                    .button
-                                    ?.overflow)))
-                  ],
-                ))));
+      ),
+      body: Center(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 30),
+          child: Column(
+            children: <Widget>[
+              ElevatedButton(
+                style: ButtonStyle(
+                  fixedSize:
+                      Theme.of(context).elevatedButtonTheme.style?.fixedSize,
+                  backgroundColor: Theme.of(context)
+                      .elevatedButtonTheme
+                      .style
+                      ?.backgroundColor,
+                  elevation:
+                      Theme.of(context).elevatedButtonTheme.style?.elevation,
+                  shape: Theme.of(context).elevatedButtonTheme.style?.shape,
+                ),
+                onPressed: () {
+                  _themeprovider.setTheme(darkTheme);
+                },
+                child: Text(
+                  'Dark theme',
+                  style: TextStyle(
+                    color: Theme.of(context).textTheme.button?.color,
+                    fontWeight: Theme.of(context).textTheme.button?.fontWeight,
+                    fontSize: Theme.of(context).textTheme.button?.fontSize,
+                    overflow: Theme.of(context).textTheme.button?.overflow,
+                  ),
+                ),
+              ),
+              const SizedBox(
+                height: 30,
+              ),
+              ElevatedButton(
+                style: ButtonStyle(
+                  fixedSize:
+                      Theme.of(context).elevatedButtonTheme.style?.fixedSize,
+                  backgroundColor: Theme.of(context)
+                      .elevatedButtonTheme
+                      .style
+                      ?.backgroundColor,
+                  elevation:
+                      Theme.of(context).elevatedButtonTheme.style?.elevation,
+                  shape: Theme.of(context).elevatedButtonTheme.style?.shape,
+                ),
+                onPressed: () {
+                  _themeprovider.setTheme(lightTheme);
+                },
+                child: Text(
+                  'Light theme',
+                  style: TextStyle(
+                    color: Theme.of(context).textTheme.button?.color,
+                    fontWeight: Theme.of(context).textTheme.button?.fontWeight,
+                    fontSize: Theme.of(context).textTheme.button?.fontSize,
+                    overflow: Theme.of(context).textTheme.button?.overflow,
+                  ),
+                ),
+              )
+            ],
+          ),
+        ),
+      ),
+    );
   }
 }

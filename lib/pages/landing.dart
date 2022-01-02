@@ -31,58 +31,78 @@ class Landing extends StatelessWidget {
         title: Text(
           'Welcome to dahliaOS',
           style: TextStyle(
-              color: Theme.of(context).appBarTheme.titleTextStyle?.color,
-              fontWeight:
-                  Theme.of(context).appBarTheme.titleTextStyle?.fontWeight,
-              fontSize: Theme.of(context).appBarTheme.titleTextStyle?.fontSize,
-              overflow: Theme.of(context).appBarTheme.titleTextStyle?.overflow),
+            color: Theme.of(context).appBarTheme.titleTextStyle?.color,
+            fontWeight:
+                Theme.of(context).appBarTheme.titleTextStyle?.fontWeight,
+            fontSize: Theme.of(context).appBarTheme.titleTextStyle?.fontSize,
+            overflow: Theme.of(context).appBarTheme.titleTextStyle?.overflow,
+          ),
         ),
       ),
       body: Center(
-          child: ScrollConfiguration(
-        behavior: ScrollConfiguration.of(context).copyWith(scrollbars: false),
-        child: SingleChildScrollView(
-          padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 30),
-          child: Column(
+        child: ScrollConfiguration(
+          behavior: ScrollConfiguration.of(context).copyWith(scrollbars: false),
+          child: SingleChildScrollView(
+            padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 30),
+            child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                landingCard('Getting started', 'Get started with dahliaOS.',
-                    Icons.arrow_forward, '/getting_started', context),
                 landingCard(
-                    'Feedback',
-                    'Have a suggestion, review or criticism?',
-                    Icons.feedback,
-                    '/feedback',
-                    context),
+                  'Getting started',
+                  'Get started with dahliaOS.',
+                  Icons.arrow_forward,
+                  '/getting_started',
+                  context,
+                ),
                 landingCard(
-                    'Support',
-                    'Where you can find us if you have any enquiries.',
-                    Icons.question_answer,
-                    '/support',
-                    context),
+                  'Feedback',
+                  'Have a suggestion, review or criticism?',
+                  Icons.feedback,
+                  '/feedback',
+                  context,
+                ),
                 landingCard(
-                    'Contributors',
-                    'Thank you for making dahliaOS a reality.',
-                    Icons.people,
-                    '/contributors',
-                    context),
-                landingCard('Software', 'Information about 3rd party software.',
-                    Icons.apps, '/software', context),
+                  'Support',
+                  'Where you can find us if you have any enquiries.',
+                  Icons.question_answer,
+                  '/support',
+                  context,
+                ),
                 landingCard(
-                    'About', 'About dahliaOS.', Icons.info, '/about', context),
+                  'Contributors',
+                  'Thank you for making dahliaOS a reality.',
+                  Icons.people,
+                  '/contributors',
+                  context,
+                ),
+                landingCard(
+                  'Software',
+                  'Information about 3rd party software.',
+                  Icons.apps,
+                  '/software',
+                  context,
+                ),
+                landingCard(
+                  'About',
+                  'About dahliaOS.',
+                  Icons.info,
+                  '/about',
+                  context,
+                ),
                 const SizedBox(
                   height: 20,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
                     iconButton(Icons.settings, '/settings', context),
                   ],
                 )
-              ]),
+              ],
+            ),
+          ),
         ),
-      )),
+      ),
     );
   }
 }

@@ -16,13 +16,13 @@ limitations under the License.
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:welcome/pages/feedback.dart' as feedback;
+import 'package:welcome/pages/about.dart';
 import 'package:welcome/pages/contributors.dart';
+import 'package:welcome/pages/feedback.dart' as feedback;
 import 'package:welcome/pages/getting_started.dart';
+import 'package:welcome/pages/landing.dart';
 import 'package:welcome/pages/settings.dart';
 import 'package:welcome/pages/software.dart';
-import 'package:welcome/pages/about.dart';
-import 'package:welcome/pages/landing.dart';
 import 'package:welcome/pages/support.dart';
 import 'package:welcome/theme/theme.dart';
 import 'package:welcome/theme/theme_manager.dart';
@@ -42,19 +42,20 @@ class Welcome extends StatelessWidget {
         ChangeNotifierProvider<ThemeProvider>.value(
           value: ThemeProvider(lightTheme),
           builder: (context, child) => MaterialApp(
-              title: 'Welcome',
-              theme: theme(context),
-              initialRoute: '/',
-              routes: {
-                '/': (context) => const Landing(),
-                '/getting_started': (context) => const GettingStarted(),
-                '/feedback': (context) => const feedback.Feedback(),
-                '/support': (context) => const Support(),
-                '/contributors': (context) => const Contributors(),
-                '/software': (context) => const Software(),
-                '/about': (context) => const About(),
-                '/settings': (context) => const Settings(),
-              }),
+            title: 'Welcome',
+            theme: theme(context),
+            initialRoute: '/',
+            routes: {
+              '/': (context) => const Landing(),
+              '/getting_started': (context) => const GettingStarted(),
+              '/feedback': (context) => const feedback.Feedback(),
+              '/support': (context) => const Support(),
+              '/contributors': (context) => const Contributors(),
+              '/software': (context) => const Software(),
+              '/about': (context) => const About(),
+              '/settings': (context) => const Settings(),
+            },
+          ),
         ),
       ],
     );

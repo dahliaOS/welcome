@@ -23,61 +23,93 @@ class Support extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          leading: Builder(
-            builder: (BuildContext context) {
-              return IconButton(
-                color: Theme.of(context).iconTheme.color,
-                icon: const Icon(Icons.navigate_before),
-                onPressed: () {
-                  Navigator.pop(context);
-                },
-                tooltip: MaterialLocalizations.of(context).backButtonTooltip,
-              );
-            },
-          ),
-          backgroundColor: Theme.of(context).canvasColor,
-          centerTitle: Theme.of(context).appBarTheme.centerTitle,
-          elevation: Theme.of(context).appBarTheme.elevation,
-          title: Text(
-            'Support',
-            style: TextStyle(
-                color: Theme.of(context).appBarTheme.titleTextStyle?.color,
-                fontWeight:
-                    Theme.of(context).appBarTheme.titleTextStyle?.fontWeight,
-                fontSize:
-                    Theme.of(context).appBarTheme.titleTextStyle?.fontSize,
-                overflow:
-                    Theme.of(context).appBarTheme.titleTextStyle?.overflow),
+      appBar: AppBar(
+        leading: Builder(
+          builder: (BuildContext context) {
+            return IconButton(
+              color: Theme.of(context).iconTheme.color,
+              icon: const Icon(Icons.navigate_before),
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              tooltip: MaterialLocalizations.of(context).backButtonTooltip,
+            );
+          },
+        ),
+        backgroundColor: Theme.of(context).canvasColor,
+        centerTitle: Theme.of(context).appBarTheme.centerTitle,
+        elevation: Theme.of(context).appBarTheme.elevation,
+        title: Text(
+          'Support',
+          style: TextStyle(
+            color: Theme.of(context).appBarTheme.titleTextStyle?.color,
+            fontWeight:
+                Theme.of(context).appBarTheme.titleTextStyle?.fontWeight,
+            fontSize: Theme.of(context).appBarTheme.titleTextStyle?.fontSize,
+            overflow: Theme.of(context).appBarTheme.titleTextStyle?.overflow,
           ),
         ),
-        body: Center(
-          child: GridView.count(
-            primary: false,
-            padding: const EdgeInsets.all(60),
-            crossAxisSpacing: 10,
-            mainAxisSpacing: 10,
-            crossAxisCount: 4,
-            shrinkWrap: true,
-            children: <Widget>[
-              socialBox('Website', 'assets/logos/dahliaOS/dahliaOS.png',
-                  'https://dahliaos.io/', context),
-              socialBox('GitHub', 'assets/logos/socialmedia/github.png',
-                  'https://dahliaos.io/github', context),
-              socialBox('Discord', 'assets/logos/socialmedia/discord.png',
-                  'https://dahliaos.io/discord', context),
-              socialBox('Telegram', 'assets/logos/socialmedia/telegram.png',
-                  'https://dahliaos.io/telegram', context),
-              socialBox('Twitter', 'assets/logos/socialmedia/twitter.png',
-                  'https://dahliaos.io/twitter', context),
-              socialBox('Instagram', 'assets/logos/socialmedia/instagram.png',
-                  'https://dahliaos.io/instagram', context),
-              socialBox('Reddit', 'assets/logos/socialmedia/reddit.png',
-                  'https://dahliaos.io/reddit', context),
-              socialBox('Facebook', 'assets/logos/socialmedia/facebook.png',
-                  'https://dahliaos.io/facebook', context),
-            ],
-          ),
-        ));
+      ),
+      body: Center(
+        child: GridView.count(
+          primary: false,
+          padding: const EdgeInsets.all(60),
+          crossAxisSpacing: 10,
+          mainAxisSpacing: 10,
+          crossAxisCount: 4,
+          shrinkWrap: true,
+          children: <Widget>[
+            socialBox(
+              'Website',
+              'assets/logos/dahliaOS/dahliaOS.png',
+              'https://dahliaos.io/',
+              context,
+            ),
+            socialBox(
+              'GitHub',
+              'assets/logos/socialmedia/github.png',
+              'https://dahliaos.io/github',
+              context,
+            ),
+            socialBox(
+              'Discord',
+              'assets/logos/socialmedia/discord.png',
+              'https://dahliaos.io/discord',
+              context,
+            ),
+            socialBox(
+              'Telegram',
+              'assets/logos/socialmedia/telegram.png',
+              'https://dahliaos.io/telegram',
+              context,
+            ),
+            socialBox(
+              'Twitter',
+              'assets/logos/socialmedia/twitter.png',
+              'https://dahliaos.io/twitter',
+              context,
+            ),
+            socialBox(
+              'Instagram',
+              'assets/logos/socialmedia/instagram.png',
+              'https://dahliaos.io/instagram',
+              context,
+            ),
+            socialBox(
+              'Reddit',
+              'assets/logos/socialmedia/reddit.png',
+              'https://dahliaos.io/reddit',
+              context,
+            ),
+            socialBox(
+              'Facebook',
+              'assets/logos/socialmedia/facebook.png',
+              'https://dahliaos.io/facebook',
+              context,
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }

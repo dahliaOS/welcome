@@ -16,13 +16,15 @@ limitations under the License.
 
 import 'package:flutter/material.dart';
 
-TextFormField form(String label, String hintText, context) {
+TextFormField form(String label, String hintText, BuildContext context) {
   return TextFormField(
-      decoration: InputDecoration(
-          hintText: hintText,
-          labelText: label,
-          labelStyle: Theme.of(context).inputDecorationTheme.labelStyle,
-          hintStyle: Theme.of(context).inputDecorationTheme.hintStyle,
-          enabledBorder: Theme.of(context).inputDecorationTheme.enabledBorder,
-          focusedBorder: Theme.of(context).inputDecorationTheme.focusedBorder));
+    decoration: InputDecoration(
+      hintText: hintText,
+      labelText: label,
+      labelStyle: Theme.of(context).inputDecorationTheme.labelStyle,
+      hintStyle: Theme.of(context).inputDecorationTheme.hintStyle,
+      enabledBorder: Theme.of(context).inputDecorationTheme.enabledBorder,
+      focusedBorder: Theme.of(context).inputDecorationTheme.focusedBorder,
+    ),
+  );
 }

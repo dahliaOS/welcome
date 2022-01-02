@@ -23,85 +23,85 @@ class GettingStarted extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          leading: Builder(
-            builder: (BuildContext context) {
-              return IconButton(
-                color: Theme.of(context).iconTheme.color,
-                icon: const Icon(Icons.navigate_before),
-                onPressed: () {
-                  Navigator.pop(context);
-                },
-                tooltip: MaterialLocalizations.of(context).backButtonTooltip,
-              );
-            },
-          ),
-          backgroundColor: Theme.of(context).canvasColor,
-          centerTitle: Theme.of(context).appBarTheme.centerTitle,
-          elevation: Theme.of(context).appBarTheme.elevation,
-          title: Text(
-            'Getting started',
-            style: TextStyle(
-                color: Theme.of(context).appBarTheme.titleTextStyle?.color,
-                fontWeight:
-                    Theme.of(context).appBarTheme.titleTextStyle?.fontWeight,
-                fontSize:
-                    Theme.of(context).appBarTheme.titleTextStyle?.fontSize,
-                overflow:
-                    Theme.of(context).appBarTheme.titleTextStyle?.overflow),
+      appBar: AppBar(
+        leading: Builder(
+          builder: (BuildContext context) {
+            return IconButton(
+              color: Theme.of(context).iconTheme.color,
+              icon: const Icon(Icons.navigate_before),
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              tooltip: MaterialLocalizations.of(context).backButtonTooltip,
+            );
+          },
+        ),
+        backgroundColor: Theme.of(context).canvasColor,
+        centerTitle: Theme.of(context).appBarTheme.centerTitle,
+        elevation: Theme.of(context).appBarTheme.elevation,
+        title: Text(
+          'Getting started',
+          style: TextStyle(
+            color: Theme.of(context).appBarTheme.titleTextStyle?.color,
+            fontWeight:
+                Theme.of(context).appBarTheme.titleTextStyle?.fontWeight,
+            fontSize: Theme.of(context).appBarTheme.titleTextStyle?.fontSize,
+            overflow: Theme.of(context).appBarTheme.titleTextStyle?.overflow,
           ),
         ),
-        body: Center(
-          child: GridView.count(
-            primary: false,
-            padding: const EdgeInsets.all(60),
-            crossAxisSpacing: 10,
-            mainAxisSpacing: 10,
-            crossAxisCount: 4,
-            shrinkWrap: true,
-            children: <Widget>[
-              boxes(
-                'Customization',
-                Icons.dashboard_customize,
-                context,
-              ),
-              boxes(
-                'Personalization',
-                Icons.palette,
-                context,
-              ),
-              boxes(
-                'Something',
-                Icons.info,
-                context,
-              ),
-              boxes(
-                'Something',
-                Icons.info,
-                context,
-              ),
-              boxes(
-                'Something',
-                Icons.info,
-                context,
-              ),
-              boxes(
-                'Something',
-                Icons.info,
-                context,
-              ),
-              boxes(
-                'Something',
-                Icons.info,
-                context,
-              ),
-              boxes(
-                'Something',
-                Icons.info,
-                context,
-              ),
-            ],
-          ),
-        ));
+      ),
+      body: Center(
+        child: GridView.count(
+          primary: false,
+          padding: const EdgeInsets.all(60),
+          crossAxisSpacing: 10,
+          mainAxisSpacing: 10,
+          crossAxisCount: 4,
+          shrinkWrap: true,
+          children: <Widget>[
+            boxes(
+              'Customization',
+              Icons.dashboard_customize,
+              context,
+            ),
+            boxes(
+              'Personalization',
+              Icons.palette,
+              context,
+            ),
+            boxes(
+              'Something',
+              Icons.info,
+              context,
+            ),
+            boxes(
+              'Something',
+              Icons.info,
+              context,
+            ),
+            boxes(
+              'Something',
+              Icons.info,
+              context,
+            ),
+            boxes(
+              'Something',
+              Icons.info,
+              context,
+            ),
+            boxes(
+              'Something',
+              Icons.info,
+              context,
+            ),
+            boxes(
+              'Something',
+              Icons.info,
+              context,
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }

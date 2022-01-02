@@ -21,40 +21,40 @@ SizedBox socialBox(
   String name,
   String imageName,
   String link,
-  context,
+  BuildContext context,
 ) {
   return SizedBox(
-      width: 100,
-      height: 100,
-      child: Card(
-        color: Theme.of(context).cardTheme.color,
-        shape: Theme.of(context).cardTheme.shape,
-        elevation: Theme.of(context).cardTheme.elevation,
-        margin: Theme.of(context).cardTheme.margin,
-        child: InkWell(
-          onTap: () => launch(link),
-          splashColor: Theme.of(context).primaryColor,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: <Widget>[
-              Image.asset(
-                imageName,
-                width: 32,
-                height: 32,
+    width: 100,
+    height: 100,
+    child: Card(
+      color: Theme.of(context).cardTheme.color,
+      shape: Theme.of(context).cardTheme.shape,
+      elevation: Theme.of(context).cardTheme.elevation,
+      margin: Theme.of(context).cardTheme.margin,
+      child: InkWell(
+        onTap: () => launch(link),
+        splashColor: Theme.of(context).primaryColor,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Image.asset(
+              imageName,
+              width: 32,
+              height: 32,
+            ),
+            const SizedBox(height: 15),
+            Text(
+              name,
+              style: TextStyle(
+                color: Theme.of(context).textTheme.headline2?.color,
+                fontSize: Theme.of(context).textTheme.headline2?.fontSize,
+                fontWeight: Theme.of(context).textTheme.headline2?.fontWeight,
               ),
-              const SizedBox(height: 15),
-              Text(
-                name,
-                style: TextStyle(
-                    color: Theme.of(context).textTheme.headline2?.color,
-                    fontSize: Theme.of(context).textTheme.headline2?.fontSize,
-                    fontWeight:
-                        Theme.of(context).textTheme.headline2?.fontWeight),
-                overflow: Theme.of(context).textTheme.headline2?.overflow,
-              )
-            ],
-          ),
+              overflow: Theme.of(context).textTheme.headline2?.overflow,
+            )
+          ],
         ),
-      ));
+      ),
+    ),
+  );
 }

@@ -21,10 +21,10 @@ class ThemeProvider with ChangeNotifier {
 
   ThemeProvider(this._themeData);
 
-  getTheme() => _themeData;
+  ThemeData getTheme() => _themeData;
 
-  setTheme(ThemeData themeData) async {
+  Future<void> setTheme(ThemeData themeData) async {
     _themeData = themeData;
-    notifyListeners();
+    return notifyListeners();
   }
 }

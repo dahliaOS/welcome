@@ -42,11 +42,12 @@ class Feedback extends StatelessWidget {
         title: Text(
           'Feedback',
           style: TextStyle(
-              color: Theme.of(context).appBarTheme.titleTextStyle?.color,
-              fontWeight:
-                  Theme.of(context).appBarTheme.titleTextStyle?.fontWeight,
-              fontSize: Theme.of(context).appBarTheme.titleTextStyle?.fontSize,
-              overflow: Theme.of(context).appBarTheme.titleTextStyle?.overflow),
+            color: Theme.of(context).appBarTheme.titleTextStyle?.color,
+            fontWeight:
+                Theme.of(context).appBarTheme.titleTextStyle?.fontWeight,
+            fontSize: Theme.of(context).appBarTheme.titleTextStyle?.fontSize,
+            overflow: Theme.of(context).appBarTheme.titleTextStyle?.overflow,
+          ),
         ),
       ),
       body: Center(
@@ -68,15 +69,12 @@ class Feedback extends StatelessWidget {
                       Text(
                         'Report a bug',
                         style: TextStyle(
-                            color: Theme.of(context).textTheme.headline1?.color,
-                            fontWeight: Theme.of(context)
-                                .textTheme
-                                .headline1
-                                ?.fontWeight,
-                            fontSize: Theme.of(context)
-                                .textTheme
-                                .headline1
-                                ?.fontSize),
+                          color: Theme.of(context).textTheme.headline1?.color,
+                          fontWeight:
+                              Theme.of(context).textTheme.headline1?.fontWeight,
+                          fontSize:
+                              Theme.of(context).textTheme.headline1?.fontSize,
+                        ),
                         overflow:
                             Theme.of(context).textTheme.headline1?.overflow,
                       ),
@@ -84,40 +82,38 @@ class Feedback extends StatelessWidget {
                       form('Email', 'Your email address', context),
                       form('Bug', 'Describe the bug', context),
                       ElevatedButton(
-                          style: ButtonStyle(
-                              fixedSize: Theme.of(context)
-                                  .elevatedButtonTheme
-                                  .style
-                                  ?.fixedSize,
-                              backgroundColor: Theme.of(context)
-                                  .elevatedButtonTheme
-                                  .style
-                                  ?.backgroundColor,
-                              elevation: Theme.of(context)
-                                  .elevatedButtonTheme
-                                  .style
-                                  ?.elevation,
-                              shape: Theme.of(context)
-                                  .elevatedButtonTheme
-                                  .style
-                                  ?.shape),
-                          onPressed: () {},
-                          child: Text('Submit',
-                              style: TextStyle(
-                                  color:
-                                      Theme.of(context).textTheme.button?.color,
-                                  fontWeight: Theme.of(context)
-                                      .textTheme
-                                      .button
-                                      ?.fontWeight,
-                                  fontSize: Theme.of(context)
-                                      .textTheme
-                                      .button
-                                      ?.fontSize,
-                                  overflow: Theme.of(context)
-                                      .textTheme
-                                      .button
-                                      ?.overflow)))
+                        style: ButtonStyle(
+                          fixedSize: Theme.of(context)
+                              .elevatedButtonTheme
+                              .style
+                              ?.fixedSize,
+                          backgroundColor: Theme.of(context)
+                              .elevatedButtonTheme
+                              .style
+                              ?.backgroundColor,
+                          elevation: Theme.of(context)
+                              .elevatedButtonTheme
+                              .style
+                              ?.elevation,
+                          shape: Theme.of(context)
+                              .elevatedButtonTheme
+                              .style
+                              ?.shape,
+                        ),
+                        onPressed: () {},
+                        child: Text(
+                          'Submit',
+                          style: TextStyle(
+                            color: Theme.of(context).textTheme.button?.color,
+                            fontWeight:
+                                Theme.of(context).textTheme.button?.fontWeight,
+                            fontSize:
+                                Theme.of(context).textTheme.button?.fontSize,
+                            overflow:
+                                Theme.of(context).textTheme.button?.overflow,
+                          ),
+                        ),
+                      )
                     ],
                   )
                 ],

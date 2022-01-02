@@ -19,7 +19,7 @@ import 'package:flutter/material.dart';
 SizedBox boxes(
   String name,
   IconData icon,
-  context,
+  BuildContext context,
 ) {
   return SizedBox(
     width: 100,
@@ -30,27 +30,28 @@ SizedBox boxes(
       elevation: Theme.of(context).cardTheme.elevation,
       margin: Theme.of(context).cardTheme.margin,
       child: InkWell(
-          onTap: () {},
-          splashColor: Theme.of(context).primaryColor,
-          child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: <Widget>[
-                Icon(
-                  icon,
-                  color: Theme.of(context).iconTheme.color,
-                ),
-                const SizedBox(height: 15),
-                Text(
-                  name,
-                  style: TextStyle(
-                      fontSize: Theme.of(context).textTheme.headline2?.fontSize,
-                      color: Theme.of(context).textTheme.headline2?.color,
-                      fontWeight:
-                          Theme.of(context).textTheme.headline2?.fontWeight),
-                  overflow: Theme.of(context).textTheme.headline2?.overflow,
-                )
-              ])),
+        onTap: () {},
+        splashColor: Theme.of(context).primaryColor,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Icon(
+              icon,
+              color: Theme.of(context).iconTheme.color,
+            ),
+            const SizedBox(height: 15),
+            Text(
+              name,
+              style: TextStyle(
+                fontSize: Theme.of(context).textTheme.headline2?.fontSize,
+                color: Theme.of(context).textTheme.headline2?.color,
+                fontWeight: Theme.of(context).textTheme.headline2?.fontWeight,
+              ),
+              overflow: Theme.of(context).textTheme.headline2?.overflow,
+            )
+          ],
+        ),
+      ),
     ),
   );
 }

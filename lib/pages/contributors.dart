@@ -42,47 +42,52 @@ class Contributors extends StatelessWidget {
         title: Text(
           'Contributors',
           style: TextStyle(
-              color: Theme.of(context).appBarTheme.titleTextStyle?.color,
-              fontWeight:
-                  Theme.of(context).appBarTheme.titleTextStyle?.fontWeight,
-              fontSize: Theme.of(context).appBarTheme.titleTextStyle?.fontSize,
-              overflow: Theme.of(context).appBarTheme.titleTextStyle?.overflow),
+            color: Theme.of(context).appBarTheme.titleTextStyle?.color,
+            fontWeight:
+                Theme.of(context).appBarTheme.titleTextStyle?.fontWeight,
+            fontSize: Theme.of(context).appBarTheme.titleTextStyle?.fontSize,
+            overflow: Theme.of(context).appBarTheme.titleTextStyle?.overflow,
+          ),
         ),
       ),
       body: ScrollConfiguration(
-          behavior: ScrollConfiguration.of(context).copyWith(scrollbars: false),
-          child: GridView.builder(
-              itemCount: dummyContributorsList.length,
-              padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 50),
-              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 6, mainAxisSpacing: 40, crossAxisSpacing: 40),
-              itemBuilder: (context, index) {
-                return Column(
-                  children: <Widget>[
-                    CircleAvatar(
-                      backgroundColor: Theme.of(context).primaryColor,
-                      child: const Icon(
-                        Icons.person,
-                        color: Colors.white,
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    Text(
-                      dummyContributorsList[index],
-                      style: TextStyle(
-                          color: Theme.of(context).textTheme.subtitle2?.color,
-                          fontWeight:
-                              Theme.of(context).textTheme.subtitle2?.fontWeight,
-                          fontSize:
-                              Theme.of(context).textTheme.subtitle2?.fontSize,
-                          overflow:
-                              Theme.of(context).textTheme.subtitle2?.overflow),
-                    ),
-                  ],
-                );
-              })),
+        behavior: ScrollConfiguration.of(context).copyWith(scrollbars: false),
+        child: GridView.builder(
+          itemCount: dummyContributorsList.length,
+          padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 50),
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 6,
+            mainAxisSpacing: 40,
+            crossAxisSpacing: 40,
+          ),
+          itemBuilder: (context, index) {
+            return Column(
+              children: <Widget>[
+                CircleAvatar(
+                  backgroundColor: Theme.of(context).primaryColor,
+                  child: const Icon(
+                    Icons.person,
+                    color: Colors.white,
+                  ),
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                Text(
+                  dummyContributorsList[index],
+                  style: TextStyle(
+                    color: Theme.of(context).textTheme.subtitle2?.color,
+                    fontWeight:
+                        Theme.of(context).textTheme.subtitle2?.fontWeight,
+                    fontSize: Theme.of(context).textTheme.subtitle2?.fontSize,
+                    overflow: Theme.of(context).textTheme.subtitle2?.overflow,
+                  ),
+                ),
+              ],
+            );
+          },
+        ),
+      ),
     );
   }
 }
