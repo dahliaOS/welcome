@@ -7,7 +7,7 @@
 
 # Welcome
 
-- **Welcome application** for the dahliaOS operating system
+- **Introduction and tips on getting started** with the dahliaOS operating system
 
 ## Contribute
 

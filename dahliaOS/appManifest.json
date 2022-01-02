@@ -3,7 +3,7 @@
       "altName": "welcome",
       "realName": "Welcome",
       "version": "dahliaOS-latest",
-      "description": "Information and guide to dahliaOS",
+      "description": "Get started with dahliaOS",
       "sourceCode": "https://github.com/dahliaOS/welcome",
       "hash": "DAP_AUTOMATION_PKGHASH",
       "architecture": "x86_64"
