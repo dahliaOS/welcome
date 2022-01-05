@@ -15,7 +15,7 @@ limitations under the License.
 */
 
 import 'package:flutter/material.dart';
-import 'package:welcome/models/landing_menu_option.dart';
+import 'package:welcome/models/landing_menu_option_model.dart';
 import 'package:welcome/widgets/buttons/icon_button.dart';
 import 'package:welcome/widgets/cards/landing_card.dart';
 

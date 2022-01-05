@@ -15,7 +15,7 @@ limitations under the License.
 */
 
 import 'package:flutter/material.dart';
-import 'package:welcome/widgets/gettingstarted_box.dart';
+import 'package:welcome/widgets/getting_started_box.dart';
 
 class GettingStarted extends StatelessWidget {
   const GettingStarted({Key? key}) : super(key: key);
