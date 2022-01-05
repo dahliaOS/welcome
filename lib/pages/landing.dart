@@ -15,11 +15,50 @@ limitations under the License.
 */
 
 import 'package:flutter/material.dart';
-import 'package:welcome/widgets/icon_button.dart';
-import 'package:welcome/widgets/landing_card.dart';
+import 'package:welcome/widgets/buttons/icon_button.dart';
+import 'package:welcome/widgets/cards/landing_card.dart';
 
 class Landing extends StatelessWidget {
   const Landing({Key? key}) : super(key: key);
+
+  static const _optionsList = <LandingMenuOption>[
+    LandingMenuOption(
+      'Getting started',
+      'Get started with dahliaOS.',
+      Icons.arrow_forward,
+      '/getting_started',
+    ),
+    LandingMenuOption(
+      'Feedback',
+      'Have a suggestion, review or criticism?',
+      Icons.feedback,
+      '/feedback',
+    ),
+    LandingMenuOption(
+      'Support',
+      'Where you can find us if you have any enquiries.',
+      Icons.question_answer,
+      '/support',
+    ),
+    LandingMenuOption(
+      'Contributors',
+      'Thank you for making dahliaOS a reality.',
+      Icons.people,
+      '/contributors',
+    ),
+    LandingMenuOption(
+      'Software',
+      'Information about 3rd party software.',
+      Icons.apps,
+      '/software',
+    ),
+    LandingMenuOption(
+      'About',
+      'About dahliaOS.',
+      Icons.info,
+      '/about',
+    ),
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -47,56 +86,19 @@ class Landing extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                landingCard(
-                  'Getting started',
-                  'Get started with dahliaOS.',
-                  Icons.arrow_forward,
-                  '/getting_started',
-                  context,
-                ),
-                landingCard(
-                  'Feedback',
-                  'Have a suggestion, review or criticism?',
-                  Icons.feedback,
-                  '/feedback',
-                  context,
-                ),
-                landingCard(
-                  'Support',
-                  'Where you can find us if you have any enquiries.',
-                  Icons.question_answer,
-                  '/support',
-                  context,
-                ),
-                landingCard(
-                  'Contributors',
-                  'Thank you for making dahliaOS a reality.',
-                  Icons.people,
-                  '/contributors',
-                  context,
-                ),
-                landingCard(
-                  'Software',
-                  'Information about 3rd party software.',
-                  Icons.apps,
-                  '/software',
-                  context,
-                ),
-                landingCard(
-                  'About',
-                  'About dahliaOS.',
-                  Icons.info,
-                  '/about',
-                  context,
-                ),
+                for (final item in _optionsList)
+                  LandingCard(
+                    item.name,
+                    item.description,
+                    item.icon,
+                    item.route,
+                  ),
                 const SizedBox(
                   height: 20,
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    iconButton(Icons.settings, '/settings', context),
-                  ],
+                const MyIconButton(
+                  Icons.settings,
+                  '/settings',
                 )
               ],
             ),
@@ -105,4 +107,18 @@ class Landing extends StatelessWidget {
       ),
     );
   }
+}
+
+class LandingMenuOption {
+  final String name;
+  final String description;
+  final IconData icon;
+  final String route;
+
+  const LandingMenuOption(
+    this.name,
+    this.description,
+    this.icon,
+    this.route,
+  );
 }
