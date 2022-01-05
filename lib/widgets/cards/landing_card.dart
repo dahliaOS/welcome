@@ -70,7 +70,8 @@ class LandingCard extends StatelessWidget {
                         fontWeight:
                             Theme.of(context).textTheme.headline1?.fontWeight,
                         color: Theme.of(context).textTheme.headline1?.color,
-                        overflow: TextOverflow.ellipsis,
+                        overflow:
+                            Theme.of(context).textTheme.headline1?.overflow,
                       ),
                     ),
                     Text(
@@ -81,7 +82,8 @@ class LandingCard extends StatelessWidget {
                         fontWeight:
                             Theme.of(context).textTheme.subtitle1?.fontWeight,
                         color: Theme.of(context).textTheme.subtitle1?.color,
-                        overflow: TextOverflow.ellipsis,
+                        overflow:
+                            Theme.of(context).textTheme.subtitle1?.overflow,
                       ),
                     )
                   ],
