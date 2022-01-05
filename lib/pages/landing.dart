@@ -15,6 +15,7 @@ limitations under the License.
 */
 
 import 'package:flutter/material.dart';
+import 'package:welcome/models/landing_menu_option.dart';
 import 'package:welcome/widgets/buttons/icon_button.dart';
 import 'package:welcome/widgets/cards/landing_card.dart';
 
@@ -107,18 +108,4 @@ class Landing extends StatelessWidget {
       ),
     );
   }
-}
-
-class LandingMenuOption {
-  final String name;
-  final String description;
-  final IconData icon;
-  final String route;
-
-  const LandingMenuOption(
-    this.name,
-    this.description,
-    this.icon,
-    this.route,
-  );
 }
