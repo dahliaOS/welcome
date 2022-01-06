@@ -81,6 +81,7 @@ final darkTheme = ThemeData(
       overflow: TextOverflow.ellipsis,
     ),
     centerTitle: true,
+    backgroundColor: Color(0xFF212121),
   ),
   elevatedButtonTheme: ElevatedButtonThemeData(
     style: ButtonStyle(
