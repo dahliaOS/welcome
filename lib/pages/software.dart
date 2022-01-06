@@ -47,21 +47,11 @@ class Software extends StatelessWidget {
               isThreeLine: true,
               title: Text(
                 dummyNameSource[index],
-                style: TextStyle(
-                  color: Theme.of(context).textTheme.headline2?.color,
-                  fontSize: Theme.of(context).textTheme.headline2?.fontSize,
-                  fontWeight: Theme.of(context).textTheme.headline2?.fontWeight,
-                  overflow: Theme.of(context).textTheme.headline2?.overflow,
-                ),
+                style: Theme.of(context).textTheme.headline2,
               ),
               subtitle: Text(
                 dummyDescriptionSource[index],
-                style: TextStyle(
-                  color: Theme.of(context).textTheme.subtitle1?.color,
-                  fontSize: Theme.of(context).textTheme.subtitle1?.fontSize,
-                  fontWeight: Theme.of(context).textTheme.subtitle1?.fontWeight,
-                  overflow: Theme.of(context).textTheme.subtitle1?.overflow,
-                ),
+                style: Theme.of(context).textTheme.subtitle1,
               ),
               iconColor: Theme.of(context).iconTheme.color,
               textColor: Theme.of(context).textTheme.headline1?.color,

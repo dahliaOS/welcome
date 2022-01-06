@@ -53,15 +53,7 @@ class Feedback extends StatelessWidget {
                     children: <Widget>[
                       Text(
                         'Report a bug',
-                        style: TextStyle(
-                          color: Theme.of(context).textTheme.headline1?.color,
-                          fontWeight:
-                              Theme.of(context).textTheme.headline1?.fontWeight,
-                          fontSize:
-                              Theme.of(context).textTheme.headline1?.fontSize,
-                        ),
-                        overflow:
-                            Theme.of(context).textTheme.headline1?.overflow,
+                        style: Theme.of(context).textTheme.headline1,
                       ),
                       form('Name', 'Your name', context),
                       form('Email', 'Your email address', context),
@@ -88,15 +80,7 @@ class Feedback extends StatelessWidget {
                         onPressed: () {},
                         child: Text(
                           'Submit',
-                          style: TextStyle(
-                            color: Theme.of(context).textTheme.button?.color,
-                            fontWeight:
-                                Theme.of(context).textTheme.button?.fontWeight,
-                            fontSize:
-                                Theme.of(context).textTheme.button?.fontSize,
-                            overflow:
-                                Theme.of(context).textTheme.button?.overflow,
-                          ),
+                          style: Theme.of(context).textTheme.button,
                         ),
                       )
                     ],

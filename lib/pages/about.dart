@@ -93,13 +93,7 @@ class About extends StatelessWidget {
               children: <Widget>[
                 Text(
                   'System information',
-                  style: TextStyle(
-                    color: Theme.of(context).textTheme.headline1?.color,
-                    fontWeight:
-                        Theme.of(context).textTheme.headline1?.fontWeight,
-                    fontSize: Theme.of(context).textTheme.headline1?.fontSize,
-                    overflow: Theme.of(context).textTheme.headline1?.overflow,
-                  ),
+                  style: Theme.of(context).textTheme.headline1,
                 ),
                 const SizedBox(
                   height: 10,
@@ -115,13 +109,7 @@ class About extends StatelessWidget {
                 ),
                 Text(
                   'Hardware information',
-                  style: TextStyle(
-                    color: Theme.of(context).textTheme.headline1?.color,
-                    fontWeight:
-                        Theme.of(context).textTheme.headline1?.fontWeight,
-                    fontSize: Theme.of(context).textTheme.headline1?.fontSize,
-                    overflow: Theme.of(context).textTheme.headline1?.overflow,
-                  ),
+                  style: Theme.of(context).textTheme.headline1,
                 ),
                 const SizedBox(
                   height: 10,

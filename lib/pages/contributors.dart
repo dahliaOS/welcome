@@ -60,13 +60,7 @@ class Contributors extends StatelessWidget {
                 ),
                 Text(
                   dummyContributorsList[index],
-                  style: TextStyle(
-                    color: Theme.of(context).textTheme.subtitle2?.color,
-                    fontWeight:
-                        Theme.of(context).textTheme.subtitle2?.fontWeight,
-                    fontSize: Theme.of(context).textTheme.subtitle2?.fontSize,
-                    overflow: Theme.of(context).textTheme.subtitle2?.overflow,
-                  ),
+                  style: Theme.of(context).textTheme.subtitle2,
                 ),
               ],
             );

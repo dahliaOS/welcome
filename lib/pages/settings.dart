@@ -60,12 +60,7 @@ class Settings extends StatelessWidget {
                 },
                 child: Text(
                   'Dark theme',
-                  style: TextStyle(
-                    color: Theme.of(context).textTheme.button?.color,
-                    fontWeight: Theme.of(context).textTheme.button?.fontWeight,
-                    fontSize: Theme.of(context).textTheme.button?.fontSize,
-                    overflow: Theme.of(context).textTheme.button?.overflow,
-                  ),
+                  style: Theme.of(context).textTheme.button,
                 ),
               ),
               const SizedBox(
@@ -88,12 +83,7 @@ class Settings extends StatelessWidget {
                 },
                 child: Text(
                   'Light theme',
-                  style: TextStyle(
-                    color: Theme.of(context).textTheme.button?.color,
-                    fontWeight: Theme.of(context).textTheme.button?.fontWeight,
-                    fontSize: Theme.of(context).textTheme.button?.fontSize,
-                    overflow: Theme.of(context).textTheme.button?.overflow,
-                  ),
+                  style: Theme.of(context).textTheme.button,
                 ),
               )
             ],
