@@ -36,18 +36,8 @@ class Contributors extends StatelessWidget {
             );
           },
         ),
-        backgroundColor: Theme.of(context).canvasColor,
-        centerTitle: Theme.of(context).appBarTheme.centerTitle,
-        elevation: Theme.of(context).appBarTheme.elevation,
-        title: Text(
+        title: const Text(
           'Contributors',
-          style: TextStyle(
-            color: Theme.of(context).appBarTheme.titleTextStyle?.color,
-            fontWeight:
-                Theme.of(context).appBarTheme.titleTextStyle?.fontWeight,
-            fontSize: Theme.of(context).appBarTheme.titleTextStyle?.fontSize,
-            overflow: Theme.of(context).appBarTheme.titleTextStyle?.overflow,
-          ),
         ),
       ),
       body: ScrollConfiguration(

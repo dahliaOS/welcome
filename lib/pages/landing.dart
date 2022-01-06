@@ -65,18 +65,8 @@ class Landing extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Theme.of(context).canvasColor,
-        centerTitle: Theme.of(context).appBarTheme.centerTitle,
-        elevation: Theme.of(context).appBarTheme.elevation,
-        title: Text(
+        title: const Text(
           'Welcome to dahliaOS',
-          style: TextStyle(
-            color: Theme.of(context).appBarTheme.titleTextStyle?.color,
-            fontWeight:
-                Theme.of(context).appBarTheme.titleTextStyle?.fontWeight,
-            fontSize: Theme.of(context).appBarTheme.titleTextStyle?.fontSize,
-            overflow: Theme.of(context).appBarTheme.titleTextStyle?.overflow,
-          ),
         ),
       ),
       body: Center(

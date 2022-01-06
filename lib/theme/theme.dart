@@ -160,6 +160,7 @@ final lightTheme = ThemeData(
       overflow: TextOverflow.ellipsis,
     ),
     centerTitle: true,
+    backgroundColor: Color.fromRGBO(255, 255, 255, 1),
   ),
   elevatedButtonTheme: ElevatedButtonThemeData(
     style: ButtonStyle(
