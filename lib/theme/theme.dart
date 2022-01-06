@@ -82,6 +82,7 @@ final darkTheme = ThemeData(
     ),
     centerTitle: true,
     backgroundColor: Color(0xFF212121),
+    iconTheme: IconThemeData(color: Colors.deepOrange),
   ),
   elevatedButtonTheme: ElevatedButtonThemeData(
     style: ButtonStyle(
@@ -162,6 +163,7 @@ final lightTheme = ThemeData(
     ),
     centerTitle: true,
     backgroundColor: Color.fromRGBO(255, 255, 255, 1),
+    iconTheme: IconThemeData(color: Colors.deepOrange),
   ),
   elevatedButtonTheme: ElevatedButtonThemeData(
     style: ButtonStyle(

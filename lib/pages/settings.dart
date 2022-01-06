@@ -27,17 +27,12 @@ class Settings extends StatelessWidget {
     final _themeprovider = Provider.of<ThemeProvider>(context);
     return Scaffold(
       appBar: AppBar(
-        leading: Builder(
-          builder: (BuildContext context) {
-            return IconButton(
-              color: Theme.of(context).iconTheme.color,
-              icon: const Icon(Icons.navigate_before),
-              onPressed: () {
-                Navigator.pop(context);
-              },
-              tooltip: MaterialLocalizations.of(context).backButtonTooltip,
-            );
+        leading: IconButton(
+          icon: const Icon(Icons.navigate_before),
+          onPressed: () {
+            Navigator.pop(context);
           },
+          tooltip: MaterialLocalizations.of(context).backButtonTooltip,
         ),
         title: const Text(
           'Settings',
