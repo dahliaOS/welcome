@@ -15,51 +15,12 @@ limitations under the License.
 */
 
 import 'package:flutter/material.dart';
-import 'package:welcome/models/landing_menu_option_model.dart';
+import 'package:welcome/constants/constants.dart';
 import 'package:welcome/widgets/buttons/icon_button.dart';
 import 'package:welcome/widgets/cards/landing_card.dart';
 
 class Landing extends StatelessWidget {
   const Landing({Key? key}) : super(key: key);
-
-  static const _optionsList = <LandingMenuOption>[
-    LandingMenuOption(
-      'Getting started',
-      'Get started with dahliaOS.',
-      Icons.arrow_forward,
-      '/getting_started',
-    ),
-    LandingMenuOption(
-      'Feedback',
-      'Have a suggestion, review or criticism?',
-      Icons.feedback,
-      '/feedback',
-    ),
-    LandingMenuOption(
-      'Support',
-      'Where you can find us if you have any enquiries.',
-      Icons.question_answer,
-      '/support',
-    ),
-    LandingMenuOption(
-      'Contributors',
-      'Thank you for making dahliaOS a reality.',
-      Icons.people,
-      '/contributors',
-    ),
-    LandingMenuOption(
-      'Software',
-      'Information about 3rd party software.',
-      Icons.apps,
-      '/software',
-    ),
-    LandingMenuOption(
-      'About',
-      'About dahliaOS.',
-      Icons.info,
-      '/about',
-    ),
-  ];
 
   @override
   Widget build(BuildContext context) {
@@ -87,7 +48,7 @@ class Landing extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                for (final item in _optionsList)
+                for (final item in landingPageMenuOptions)
                   LandingCard(
                     item.name,
                     item.description,
