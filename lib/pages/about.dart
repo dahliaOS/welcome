@@ -71,30 +71,15 @@ class About extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: Builder(
-          builder: (BuildContext context) {
-            return IconButton(
-              color: Theme.of(context).iconTheme.color,
-              icon: const Icon(Icons.navigate_before),
-              onPressed: () {
-                Navigator.pop(context);
-              },
-              tooltip: MaterialLocalizations.of(context).backButtonTooltip,
-            );
+        leading: IconButton(
+          icon: const Icon(Icons.navigate_before),
+          onPressed: () {
+            Navigator.pop(context);
           },
+          tooltip: MaterialLocalizations.of(context).backButtonTooltip,
         ),
-        backgroundColor: Theme.of(context).canvasColor,
-        centerTitle: Theme.of(context).appBarTheme.centerTitle,
-        elevation: Theme.of(context).appBarTheme.elevation,
-        title: Text(
+        title: const Text(
           'About',
-          style: TextStyle(
-            color: Theme.of(context).appBarTheme.titleTextStyle?.color,
-            fontWeight:
-                Theme.of(context).appBarTheme.titleTextStyle?.fontWeight,
-            fontSize: Theme.of(context).appBarTheme.titleTextStyle?.fontSize,
-            overflow: Theme.of(context).appBarTheme.titleTextStyle?.overflow,
-          ),
         ),
       ),
       body: Center(
@@ -108,13 +93,7 @@ class About extends StatelessWidget {
               children: <Widget>[
                 Text(
                   'System information',
-                  style: TextStyle(
-                    color: Theme.of(context).textTheme.headline1?.color,
-                    fontWeight:
-                        Theme.of(context).textTheme.headline1?.fontWeight,
-                    fontSize: Theme.of(context).textTheme.headline1?.fontSize,
-                    overflow: Theme.of(context).textTheme.headline1?.overflow,
-                  ),
+                  style: Theme.of(context).textTheme.headline1,
                 ),
                 const SizedBox(
                   height: 10,
@@ -130,13 +109,7 @@ class About extends StatelessWidget {
                 ),
                 Text(
                   'Hardware information',
-                  style: TextStyle(
-                    color: Theme.of(context).textTheme.headline1?.color,
-                    fontWeight:
-                        Theme.of(context).textTheme.headline1?.fontWeight,
-                    fontSize: Theme.of(context).textTheme.headline1?.fontSize,
-                    overflow: Theme.of(context).textTheme.headline1?.overflow,
-                  ),
+                  style: Theme.of(context).textTheme.headline1,
                 ),
                 const SizedBox(
                   height: 10,

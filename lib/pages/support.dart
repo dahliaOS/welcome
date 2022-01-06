@@ -24,30 +24,15 @@ class Support extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: Builder(
-          builder: (BuildContext context) {
-            return IconButton(
-              color: Theme.of(context).iconTheme.color,
-              icon: const Icon(Icons.navigate_before),
-              onPressed: () {
-                Navigator.pop(context);
-              },
-              tooltip: MaterialLocalizations.of(context).backButtonTooltip,
-            );
+        leading: IconButton(
+          icon: const Icon(Icons.navigate_before),
+          onPressed: () {
+            Navigator.pop(context);
           },
+          tooltip: MaterialLocalizations.of(context).backButtonTooltip,
         ),
-        backgroundColor: Theme.of(context).canvasColor,
-        centerTitle: Theme.of(context).appBarTheme.centerTitle,
-        elevation: Theme.of(context).appBarTheme.elevation,
-        title: Text(
+        title: const Text(
           'Support',
-          style: TextStyle(
-            color: Theme.of(context).appBarTheme.titleTextStyle?.color,
-            fontWeight:
-                Theme.of(context).appBarTheme.titleTextStyle?.fontWeight,
-            fontSize: Theme.of(context).appBarTheme.titleTextStyle?.fontSize,
-            overflow: Theme.of(context).appBarTheme.titleTextStyle?.overflow,
-          ),
         ),
       ),
       body: Center(
