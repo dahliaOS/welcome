@@ -52,7 +52,7 @@ class SocialCard extends StatelessWidget {
               const SizedBox(height: 15),
               Text(
                 name,
-                style: Theme.of(context).textTheme.headline2,
+                style: Theme.of(context).textTheme.subtitle2,
               )
             ],
           ),

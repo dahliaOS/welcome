@@ -59,24 +59,7 @@ class Feedback extends StatelessWidget {
                       const MyTextFormField('Email', 'Your email address'),
                       const MyTextFormField('Bug', 'Describe the bug'),
                       ElevatedButton(
-                        style: ButtonStyle(
-                          fixedSize: Theme.of(context)
-                              .elevatedButtonTheme
-                              .style
-                              ?.fixedSize,
-                          backgroundColor: Theme.of(context)
-                              .elevatedButtonTheme
-                              .style
-                              ?.backgroundColor,
-                          elevation: Theme.of(context)
-                              .elevatedButtonTheme
-                              .style
-                              ?.elevation,
-                          shape: Theme.of(context)
-                              .elevatedButtonTheme
-                              .style
-                              ?.shape,
-                        ),
+                        style: Theme.of(context).elevatedButtonTheme.style,
                         onPressed: () {},
                         child: Text(
                           'Submit',

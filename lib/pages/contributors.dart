@@ -42,8 +42,8 @@ class Contributors extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 50),
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 6,
-            mainAxisSpacing: 40,
-            crossAxisSpacing: 40,
+            mainAxisSpacing: 30,
+            crossAxisSpacing: 30,
           ),
           itemBuilder: (context, index) {
             return Column(
@@ -60,6 +60,13 @@ class Contributors extends StatelessWidget {
                 ),
                 Text(
                   dummyContributorsList[index],
+                  style: Theme.of(context).textTheme.headline2,
+                ),
+                const SizedBox(
+                  height: 5,
+                ),
+                Text(
+                  'Contributor',
                   style: Theme.of(context).textTheme.subtitle2,
                 ),
               ],

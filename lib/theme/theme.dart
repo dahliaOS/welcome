@@ -16,7 +16,7 @@ limitations under the License.
 
 import 'package:flutter/material.dart';
 
-final darkTheme = ThemeData(
+final ThemeData darkTheme = ThemeData(
   hoverColor: Colors.white24,
   primaryColor: Colors.deepOrange,
   backgroundColor: Colors.white10,
@@ -61,8 +61,18 @@ final darkTheme = ThemeData(
     shape: RoundedRectangleBorder(),
   ),
   inputDecorationTheme: const InputDecorationTheme(
-    labelStyle: TextStyle(color: Colors.white),
-    hintStyle: TextStyle(color: Colors.white),
+    labelStyle: TextStyle(
+      color: Colors.white,
+      fontWeight: FontWeight.w500,
+      fontSize: 14,
+      overflow: TextOverflow.ellipsis,
+    ),
+    hintStyle: TextStyle(
+      color: Colors.white,
+      fontWeight: FontWeight.normal,
+      fontSize: 14,
+      overflow: TextOverflow.ellipsis,
+    ),
     enabledBorder: OutlineInputBorder(
       borderSide: BorderSide(color: Colors.white),
       borderRadius: BorderRadius.zero,
@@ -96,7 +106,7 @@ final darkTheme = ThemeData(
   ),
 );
 
-final lightTheme = ThemeData(
+final ThemeData lightTheme = ThemeData(
   hoverColor: Colors.grey.shade400,
   primaryColor: Colors.deepOrange,
   backgroundColor: Colors.grey.shade200,
@@ -143,8 +153,18 @@ final lightTheme = ThemeData(
     margin: const EdgeInsets.all(5),
   ),
   inputDecorationTheme: const InputDecorationTheme(
-    labelStyle: TextStyle(color: Colors.black),
-    hintStyle: TextStyle(color: Colors.black),
+    labelStyle: TextStyle(
+      color: Colors.black,
+      fontWeight: FontWeight.w500,
+      fontSize: 14,
+      overflow: TextOverflow.ellipsis,
+    ),
+    hintStyle: TextStyle(
+      color: Colors.black,
+      fontWeight: FontWeight.normal,
+      fontSize: 14,
+      overflow: TextOverflow.ellipsis,
+    ),
     enabledBorder: OutlineInputBorder(
       borderRadius: BorderRadius.zero,
     ),
