@@ -15,7 +15,7 @@ limitations under the License.
 */
 
 import 'package:flutter/material.dart';
-import 'package:welcome/widgets/support_box.dart';
+import 'package:welcome/widgets/cards/social_card.dart';
 
 class Support extends StatelessWidget {
   const Support({Key? key}) : super(key: key);
@@ -43,54 +43,46 @@ class Support extends StatelessWidget {
           mainAxisSpacing: 10,
           crossAxisCount: 4,
           shrinkWrap: true,
-          children: <Widget>[
-            socialBox(
+          children: const <Widget>[
+            SocialCard(
               'Website',
               'assets/logos/dahliaOS/dahliaOS.png',
               'https://dahliaos.io/',
-              context,
             ),
-            socialBox(
+            SocialCard(
               'GitHub',
               'assets/logos/socialmedia/github.png',
               'https://dahliaos.io/github',
-              context,
             ),
-            socialBox(
+            SocialCard(
               'Discord',
               'assets/logos/socialmedia/discord.png',
               'https://dahliaos.io/discord',
-              context,
             ),
-            socialBox(
+            SocialCard(
               'Telegram',
               'assets/logos/socialmedia/telegram.png',
               'https://dahliaos.io/telegram',
-              context,
             ),
-            socialBox(
+            SocialCard(
               'Twitter',
               'assets/logos/socialmedia/twitter.png',
               'https://dahliaos.io/twitter',
-              context,
             ),
-            socialBox(
+            SocialCard(
               'Instagram',
               'assets/logos/socialmedia/instagram.png',
               'https://dahliaos.io/instagram',
-              context,
             ),
-            socialBox(
+            SocialCard(
               'Reddit',
               'assets/logos/socialmedia/reddit.png',
               'https://dahliaos.io/reddit',
-              context,
             ),
-            socialBox(
+            SocialCard(
               'Facebook',
               'assets/logos/socialmedia/facebook.png',
               'https://dahliaos.io/facebook',
-              context,
             ),
           ],
         ),
