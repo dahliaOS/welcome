@@ -49,12 +49,7 @@ class GettingStartedCard extends StatelessWidget {
               const SizedBox(height: 15),
               Text(
                 name,
-                style: TextStyle(
-                  fontSize: Theme.of(context).textTheme.headline2?.fontSize,
-                  color: Theme.of(context).textTheme.headline2?.color,
-                  fontWeight: Theme.of(context).textTheme.headline2?.fontWeight,
-                ),
-                overflow: Theme.of(context).textTheme.headline2?.overflow,
+                style: Theme.of(context).textTheme.headline2,
               )
             ],
           ),

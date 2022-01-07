@@ -57,26 +57,14 @@ class AboutCard extends StatelessWidget {
                 children: <Widget>[
                   Text(
                     name,
-                    style: TextStyle(
-                      fontSize: Theme.of(context).textTheme.headline2?.fontSize,
-                      fontWeight:
-                          Theme.of(context).textTheme.headline2?.fontWeight,
-                      color: Theme.of(context).textTheme.headline2?.color,
-                      overflow: Theme.of(context).textTheme.headline2?.overflow,
-                    ),
+                    style: Theme.of(context).textTheme.headline2,
                   ),
                   const SizedBox(
                     height: 3,
                   ),
                   Text(
                     description,
-                    style: TextStyle(
-                      fontSize: Theme.of(context).textTheme.subtitle2?.fontSize,
-                      fontWeight:
-                          Theme.of(context).textTheme.subtitle2?.fontWeight,
-                      color: Theme.of(context).textTheme.subtitle2?.color,
-                      overflow: Theme.of(context).textTheme.subtitle2?.overflow,
-                    ),
+                    style: Theme.of(context).textTheme.subtitle2,
                   )
                 ],
               ),

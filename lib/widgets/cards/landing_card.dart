@@ -64,27 +64,11 @@ class LandingCard extends StatelessWidget {
                   children: <Widget>[
                     Text(
                       name,
-                      style: TextStyle(
-                        fontSize:
-                            Theme.of(context).textTheme.headline1?.fontSize,
-                        fontWeight:
-                            Theme.of(context).textTheme.headline1?.fontWeight,
-                        color: Theme.of(context).textTheme.headline1?.color,
-                        overflow:
-                            Theme.of(context).textTheme.headline1?.overflow,
-                      ),
+                      style: Theme.of(context).textTheme.headline1,
                     ),
                     Text(
                       description,
-                      style: TextStyle(
-                        fontSize:
-                            Theme.of(context).textTheme.subtitle1?.fontSize,
-                        fontWeight:
-                            Theme.of(context).textTheme.subtitle1?.fontWeight,
-                        color: Theme.of(context).textTheme.subtitle1?.color,
-                        overflow:
-                            Theme.of(context).textTheme.subtitle1?.overflow,
-                      ),
+                      style: Theme.of(context).textTheme.subtitle1,
                     )
                   ],
                 ),

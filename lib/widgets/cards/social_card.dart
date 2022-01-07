@@ -52,12 +52,7 @@ class SocialCard extends StatelessWidget {
               const SizedBox(height: 15),
               Text(
                 name,
-                style: TextStyle(
-                  color: Theme.of(context).textTheme.headline2?.color,
-                  fontSize: Theme.of(context).textTheme.headline2?.fontSize,
-                  fontWeight: Theme.of(context).textTheme.headline2?.fontWeight,
-                ),
-                overflow: Theme.of(context).textTheme.headline2?.overflow,
+                style: Theme.of(context).textTheme.headline2,
               )
             ],
           ),
