@@ -15,7 +15,7 @@ limitations under the License.
 */
 
 import 'package:flutter/material.dart';
-import 'package:welcome/widgets/getting_started_box.dart';
+import 'package:welcome/widgets/cards/getting_started_card.dart';
 
 class GettingStarted extends StatelessWidget {
   const GettingStarted({Key? key}) : super(key: key);
@@ -43,46 +43,38 @@ class GettingStarted extends StatelessWidget {
           mainAxisSpacing: 10,
           crossAxisCount: 4,
           shrinkWrap: true,
-          children: <Widget>[
-            boxes(
+          children: const <Widget>[
+            GettingStartedCard(
               'Customization',
               Icons.dashboard_customize,
-              context,
             ),
-            boxes(
+            GettingStartedCard(
               'Personalization',
               Icons.palette,
-              context,
             ),
-            boxes(
+            GettingStartedCard(
               'Something',
               Icons.info,
-              context,
             ),
-            boxes(
+            GettingStartedCard(
               'Something',
               Icons.info,
-              context,
             ),
-            boxes(
+            GettingStartedCard(
               'Something',
               Icons.info,
-              context,
             ),
-            boxes(
+            GettingStartedCard(
               'Something',
               Icons.info,
-              context,
             ),
-            boxes(
+            GettingStartedCard(
               'Something',
               Icons.info,
-              context,
             ),
-            boxes(
+            GettingStartedCard(
               'Something',
               Icons.info,
-              context,
             ),
           ],
         ),

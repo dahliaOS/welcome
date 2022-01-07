@@ -15,7 +15,7 @@ limitations under the License.
 */
 
 import 'package:flutter/material.dart';
-import 'package:welcome/widgets/feedback_fields.dart';
+import 'package:welcome/widgets/text_fields/my_text_form_field.dart';
 
 class Feedback extends StatelessWidget {
   const Feedback({Key? key}) : super(key: key);
@@ -55,9 +55,9 @@ class Feedback extends StatelessWidget {
                         'Report a bug',
                         style: Theme.of(context).textTheme.headline1,
                       ),
-                      form('Name', 'Your name', context),
-                      form('Email', 'Your email address', context),
-                      form('Bug', 'Describe the bug', context),
+                      const MyTextFormField('Name', 'Your name'),
+                      const MyTextFormField('Email', 'Your email address'),
+                      const MyTextFormField('Bug', 'Describe the bug'),
                       ElevatedButton(
                         style: ButtonStyle(
                           fixedSize: Theme.of(context)
