@@ -40,52 +40,93 @@ class Settings extends StatelessWidget {
       ),
       body: Center(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 30),
+          padding:
+              const EdgeInsets.only(left: 70, right: 70, top: 30, bottom: 30),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              ElevatedButton(
-                style: ButtonStyle(
-                  fixedSize:
-                      Theme.of(context).elevatedButtonTheme.style?.fixedSize,
-                  backgroundColor: Theme.of(context)
-                      .elevatedButtonTheme
-                      .style
-                      ?.backgroundColor,
-                  elevation:
-                      Theme.of(context).elevatedButtonTheme.style?.elevation,
-                  shape: Theme.of(context).elevatedButtonTheme.style?.shape,
-                ),
-                onPressed: () {
-                  _themeprovider.setTheme(darkTheme);
-                },
-                child: Text(
-                  'Dark theme',
-                  style: Theme.of(context).textTheme.button,
-                ),
+              Text(
+                'Theme',
+                style: Theme.of(context).textTheme.headline1,
               ),
               const SizedBox(
-                height: 30,
+                height: 10,
               ),
-              ElevatedButton(
-                style: ButtonStyle(
-                  fixedSize:
-                      Theme.of(context).elevatedButtonTheme.style?.fixedSize,
-                  backgroundColor: Theme.of(context)
-                      .elevatedButtonTheme
-                      .style
-                      ?.backgroundColor,
-                  elevation:
-                      Theme.of(context).elevatedButtonTheme.style?.elevation,
-                  shape: Theme.of(context).elevatedButtonTheme.style?.shape,
-                ),
-                onPressed: () {
-                  _themeprovider.setTheme(lightTheme);
-                },
-                child: Text(
-                  'Light theme',
-                  style: Theme.of(context).textTheme.button,
-                ),
-              )
+              Row(
+                children: <Widget>[
+                  Expanded(
+                    child: SizedBox(
+                      height: 150,
+                      child: Card(
+                        color: Theme.of(context).cardTheme.color,
+                        shape: Theme.of(context).cardTheme.shape,
+                        elevation: Theme.of(context).cardTheme.elevation,
+                        margin: Theme.of(context).cardTheme.margin,
+                        child: InkWell(
+                          splashColor: Theme.of(context).primaryColor,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Icon(
+                                Icons.light_mode,
+                                size: 35,
+                                color: Theme.of(context).iconTheme.color,
+                              ),
+                              const SizedBox(
+                                height: 10,
+                              ),
+                              Text(
+                                'Light',
+                                style: Theme.of(context).textTheme.subtitle1,
+                              )
+                            ],
+                          ),
+                          onTap: () {
+                            _themeprovider.setTheme(lightTheme);
+                          },
+                        ),
+                      ),
+                    ),
+                  ),
+                  const SizedBox(
+                    width: 20,
+                  ),
+                  Expanded(
+                    child: SizedBox(
+                      height: 150,
+                      child: Card(
+                        color: Theme.of(context).cardTheme.color,
+                        shape: Theme.of(context).cardTheme.shape,
+                        elevation: Theme.of(context).cardTheme.elevation,
+                        margin: Theme.of(context).cardTheme.margin,
+                        child: InkWell(
+                          splashColor: Theme.of(context).primaryColor,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Icon(
+                                Icons.dark_mode,
+                                size: 35,
+                                color: Theme.of(context).iconTheme.color,
+                              ),
+                              const SizedBox(
+                                height: 10,
+                              ),
+                              Text(
+                                'Dark',
+                                style: Theme.of(context).textTheme.subtitle1,
+                              )
+                            ],
+                          ),
+                          onTap: () {
+                            _themeprovider.setTheme(darkTheme);
+                          },
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ],
           ),
         ),

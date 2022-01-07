@@ -21,7 +21,7 @@ final ThemeData darkTheme = ThemeData(
   primaryColor: Colors.deepOrange,
   backgroundColor: Colors.white10,
   colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.deepOrange)
-      .copyWith(secondary: Colors.white),
+      .copyWith(secondary: const Color(0xFF212121)),
   iconTheme: const IconThemeData(color: Colors.deepOrange),
   textTheme: const TextTheme(
     button: TextStyle(
@@ -58,7 +58,9 @@ final ThemeData darkTheme = ThemeData(
   canvasColor: const Color(0xFF212121),
   cardTheme: const CardTheme(
     color: Colors.white10,
+    elevation: 0,
     shape: RoundedRectangleBorder(),
+    margin: EdgeInsets.all(5),
   ),
   inputDecorationTheme: const InputDecorationTheme(
     labelStyle: TextStyle(
