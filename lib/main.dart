@@ -15,6 +15,7 @@ limitations under the License.
 */
 
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:provider/provider.dart';
 import 'package:welcome/pages/about.dart';
 import 'package:welcome/pages/contributors.dart';
@@ -40,7 +41,12 @@ class Welcome extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider<ThemeProvider>.value(
-          value: ThemeProvider(lightTheme),
+          value: ThemeProvider(
+            SchedulerBinding.instance!.window.platformBrightness ==
+                    Brightness.light
+                ? lightTheme
+                : darkTheme,
+          ),
           builder: (context, child) => MaterialApp(
             title: 'Welcome',
             theme: theme(context),
