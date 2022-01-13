@@ -16,6 +16,7 @@ limitations under the License.
 
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:welcome/utils/utils.dart';
 
 class SocialCard extends StatelessWidget {
   const SocialCard(
@@ -48,6 +49,7 @@ class SocialCard extends StatelessWidget {
                 imageName,
                 width: 32,
                 height: 32,
+                package: isDebug ? null : 'welcome',
               ),
               const SizedBox(height: 15),
               Text(
