@@ -35,10 +35,6 @@ class SocialCard extends StatelessWidget {
       width: 100,
       height: 100,
       child: Card(
-        color: Theme.of(context).cardTheme.color,
-        shape: Theme.of(context).cardTheme.shape,
-        elevation: Theme.of(context).cardTheme.elevation,
-        margin: Theme.of(context).cardTheme.margin,
         child: InkWell(
           onTap: () => launch(link),
           splashColor: Theme.of(context).primaryColor,
