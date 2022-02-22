@@ -14,12 +14,12 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-const totalVersionNumber = "201215";
+const totalVersionNumber = "220222";
 const headingFeatureString =
     "dahliaOS Linux-Based " + totalVersionNumber + " ...";
 const longName = "dahliaOS Linux-Based " + totalVersionNumber + " PRE-RELEASE";
-const kernel = "5.10.1";
-const pangolinCommit = "Pangolin f624938c1d8bf35c7033be89fb9c3d462f7f5bfd";
+const kernel = "5.17.0-rc5";
+const pangolinCommit = "Pangolin main";
 const fullPangolinVersion =
-    "Pangolin 201215; HASH: f624938c1d8bf35c7033be89fb9c3d462f7f5bfd";
+    "Pangolin 220222";
 const package = "welcome";
