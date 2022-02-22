@@ -61,9 +61,7 @@ class Landing extends StatelessWidget {
                   fontFamily: "Sulphur Point",
                 ),
               ),
-              Image.asset(
-                "assets/images/icons/PNG/welcome-info.png",
-              ),
+              
               feature(
                 "assets/images/icons/PNG/welcome-info.png",
                 "Build Information",
