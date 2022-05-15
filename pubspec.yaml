@@ -13,7 +13,7 @@ dependencies:
   url_launcher: ^6.0.17
 
 dev_dependencies:
-  lint: ^1.8.1
+  flutter_lints: ^2.0.1
 #  flutter_test:
 #    sdk: flutter
 
