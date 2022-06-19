@@ -24,13 +24,6 @@ class Contributors extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(
-          icon: const Icon(Icons.navigate_before),
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          tooltip: MaterialLocalizations.of(context).backButtonTooltip,
-        ),
         title: const Text(
           'Contributors',
         ),
@@ -39,7 +32,7 @@ class Contributors extends StatelessWidget {
         behavior: ScrollConfiguration.of(context).copyWith(scrollbars: false),
         child: GridView.builder(
           itemCount: dummyContributorsList.length,
-          padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 50),
+          padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 70),
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 6,
             mainAxisSpacing: 30,
@@ -66,7 +59,7 @@ class Contributors extends StatelessWidget {
                   height: 5,
                 ),
                 Text(
-                  'Contributor',
+                  'Developer',
                   style: Theme.of(context).textTheme.subtitle2,
                 ),
               ],

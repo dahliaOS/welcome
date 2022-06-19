@@ -24,7 +24,7 @@ class About extends StatelessWidget {
   static const _systemInformationList = <AboutCardItem>[
     AboutCardItem(
       'Operating system',
-      'dahliaOS',
+      'dahliaOS Linux-based',
       Icons.computer,
     ),
     AboutCardItem(
@@ -33,13 +33,13 @@ class About extends StatelessWidget {
       Icons.architecture,
     ),
     AboutCardItem(
-      'Build info',
-      '21XXXX',
+      'Build number',
+      '220222',
       Icons.build,
     ),
     AboutCardItem(
       'Kernel version',
-      '5.11.1',
+      '5.17.0-rc5',
       Icons.update,
     ),
   ];
@@ -71,13 +71,6 @@ class About extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(
-          icon: const Icon(Icons.navigate_before),
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          tooltip: MaterialLocalizations.of(context).backButtonTooltip,
-        ),
         title: const Text(
           'About',
         ),
@@ -86,7 +79,7 @@ class About extends StatelessWidget {
         child: ScrollConfiguration(
           behavior: ScrollConfiguration.of(context).copyWith(scrollbars: false),
           child: SingleChildScrollView(
-            padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 30),
+            padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 70),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.center,

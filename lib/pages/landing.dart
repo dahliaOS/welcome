@@ -15,86 +15,93 @@ limitations under the License.
 */
 
 import 'package:flutter/material.dart';
-import 'package:welcome/models/landing_menu_option_model.dart';
-import 'package:welcome/widgets/buttons/icon_button.dart';
-import 'package:welcome/widgets/cards/landing_card.dart';
+import 'package:welcome/pages/about.dart';
+import 'package:welcome/pages/contributors.dart';
+import 'package:welcome/pages/feedback.dart' as feedback;
+import 'package:welcome/pages/home.dart';
+import 'package:welcome/pages/settings.dart';
+import 'package:welcome/pages/software.dart';
+import 'package:welcome/pages/support.dart';
 
-class Landing extends StatelessWidget {
+class Landing extends StatefulWidget {
   const Landing({Key? key}) : super(key: key);
 
-  static const _optionsList = <LandingMenuOption>[
-    LandingMenuOption(
-      'Getting started',
-      'Get started with dahliaOS.',
-      Icons.arrow_forward,
-      '/getting_started',
-    ),
-    LandingMenuOption(
-      'Feedback',
-      'Have a suggestion, review or criticism?',
-      Icons.feedback,
-      '/feedback',
-    ),
-    LandingMenuOption(
-      'Support',
-      'Where you can find us if you have any enquiries.',
-      Icons.question_answer,
-      '/support',
-    ),
-    LandingMenuOption(
-      'Contributors',
-      'Thank you for making dahliaOS a reality.',
-      Icons.people,
-      '/contributors',
-    ),
-    LandingMenuOption(
-      'Software',
-      'Information about 3rd party software.',
-      Icons.apps,
-      '/software',
-    ),
-    LandingMenuOption(
-      'About',
-      'About dahliaOS.',
-      Icons.info,
-      '/about',
-    ),
-  ];
+  @override
+  State<Landing> createState() => _LandingState();
+}
+
+class _LandingState extends State<Landing> {
+  int _selectedIndex = 0;
+  final PageController _pageController = PageController();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text(
-          'Welcome to dahliaOS',
-        ),
-      ),
-      body: Center(
-        child: ScrollConfiguration(
-          behavior: ScrollConfiguration.of(context).copyWith(scrollbars: false),
-          child: SingleChildScrollView(
-            padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 30),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                for (final item in _optionsList)
-                  LandingCard(
-                    item.name,
-                    item.description,
-                    item.icon,
-                    item.route,
-                  ),
-                const SizedBox(
-                  height: 20,
-                ),
-                const MyIconButton(
-                  Icons.settings,
-                  '/settings',
-                )
+      body: Row(
+        children: [
+          NavigationRail(
+            selectedIndex: _selectedIndex,
+            onDestinationSelected: (int index) {
+              setState(
+                () {
+                  _selectedIndex = index;
+                  _pageController.animateToPage(
+                    index,
+                    duration: const Duration(milliseconds: 250),
+                    curve: Curves.easeInOut,
+                  );
+                },
+              );
+            },
+            labelType: NavigationRailLabelType.selected,
+            destinations: const <NavigationRailDestination>[
+              NavigationRailDestination(
+                icon: Icon(Icons.home),
+                label: Text('Home'),
+              ),
+              NavigationRailDestination(
+                icon: Icon(Icons.feedback),
+                label: Text('Feedback'),
+              ),
+              NavigationRailDestination(
+                icon: Icon(Icons.question_answer),
+                label: Text('Support'),
+              ),
+              NavigationRailDestination(
+                icon: Icon(Icons.people),
+                label: Text('Contributors'),
+              ),
+              NavigationRailDestination(
+                icon: Icon(Icons.apps),
+                label: Text('Software'),
+              ),
+              NavigationRailDestination(
+                icon: Icon(Icons.info),
+                label: Text('About'),
+              ),
+              NavigationRailDestination(
+                icon: Icon(Icons.settings),
+                label: Text('Settings'),
+              ),
+            ],
+          ),
+          const VerticalDivider(thickness: 1, width: 1),
+          Expanded(
+            child: PageView(
+              controller: _pageController,
+              physics: const NeverScrollableScrollPhysics(),
+              children: const <Widget>[
+                Home(),
+                feedback.Feedback(),
+                Support(),
+                Contributors(),
+                Software(),
+                About(),
+                Settings(),
               ],
             ),
-          ),
-        ),
+          )
+        ],
       ),
     );
   }

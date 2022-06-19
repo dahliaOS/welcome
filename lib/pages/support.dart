@@ -24,68 +24,59 @@ class Support extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(
-          icon: const Icon(Icons.navigate_before),
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          tooltip: MaterialLocalizations.of(context).backButtonTooltip,
-        ),
         title: const Text(
           'Support',
         ),
       ),
-      body: Center(
-        child: GridView.count(
-          primary: false,
-          padding: const EdgeInsets.all(60),
-          crossAxisSpacing: 10,
-          mainAxisSpacing: 10,
-          crossAxisCount: 4,
-          shrinkWrap: true,
-          children: const <Widget>[
-            SocialCard(
-              'Website',
-              'assets/logos/dahliaOS/dahliaOS.png',
-              'https://dahliaos.io/',
-            ),
-            SocialCard(
-              'GitHub',
-              'assets/logos/socialmedia/github.png',
-              'https://dahliaos.io/github',
-            ),
-            SocialCard(
-              'Discord',
-              'assets/logos/socialmedia/discord.png',
-              'https://dahliaos.io/discord',
-            ),
-            SocialCard(
-              'Telegram',
-              'assets/logos/socialmedia/telegram.png',
-              'https://dahliaos.io/telegram',
-            ),
-            SocialCard(
-              'Twitter',
-              'assets/logos/socialmedia/twitter.png',
-              'https://dahliaos.io/twitter',
-            ),
-            SocialCard(
-              'Instagram',
-              'assets/logos/socialmedia/instagram.png',
-              'https://dahliaos.io/instagram',
-            ),
-            SocialCard(
-              'Reddit',
-              'assets/logos/socialmedia/reddit.png',
-              'https://dahliaos.io/reddit',
-            ),
-            SocialCard(
-              'Facebook',
-              'assets/logos/socialmedia/facebook.png',
-              'https://dahliaos.io/facebook',
-            ),
-          ],
-        ),
+      body: GridView.count(
+        primary: false,
+        padding: const EdgeInsets.all(60),
+        crossAxisSpacing: 10,
+        mainAxisSpacing: 10,
+        crossAxisCount: 4,
+        shrinkWrap: true,
+        children: <Widget>[
+          SocialCard(
+            'Website',
+            'assets/logos/dahliaOS/logomark.png',
+            Uri.https('dahliaos.io', ''),
+          ),
+          SocialCard(
+            'GitHub',
+            'assets/logos/social_media/github.png',
+            Uri.https('dahliaos.io', '/github'),
+          ),
+          SocialCard(
+            'Discord',
+            'assets/logos/social_media/discord.png',
+            Uri.https('dahliaos.io', '/discord'),
+          ),
+          SocialCard(
+            'Telegram',
+            'assets/logos/social_media/telegram.png',
+            Uri.https('dahliaos.io', '/telegram'),
+          ),
+          SocialCard(
+            'Twitter',
+            'assets/logos/social_media/twitter.png',
+            Uri.https('dahliaos.io', '/twitter'),
+          ),
+          SocialCard(
+            'Instagram',
+            'assets/logos/social_media/instagram.png',
+            Uri.https('dahliaos.io', '/instagram'),
+          ),
+          SocialCard(
+            'Reddit',
+            'assets/logos/social_media/reddit.png',
+            Uri.https('dahliaos.io', '/reddit'),
+          ),
+          SocialCard(
+            'Facebook',
+            'assets/logos/social_media/facebook.png',
+            Uri.https('dahliaos.io', '/facebook'),
+          ),
+        ],
       ),
     );
   }

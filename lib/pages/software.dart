@@ -15,7 +15,6 @@ limitations under the License.
 */
 
 import 'package:flutter/material.dart';
-import 'package:welcome/constants/constants.dart';
 
 class Software extends StatelessWidget {
   const Software({Key? key}) : super(key: key);
@@ -24,42 +23,56 @@ class Software extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(
-          icon: const Icon(Icons.navigate_before),
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          tooltip: MaterialLocalizations.of(context).backButtonTooltip,
-        ),
         title: const Text(
           'Software',
         ),
       ),
-      body: ScrollConfiguration(
-        behavior: ScrollConfiguration.of(context).copyWith(scrollbars: false),
-        child: ListView.builder(
-          padding: const EdgeInsets.symmetric(horizontal: 60, vertical: 60),
-          itemCount: dummyNameSource.length,
-          itemBuilder: (context, index) {
-            return ListTile(
-              leading: const Icon(Icons.library_add),
-              trailing: const Icon(Icons.library_books),
-              isThreeLine: true,
-              title: Text(
-                dummyNameSource[index],
+      body: Center(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 70),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              Text(
+                'Licenses',
                 style: Theme.of(context).textTheme.headline2,
               ),
-              subtitle: Text(
-                dummyDescriptionSource[index],
-                style: Theme.of(context).textTheme.subtitle1,
+              const SizedBox(
+                height: 15,
               ),
-              iconColor: Theme.of(context).iconTheme.color,
-              textColor: Theme.of(context).textTheme.headline1?.color,
-              tileColor: Theme.of(context).backgroundColor,
-              hoverColor: Theme.of(context).hoverColor,
-              onTap: () {},
-            );
-          },
+              ListTile(
+                leading: Icon(
+                  Icons.info_outline_rounded,
+                  color: Theme.of(context).listTileTheme.iconColor,
+                  size: 30,
+                ),
+                title: Text(
+                  "Licenses",
+                  style: Theme.of(context).textTheme.headline2,
+                ),
+                subtitle: Text(
+                  "Show third party licenses",
+                  style: Theme.of(context).textTheme.subtitle2,
+                ),
+                onTap: () => showLicensePage(
+                  context: context,
+                  applicationName: "Welcome",
+                  applicationIcon: Padding(
+                    padding: const EdgeInsets.symmetric(
+                      vertical: 30,
+                      horizontal: 70,
+                    ),
+                    child: Image.asset(
+                      "assets/logos/dahliaOS/logomark.png",
+                      height: 64,
+                      width: 64,
+                    ),
+                  ),
+                  applicationLegalese: "Apache-2.0 License",
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );

@@ -16,8 +16,9 @@ limitations under the License.
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:welcome/providers/switch_list_tile_provider.dart';
+import 'package:welcome/providers/theme_provider.dart';
 import 'package:welcome/theme/theme.dart';
-import 'package:welcome/theme/theme_provider.dart';
 
 class Settings extends StatelessWidget {
   const Settings({Key? key}) : super(key: key);
@@ -25,107 +26,50 @@ class Settings extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final _themeprovider = Provider.of<ThemeProvider>(context);
+    final _switchprovider = Provider.of<SwitchListTileProvider>(context);
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(
-          icon: const Icon(Icons.navigate_before),
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          tooltip: MaterialLocalizations.of(context).backButtonTooltip,
-        ),
         title: const Text(
           'Settings',
         ),
       ),
       body: Center(
         child: Padding(
-          padding:
-              const EdgeInsets.only(left: 70, right: 70, top: 30, bottom: 30),
+          padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 70),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               Text(
-                'Theme',
-                style: Theme.of(context).textTheme.headline1,
+                'Theme mode',
+                style: Theme.of(context).textTheme.headline2,
               ),
               const SizedBox(
-                height: 10,
+                height: 15,
               ),
-              Row(
-                children: <Widget>[
-                  Expanded(
-                    child: SizedBox(
-                      height: 150,
-                      child: Card(
-                        color: Theme.of(context).cardTheme.color,
-                        shape: Theme.of(context).cardTheme.shape,
-                        elevation: Theme.of(context).cardTheme.elevation,
-                        margin: Theme.of(context).cardTheme.margin,
-                        child: InkWell(
-                          splashColor: Theme.of(context).primaryColor,
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Icon(
-                                Icons.light_mode,
-                                size: 35,
-                                color: Theme.of(context).iconTheme.color,
-                              ),
-                              const SizedBox(
-                                height: 10,
-                              ),
-                              Text(
-                                'Light',
-                                style: Theme.of(context).textTheme.subtitle1,
-                              )
-                            ],
-                          ),
-                          onTap: () {
-                            _themeprovider.setTheme(lightTheme);
-                          },
-                        ),
-                      ),
-                    ),
-                  ),
-                  const SizedBox(
-                    width: 20,
-                  ),
-                  Expanded(
-                    child: SizedBox(
-                      height: 150,
-                      child: Card(
-                        color: Theme.of(context).cardTheme.color,
-                        shape: Theme.of(context).cardTheme.shape,
-                        elevation: Theme.of(context).cardTheme.elevation,
-                        margin: Theme.of(context).cardTheme.margin,
-                        child: InkWell(
-                          splashColor: Theme.of(context).primaryColor,
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Icon(
-                                Icons.dark_mode,
-                                size: 35,
-                                color: Theme.of(context).iconTheme.color,
-                              ),
-                              const SizedBox(
-                                height: 10,
-                              ),
-                              Text(
-                                'Dark',
-                                style: Theme.of(context).textTheme.subtitle1,
-                              )
-                            ],
-                          ),
-                          onTap: () {
-                            _themeprovider.setTheme(darkTheme);
-                          },
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
+              SwitchListTile(
+                title: Text(
+                  'Dark mode',
+                  style: Theme.of(context).textTheme.headline2,
+                ),
+                subtitle: Text(
+                  'Turn on dark mode',
+                  style: Theme.of(context).textTheme.subtitle2,
+                ),
+                shape: Theme.of(context).listTileTheme.shape,
+                tileColor: Theme.of(context).listTileTheme.tileColor,
+                activeColor: Theme.of(context).listTileTheme.selectedTileColor,
+                secondary: Icon(
+                  Icons.dark_mode,
+                  color: Theme.of(context).listTileTheme.iconColor,
+                  size: 30,
+                ),
+                onChanged: (bool value) {
+                  _switchprovider.setSwitched(value);
+                  _switchprovider.getSwitched()
+                      ? _themeprovider.setTheme(darkTheme)
+                      : _themeprovider.setTheme(lightTheme);
+                },
+                value: _switchprovider.getSwitched(),
               ),
             ],
           ),

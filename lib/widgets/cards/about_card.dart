@@ -31,13 +31,13 @@ class AboutCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 500,
       height: 80,
       child: Card(
         color: Theme.of(context).cardTheme.color,
         shape: Theme.of(context).cardTheme.shape,
         elevation: Theme.of(context).cardTheme.elevation,
         margin: Theme.of(context).cardTheme.margin,
+        clipBehavior: Clip.antiAlias,
         child: Row(
           children: <Widget>[
             Container(

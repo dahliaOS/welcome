@@ -24,51 +24,78 @@ class Feedback extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(
-          icon: const Icon(Icons.navigate_before),
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          tooltip: MaterialLocalizations.of(context).backButtonTooltip,
-        ),
         title: const Text(
           'Feedback',
         ),
       ),
       body: Center(
-        child: SizedBox(
-          width: 700,
-          height: 500,
-          child: Card(
-            color: Theme.of(context).cardTheme.color,
-            elevation: Theme.of(context).cardTheme.elevation,
-            shape: Theme.of(context).cardTheme.shape,
-            child: Padding(
-              padding: const EdgeInsets.all(40),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  Wrap(
-                    runSpacing: 25,
-                    children: <Widget>[
-                      Text(
-                        'Report a bug',
-                        style: Theme.of(context).textTheme.headline1,
-                      ),
-                      const MyTextFormField('Name', 'Your name'),
-                      const MyTextFormField('Email', 'Your email address'),
-                      const MyTextFormField('Bug', 'Describe the bug'),
-                      ElevatedButton(
-                        style: Theme.of(context).elevatedButtonTheme.style,
-                        onPressed: () {},
-                        child: Text(
-                          'Submit',
-                          style: Theme.of(context).textTheme.button,
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 70),
+          child: SizedBox(
+            width: 700,
+            height: 500,
+            child: Card(
+              color: Theme.of(context).cardTheme.color,
+              elevation: Theme.of(context).cardTheme.elevation,
+              shape: Theme.of(context).cardTheme.shape,
+              child: Padding(
+                padding: const EdgeInsets.all(40),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    Wrap(
+                      runSpacing: 25,
+                      children: <Widget>[
+                        Text(
+                          'Report a bug',
+                          style: Theme.of(context).textTheme.headline1,
                         ),
-                      )
-                    ],
-                  )
-                ],
+                        const MyTextFormField('Name', 'Your name'),
+                        const MyTextFormField('Email', 'Your email address'),
+                        const MyTextFormField('Bug', 'Describe the bug'),
+                        ElevatedButton(
+                          style: Theme.of(context).elevatedButtonTheme.style,
+                          onPressed: () {
+                            showDialog(
+                              context: context,
+                              builder: (BuildContext context) => Dialog(
+                                insetPadding: const EdgeInsets.symmetric(
+                                  vertical: 250,
+                                ),
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Text(
+                                      'Bug successfully reported, thank you!',
+                                      style:
+                                          Theme.of(context).textTheme.headline2,
+                                    ),
+                                    const SizedBox(
+                                      height: 30,
+                                    ),
+                                    ElevatedButton(
+                                      onPressed: () {
+                                        Navigator.of(context).pop();
+                                      },
+                                      style: Theme.of(context)
+                                          .elevatedButtonTheme
+                                          .style,
+                                      child: const Text('Close'),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            );
+                          },
+                          child: Text(
+                            'Submit',
+                            style: Theme.of(context).textTheme.button,
+                          ),
+                        )
+                      ],
+                    )
+                  ],
+                ),
               ),
             ),
           ),

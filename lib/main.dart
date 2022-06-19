@@ -15,19 +15,18 @@ limitations under the License.
 */
 
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:provider/provider.dart';
 import 'package:welcome/pages/about.dart';
 import 'package:welcome/pages/contributors.dart';
 import 'package:welcome/pages/feedback.dart' as feedback;
-import 'package:welcome/pages/getting_started.dart';
+import 'package:welcome/pages/home.dart';
 import 'package:welcome/pages/landing.dart';
 import 'package:welcome/pages/settings.dart';
 import 'package:welcome/pages/software.dart';
 import 'package:welcome/pages/support.dart';
+import 'package:welcome/providers/switch_list_tile_provider.dart';
+import 'package:welcome/providers/theme_provider.dart';
 import 'package:welcome/theme/theme.dart';
-import 'package:welcome/theme/theme_manager.dart';
-import 'package:welcome/theme/theme_provider.dart';
 
 void main() {
   runApp(const Welcome());
@@ -41,29 +40,37 @@ class Welcome extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider<ThemeProvider>.value(
-          value: ThemeProvider(
-            SchedulerBinding.instance!.window.platformBrightness ==
-                    Brightness.light
-                ? lightTheme
-                : darkTheme,
-          ),
-          builder: (context, child) => MaterialApp(
-            title: 'Welcome',
-            theme: theme(context),
-            initialRoute: '/',
-            routes: {
-              '/': (context) => const Landing(),
-              '/getting_started': (context) => const GettingStarted(),
-              '/feedback': (context) => const feedback.Feedback(),
-              '/support': (context) => const Support(),
-              '/contributors': (context) => const Contributors(),
-              '/software': (context) => const Software(),
-              '/about': (context) => const About(),
-              '/settings': (context) => const Settings(),
-            },
-          ),
+          value: ThemeProvider(lightTheme),
+        ),
+        ChangeNotifierProvider<SwitchListTileProvider>.value(
+          value: SwitchListTileProvider(false),
         ),
       ],
+      child: const WelcomeHome(),
+    );
+  }
+}
+
+class WelcomeHome extends StatelessWidget {
+  const WelcomeHome({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Welcome',
+      theme: theme(context),
+      debugShowCheckedModeBanner: false,
+      initialRoute: '/',
+      routes: {
+        '/': (context) => const Landing(),
+        '/home': (context) => const Home(),
+        '/feedback': (context) => const feedback.Feedback(),
+        '/support': (context) => const Support(),
+        '/contributors': (context) => const Contributors(),
+        '/software': (context) => const Software(),
+        '/about': (context) => const About(),
+        '/settings': (context) => const Settings(),
+      },
     );
   }
 }

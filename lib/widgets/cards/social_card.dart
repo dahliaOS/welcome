@@ -27,7 +27,7 @@ class SocialCard extends StatelessWidget {
   }) : super(key: key);
   final String name;
   final String imageName;
-  final String link;
+  final Uri link;
 
   @override
   Widget build(BuildContext context) {
@@ -35,8 +35,9 @@ class SocialCard extends StatelessWidget {
       width: 100,
       height: 100,
       child: Card(
+        clipBehavior: Clip.antiAlias,
         child: InkWell(
-          onTap: () => launch(link),
+          onTap: () => launchUrl(link),
           splashColor: Theme.of(context).primaryColor,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
