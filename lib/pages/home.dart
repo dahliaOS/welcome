@@ -16,6 +16,7 @@ limitations under the License.
 
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:welcome/utils/utils.dart';
 
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);
@@ -27,6 +28,7 @@ class Home extends StatelessWidget {
         title: Image.asset(
           "assets/logos/dahliaOS/logotype-light.png",
           height: 25,
+          package: isDebug ? null : 'welcome',
         ),
       ),
       body: ScrollConfiguration(
@@ -52,6 +54,7 @@ class Home extends StatelessWidget {
                     Image.asset(
                       "assets/logos/dahliaOS/logotype-light.png",
                       height: 50,
+                      package: isDebug ? null : 'welcome',
                     ),
                   ],
                 ),
