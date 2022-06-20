@@ -206,7 +206,9 @@ final ThemeData darkTheme = ThemeData(
           overflow: TextOverflow.ellipsis,
         ),
       ),
-      fixedSize: MaterialStateProperty.all<Size>(const Size(120, 45)),
+      padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
+        const EdgeInsets.symmetric(vertical: 18, horizontal: 15),
+      ),
       backgroundColor: MaterialStateProperty.all<Color>(Colors.deepOrange),
       elevation: MaterialStateProperty.all(0),
       shape: MaterialStateProperty.all<RoundedRectangleBorder>(
@@ -410,7 +412,9 @@ final ThemeData lightTheme = ThemeData(
           overflow: TextOverflow.ellipsis,
         ),
       ),
-      fixedSize: MaterialStateProperty.all<Size>(const Size(120, 45)),
+      padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
+        const EdgeInsets.symmetric(vertical: 18, horizontal: 15),
+      ),
       backgroundColor: MaterialStateProperty.all<Color>(Colors.deepOrange),
       elevation: MaterialStateProperty.all(0),
       shape: MaterialStateProperty.all<RoundedRectangleBorder>(

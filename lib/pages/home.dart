@@ -80,12 +80,13 @@ class Home extends StatelessWidget {
                   const SizedBox(
                     height: 10,
                   ),
-                  ElevatedButton(
+                  ElevatedButton.icon(
                     onPressed: () {
                       launchUrl(Uri.https('dahliaos.io', ''));
                     },
                     style: Theme.of(context).elevatedButtonTheme.style,
-                    child: const Text('Learn more'),
+                    icon: const Icon(Icons.my_library_books),
+                    label: const Text('Learn more'),
                   ),
                   const SizedBox(
                     height: 20,
@@ -105,12 +106,13 @@ class Home extends StatelessWidget {
                   const SizedBox(
                     height: 10,
                   ),
-                  ElevatedButton(
+                  ElevatedButton.icon(
                     onPressed: () {
                       launchUrl(Uri.https('dahliaos.io', '/donate'));
                     },
                     style: Theme.of(context).elevatedButtonTheme.style,
-                    child: const Text('Donate'),
+                    icon: const Icon(Icons.volunteer_activism),
+                    label: const Text('Donate'),
                   ),
                 ],
               )

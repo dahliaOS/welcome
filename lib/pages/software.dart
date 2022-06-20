@@ -15,6 +15,7 @@ limitations under the License.
 */
 
 import 'package:flutter/material.dart';
+import 'package:welcome/utils/utils.dart';
 
 class Software extends StatelessWidget {
   const Software({Key? key}) : super(key: key);
@@ -66,6 +67,7 @@ class Software extends StatelessWidget {
                       "assets/logos/dahliaOS/logomark.png",
                       height: 64,
                       width: 64,
+                      package: isDebug ? null : 'welcome',
                     ),
                   ),
                   applicationLegalese: "Apache-2.0 License",
