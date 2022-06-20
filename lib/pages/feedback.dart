@@ -64,7 +64,10 @@ class _FeedbackState extends State<Feedback> {
                   Row(
                     children: <Widget>[
                       DropdownButton<String>(
-                        hint: const Text('Select'),
+                        hint: Text(
+                          'Select',
+                          style: Theme.of(context).textTheme.subtitle1,
+                        ),
                         items: <String>[
                           'OS',
                           'Pangolin',
@@ -83,7 +86,9 @@ class _FeedbackState extends State<Feedback> {
                         ].map((String value) {
                           return DropdownMenuItem<String>(
                             value: value,
-                            child: Text(value),
+                            child: Text(
+                              value,
+                            ),
                           );
                         }).toList(),
                         onChanged: (String? selectedName) {
@@ -149,7 +154,10 @@ class _FeedbackState extends State<Feedback> {
                   Row(
                     children: <Widget>[
                       DropdownButton<String>(
-                        hint: const Text('Select'),
+                        hint: Text(
+                          'Select',
+                          style: Theme.of(context).textTheme.subtitle1,
+                        ),
                         items: <String>[
                           'OS',
                           'Pangolin',
