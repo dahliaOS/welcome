@@ -27,8 +27,10 @@ class Feedback extends StatefulWidget {
 class _FeedbackState extends State<Feedback> {
   Uri _linkBugReport = Uri.https('', '');
   bool _enabledBugReport = false;
+  String componentNameBugReport = '';
   Uri _linkFeatureRequest = Uri.https('', '');
   bool _enabledFeatureRequest = false;
+  String componentNameFeatureRequest = '';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -64,10 +66,15 @@ class _FeedbackState extends State<Feedback> {
                   Row(
                     children: <Widget>[
                       DropdownButton<String>(
-                        hint: Text(
-                          'Select',
-                          style: Theme.of(context).textTheme.subtitle1,
-                        ),
+                        hint: _enabledBugReport
+                            ? Text(
+                                componentNameBugReport,
+                                style: Theme.of(context).textTheme.subtitle1,
+                              )
+                            : Text(
+                                'Select',
+                                style: Theme.of(context).textTheme.subtitle1,
+                              ),
                         items: <String>[
                           'OS',
                           'Pangolin',
@@ -101,13 +108,12 @@ class _FeedbackState extends State<Feedback> {
                             } else if (selectedName == 'Pangolin') {
                               selectedName = 'pangolin_desktop';
                             }
-                            String name;
-                            name = selectedName!
+                            componentNameBugReport = selectedName!
                                 .replaceAll(' ', '_')
                                 .toLowerCase();
                             _linkBugReport = Uri.https(
                               'github.com',
-                              '/dahliaos/$name/issues/new/choose',
+                              '/dahliaos/$componentNameBugReport/issues/new/choose',
                             );
                           });
                         },
@@ -154,10 +160,15 @@ class _FeedbackState extends State<Feedback> {
                   Row(
                     children: <Widget>[
                       DropdownButton<String>(
-                        hint: Text(
-                          'Select',
-                          style: Theme.of(context).textTheme.subtitle1,
-                        ),
+                        hint: _enabledFeatureRequest
+                            ? Text(
+                                componentNameFeatureRequest,
+                                style: Theme.of(context).textTheme.subtitle1,
+                              )
+                            : Text(
+                                'Select',
+                                style: Theme.of(context).textTheme.subtitle1,
+                              ),
                         items: <String>[
                           'OS',
                           'Pangolin',
@@ -189,13 +200,12 @@ class _FeedbackState extends State<Feedback> {
                             } else if (selectedName == 'Pangolin') {
                               selectedName = 'pangolin_desktop';
                             }
-                            String name;
-                            name = selectedName!
+                            componentNameFeatureRequest = selectedName!
                                 .replaceAll(' ', '_')
                                 .toLowerCase();
                             _linkFeatureRequest = Uri.https(
                               'github.com',
-                              '/dahliaos/$name/issues/new/choose',
+                              '/dahliaos/$componentNameFeatureRequest/issues/new/choose',
                             );
                           });
                         },
