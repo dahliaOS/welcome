@@ -32,8 +32,6 @@ class SocialCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 100,
-      height: 100,
       child: Card(
         clipBehavior: Clip.antiAlias,
         child: InkWell(
@@ -44,8 +42,8 @@ class SocialCard extends StatelessWidget {
             children: <Widget>[
               Image.asset(
                 imageName,
-                width: 32,
-                height: 32,
+                width: MediaQuery.of(context).size.width / 20,
+                height: MediaQuery.of(context).size.height / 20,
                 package: isDebug ? null : 'welcome',
               ),
               const SizedBox(height: 15),

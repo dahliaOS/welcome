@@ -24,7 +24,6 @@ import 'package:welcome/pages/landing.dart';
 import 'package:welcome/pages/settings.dart';
 import 'package:welcome/pages/software.dart';
 import 'package:welcome/pages/support.dart';
-import 'package:welcome/providers/switch_list_tile_provider.dart';
 import 'package:welcome/providers/theme_provider.dart';
 import 'package:welcome/theme/theme.dart';
 
@@ -40,10 +39,7 @@ class Welcome extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider<ThemeProvider>.value(
-          value: ThemeProvider(lightTheme),
-        ),
-        ChangeNotifierProvider<SwitchListTileProvider>.value(
-          value: SwitchListTileProvider(false),
+          value: ThemeProvider(lightTheme, false),
         ),
       ],
       child: const WelcomeHome(),

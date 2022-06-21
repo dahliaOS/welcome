@@ -32,7 +32,10 @@ class Contributors extends StatelessWidget {
         behavior: ScrollConfiguration.of(context).copyWith(scrollbars: false),
         child: GridView.builder(
           itemCount: dummyContributorsList.length,
-          padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 70),
+          padding: EdgeInsets.symmetric(
+            vertical: MediaQuery.of(context).size.height / 40,
+            horizontal: MediaQuery.of(context).size.width / 20,
+          ),
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 6,
             mainAxisSpacing: 30,

@@ -79,7 +79,10 @@ class About extends StatelessWidget {
         child: ScrollConfiguration(
           behavior: ScrollConfiguration.of(context).copyWith(scrollbars: false),
           child: SingleChildScrollView(
-            padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 70),
+            padding: EdgeInsets.symmetric(
+              vertical: MediaQuery.of(context).size.height / 40,
+              horizontal: MediaQuery.of(context).size.width / 20,
+            ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.center,
@@ -87,6 +90,7 @@ class About extends StatelessWidget {
                 Text(
                   'System information',
                   style: Theme.of(context).textTheme.headline1,
+                  overflow: TextOverflow.visible,
                 ),
                 const SizedBox(
                   height: 10,
@@ -103,6 +107,7 @@ class About extends StatelessWidget {
                 Text(
                   'Hardware information',
                   style: Theme.of(context).textTheme.headline1,
+                  overflow: TextOverflow.visible,
                 ),
                 const SizedBox(
                   height: 10,

@@ -16,7 +16,6 @@ limitations under the License.
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:welcome/providers/switch_list_tile_provider.dart';
 import 'package:welcome/providers/theme_provider.dart';
 import 'package:welcome/theme/theme.dart';
 
@@ -26,7 +25,6 @@ class Settings extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final _themeprovider = Provider.of<ThemeProvider>(context);
-    final _switchprovider = Provider.of<SwitchListTileProvider>(context);
     return Scaffold(
       appBar: AppBar(
         title: const Text(
@@ -35,7 +33,10 @@ class Settings extends StatelessWidget {
       ),
       body: Center(
         child: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 70),
+          padding: EdgeInsets.symmetric(
+            vertical: MediaQuery.of(context).size.height / 40,
+            horizontal: MediaQuery.of(context).size.width / 20,
+          ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
@@ -64,12 +65,12 @@ class Settings extends StatelessWidget {
                   size: 30,
                 ),
                 onChanged: (bool value) {
-                  _switchprovider.setSwitched(value);
-                  _switchprovider.getSwitched()
+                  _themeprovider.setThemeSwitched(value);
+                  _themeprovider.getThemeSwitched()
                       ? _themeprovider.setTheme(darkTheme)
                       : _themeprovider.setTheme(lightTheme);
                 },
-                value: _switchprovider.getSwitched(),
+                value: _themeprovider.getThemeSwitched(),
               ),
             ],
           ),

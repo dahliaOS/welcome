@@ -34,7 +34,10 @@ class Home extends StatelessWidget {
       body: ScrollConfiguration(
         behavior: ScrollConfiguration.of(context).copyWith(scrollbars: false),
         child: SingleChildScrollView(
-          padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 70),
+          padding: EdgeInsets.symmetric(
+            vertical: MediaQuery.of(context).size.height / 40,
+            horizontal: MediaQuery.of(context).size.width / 20,
+          ),
           child: Column(
             children: <Widget>[
               Center(
@@ -45,7 +48,7 @@ class Home extends StatelessWidget {
                       'Welcome to',
                       style: TextStyle(
                         color: Theme.of(context).textTheme.headline1?.color,
-                        fontSize: 34,
+                        fontSize: MediaQuery.of(context).size.width / 30,
                       ),
                     ),
                     const SizedBox(
@@ -53,7 +56,7 @@ class Home extends StatelessWidget {
                     ),
                     Image.asset(
                       "assets/logos/dahliaOS/logotype-light.png",
-                      height: 50,
+                      height: MediaQuery.of(context).size.width / 30,
                       package: isDebug ? null : 'welcome',
                     ),
                   ],
@@ -86,7 +89,9 @@ class Home extends StatelessWidget {
                     },
                     style: Theme.of(context).elevatedButtonTheme.style,
                     icon: const Icon(Icons.my_library_books),
-                    label: const Text('Learn more'),
+                    label: const Text(
+                      'Learn more',
+                    ),
                   ),
                   const SizedBox(
                     height: 20,
@@ -112,7 +117,9 @@ class Home extends StatelessWidget {
                     },
                     style: Theme.of(context).elevatedButtonTheme.style,
                     icon: const Icon(Icons.volunteer_activism),
-                    label: const Text('Donate'),
+                    label: const Text(
+                      'Donate',
+                    ),
                   ),
                 ],
               )

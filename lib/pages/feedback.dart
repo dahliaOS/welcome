@@ -42,7 +42,10 @@ class _FeedbackState extends State<Feedback> {
       body: ScrollConfiguration(
         behavior: ScrollConfiguration.of(context).copyWith(scrollbars: false),
         child: SingleChildScrollView(
-          padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 70),
+          padding: EdgeInsets.symmetric(
+            vertical: MediaQuery.of(context).size.height / 40,
+            horizontal: MediaQuery.of(context).size.width / 20,
+          ),
           child: Column(
             children: <Widget>[
               Column(
@@ -51,6 +54,7 @@ class _FeedbackState extends State<Feedback> {
                   Text(
                     'Bug report',
                     style: Theme.of(context).textTheme.headline1,
+                    overflow: TextOverflow.visible,
                   ),
                   const SizedBox(
                     height: 10,
@@ -63,17 +67,19 @@ class _FeedbackState extends State<Feedback> {
                   const SizedBox(
                     height: 10,
                   ),
-                  Row(
+                  Wrap(
                     children: <Widget>[
                       DropdownButton<String>(
                         hint: _enabledBugReport
                             ? Text(
                                 componentNameBugReport,
                                 style: Theme.of(context).textTheme.subtitle1,
+                                overflow: TextOverflow.visible,
                               )
                             : Text(
                                 'Select',
                                 style: Theme.of(context).textTheme.subtitle1,
+                                overflow: TextOverflow.visible,
                               ),
                         items: <String>[
                           'OS',
@@ -128,14 +134,18 @@ class _FeedbackState extends State<Feedback> {
                           },
                           style: Theme.of(context).elevatedButtonTheme.style,
                           icon: const Icon(Icons.bug_report),
-                          label: const Text('Report the bug'),
+                          label: const Text(
+                            'Report the bug',
+                          ),
                         )
                       else
                         ElevatedButton.icon(
                           onPressed: null,
                           style: Theme.of(context).elevatedButtonTheme.style,
                           icon: const Icon(Icons.bug_report),
-                          label: const Text('Report the bug'),
+                          label: const Text(
+                            'Report the bug',
+                          ),
                         )
                     ],
                   ),
@@ -144,6 +154,7 @@ class _FeedbackState extends State<Feedback> {
                   ),
                   Text(
                     'Feature request',
+                    overflow: TextOverflow.visible,
                     style: Theme.of(context).textTheme.headline1,
                   ),
                   const SizedBox(
@@ -157,17 +168,19 @@ class _FeedbackState extends State<Feedback> {
                   const SizedBox(
                     height: 10,
                   ),
-                  Row(
+                  Wrap(
                     children: <Widget>[
                       DropdownButton<String>(
                         hint: _enabledFeatureRequest
                             ? Text(
                                 componentNameFeatureRequest,
                                 style: Theme.of(context).textTheme.subtitle1,
+                                overflow: TextOverflow.visible,
                               )
                             : Text(
                                 'Select',
                                 style: Theme.of(context).textTheme.subtitle1,
+                                overflow: TextOverflow.visible,
                               ),
                         items: <String>[
                           'OS',
@@ -220,14 +233,18 @@ class _FeedbackState extends State<Feedback> {
                           },
                           style: Theme.of(context).elevatedButtonTheme.style,
                           icon: const Icon(Icons.auto_awesome),
-                          label: const Text('Request a feature'),
+                          label: const Text(
+                            'Request a feature',
+                          ),
                         )
                       else
                         ElevatedButton.icon(
                           onPressed: null,
                           style: Theme.of(context).elevatedButtonTheme.style,
                           icon: const Icon(Icons.auto_awesome),
-                          label: const Text('Request a feature'),
+                          label: const Text(
+                            'Request a feature',
+                          ),
                         )
                     ],
                   ),

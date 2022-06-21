@@ -30,7 +30,10 @@ class Software extends StatelessWidget {
       ),
       body: Center(
         child: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 70),
+          padding: EdgeInsets.symmetric(
+            vertical: MediaQuery.of(context).size.height / 40,
+            horizontal: MediaQuery.of(context).size.width / 20,
+          ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
@@ -59,9 +62,9 @@ class Software extends StatelessWidget {
                   context: context,
                   applicationName: "Welcome",
                   applicationIcon: Padding(
-                    padding: const EdgeInsets.symmetric(
-                      vertical: 30,
-                      horizontal: 70,
+                    padding: EdgeInsets.symmetric(
+                      vertical: MediaQuery.of(context).size.height / 40,
+                      horizontal: MediaQuery.of(context).size.width / 20,
                     ),
                     child: Image.asset(
                       "assets/logos/dahliaOS/logomark.png",
