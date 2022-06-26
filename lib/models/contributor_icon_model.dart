@@ -14,15 +14,12 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-const dummyContributorsList = <String>[
-  'Noah',
-  'Lars',
-  'Davide',
-  'Quinten',
-  'Liam',
-  'Blake',
-  'Cody',
-  'Marin',
-  'Camden',
-  'Allan',
-];
+class ContributorIconModel {
+  final String name;
+  final String description;
+
+  ContributorIconModel({
+    required this.name,
+    required this.description,
+  });
+}

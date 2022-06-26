@@ -22,6 +22,8 @@ class Support extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
+    final width = size.width;
     return Scaffold(
       appBar: AppBar(
         title: const Text(
@@ -32,57 +34,56 @@ class Support extends StatelessWidget {
         behavior: ScrollConfiguration.of(context).copyWith(scrollbars: false),
         child: SingleChildScrollView(
           padding: EdgeInsets.symmetric(
-            vertical: MediaQuery.of(context).size.height / 40,
-            horizontal: MediaQuery.of(context).size.width / 20,
+            vertical: MediaQuery.of(context).size.height / 60,
+            horizontal: MediaQuery.of(context).size.width / 40,
           ),
-          child: GridView.count(
-            primary: false,
-            crossAxisSpacing: 10,
-            mainAxisSpacing: 10,
-            crossAxisCount: 4,
-            shrinkWrap: true,
-            children: <Widget>[
-              SocialCard(
-                'Website',
-                'assets/logos/dahliaOS/logomark.png',
-                Uri.https('dahliaos.io', ''),
-              ),
-              SocialCard(
-                'GitHub',
-                'assets/logos/social_media/github.png',
-                Uri.https('dahliaos.io', '/github'),
-              ),
-              SocialCard(
-                'Discord',
-                'assets/logos/social_media/discord.png',
-                Uri.https('dahliaos.io', '/discord'),
-              ),
-              SocialCard(
-                'Telegram',
-                'assets/logos/social_media/telegram.png',
-                Uri.https('dahliaos.io', '/telegram'),
-              ),
-              SocialCard(
-                'Twitter',
-                'assets/logos/social_media/twitter.png',
-                Uri.https('dahliaos.io', '/twitter'),
-              ),
-              SocialCard(
-                'Instagram',
-                'assets/logos/social_media/instagram.png',
-                Uri.https('dahliaos.io', '/instagram'),
-              ),
-              SocialCard(
-                'Reddit',
-                'assets/logos/social_media/reddit.png',
-                Uri.https('dahliaos.io', '/reddit'),
-              ),
-              SocialCard(
-                'Facebook',
-                'assets/logos/social_media/facebook.png',
-                Uri.https('dahliaos.io', '/facebook'),
-              ),
-            ],
+          child: SizedBox(
+            width: width,
+            child: Wrap(
+              alignment: WrapAlignment.spaceBetween,
+              children: <Widget>[
+                SocialCard(
+                  'Website',
+                  'assets/logos/dahliaOS/logomark.png',
+                  Uri.https('dahliaos.io', ''),
+                ),
+                SocialCard(
+                  'GitHub',
+                  'assets/logos/social_media/github.png',
+                  Uri.https('dahliaos.io', '/github'),
+                ),
+                SocialCard(
+                  'Discord',
+                  'assets/logos/social_media/discord.png',
+                  Uri.https('dahliaos.io', '/discord'),
+                ),
+                SocialCard(
+                  'Telegram',
+                  'assets/logos/social_media/telegram.png',
+                  Uri.https('dahliaos.io', '/telegram'),
+                ),
+                SocialCard(
+                  'Twitter',
+                  'assets/logos/social_media/twitter.png',
+                  Uri.https('dahliaos.io', '/twitter'),
+                ),
+                SocialCard(
+                  'Instagram',
+                  'assets/logos/social_media/instagram.png',
+                  Uri.https('dahliaos.io', '/instagram'),
+                ),
+                SocialCard(
+                  'Reddit',
+                  'assets/logos/social_media/reddit.png',
+                  Uri.https('dahliaos.io', '/reddit'),
+                ),
+                SocialCard(
+                  'Facebook',
+                  'assets/logos/social_media/facebook.png',
+                  Uri.https('dahliaos.io', '/facebook'),
+                ),
+              ],
+            ),
           ),
         ),
       ),

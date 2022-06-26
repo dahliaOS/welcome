@@ -15,59 +15,55 @@ limitations under the License.
 */
 
 import 'package:flutter/material.dart';
-import 'package:welcome/constants/constants.dart';
+import 'package:welcome/models/contributor_icon_model.dart';
+import 'package:welcome/widgets/icon_list/contributor_icon.dart';
+
+final _contributorsList = <ContributorIconModel>[
+  ContributorIconModel(name: 'Davide', description: 'Developer'),
+  ContributorIconModel(name: 'Noah', description: 'Developer'),
+  ContributorIconModel(name: 'Lars', description: 'Developer'),
+  ContributorIconModel(name: 'Quiten', description: 'Developer'),
+  ContributorIconModel(name: 'Marin', description: 'Developer'),
+  ContributorIconModel(name: 'Liam', description: 'Developer'),
+  ContributorIconModel(name: 'Blake', description: 'Developer'),
+  ContributorIconModel(name: 'Cody', description: 'Developer'),
+  ContributorIconModel(name: 'Allan', description: 'Developer'),
+  ContributorIconModel(name: 'Camden', description: 'Developer'),
+];
 
 class Contributors extends StatelessWidget {
   const Contributors({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
+    final width = size.width;
     return Scaffold(
       appBar: AppBar(
         title: const Text(
           'Contributors',
         ),
       ),
-      body: ScrollConfiguration(
-        behavior: ScrollConfiguration.of(context).copyWith(scrollbars: false),
-        child: GridView.builder(
-          itemCount: dummyContributorsList.length,
-          padding: EdgeInsets.symmetric(
-            vertical: MediaQuery.of(context).size.height / 40,
-            horizontal: MediaQuery.of(context).size.width / 20,
-          ),
-          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 6,
-            mainAxisSpacing: 30,
-            crossAxisSpacing: 30,
-          ),
-          itemBuilder: (context, index) {
-            return Column(
+      body: Padding(
+        padding: EdgeInsets.symmetric(
+          vertical: MediaQuery.of(context).size.height / 60,
+          horizontal: MediaQuery.of(context).size.width / 40,
+        ),
+        child: ScrollConfiguration(
+          behavior: ScrollConfiguration.of(context).copyWith(scrollbars: false),
+          child: SizedBox(
+            width: width,
+            child: Wrap(
+              alignment: WrapAlignment.spaceBetween,
               children: <Widget>[
-                CircleAvatar(
-                  backgroundColor: Theme.of(context).primaryColor,
-                  child: const Icon(
-                    Icons.person,
-                    color: Colors.white,
-                  ),
-                ),
-                const SizedBox(
-                  height: 10,
-                ),
-                Text(
-                  dummyContributorsList[index],
-                  style: Theme.of(context).textTheme.headline2,
-                ),
-                const SizedBox(
-                  height: 5,
-                ),
-                Text(
-                  'Developer',
-                  style: Theme.of(context).textTheme.subtitle2,
-                ),
+                for (final item in _contributorsList)
+                  ContributorIcon(
+                    name: item.name,
+                    description: item.description,
+                  )
               ],
-            );
-          },
+            ),
+          ),
         ),
       ),
     );

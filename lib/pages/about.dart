@@ -80,8 +80,8 @@ class About extends StatelessWidget {
           behavior: ScrollConfiguration.of(context).copyWith(scrollbars: false),
           child: SingleChildScrollView(
             padding: EdgeInsets.symmetric(
-              vertical: MediaQuery.of(context).size.height / 40,
-              horizontal: MediaQuery.of(context).size.width / 20,
+              vertical: MediaQuery.of(context).size.height / 60,
+              horizontal: MediaQuery.of(context).size.width / 40,
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
