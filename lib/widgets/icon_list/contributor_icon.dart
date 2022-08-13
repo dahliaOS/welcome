@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 
 class ContributorIcon extends StatelessWidget {
-  final String name;
-  final String description;
-
   const ContributorIcon({
     required this.name,
     required this.description,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
+  final String name;
+  final String description;
 
   @override
   Widget build(BuildContext context) {

@@ -24,7 +24,7 @@ import 'package:welcome/pages/software.dart';
 import 'package:welcome/pages/support.dart';
 
 class Landing extends StatefulWidget {
-  const Landing({Key? key}) : super(key: key);
+  const Landing({super.key});
 
   @override
   State<Landing> createState() => _LandingState();

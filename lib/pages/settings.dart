@@ -20,7 +20,7 @@ import 'package:welcome/providers/theme_provider.dart';
 import 'package:welcome/theme/theme.dart';
 
 class Settings extends StatelessWidget {
-  const Settings({Key? key}) : super(key: key);
+  const Settings({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -65,7 +65,7 @@ class Settings extends StatelessWidget {
                   size: 30,
                 ),
                 onChanged: (bool value) {
-                  _themeprovider.setThemeSwitched(value);
+                  _themeprovider.setThemeSwitched(value: value);
                   _themeprovider.getThemeSwitched()
                       ? _themeprovider.setTheme(darkTheme)
                       : _themeprovider.setTheme(lightTheme);

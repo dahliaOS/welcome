@@ -18,7 +18,7 @@ import 'package:flutter/material.dart';
 import 'package:welcome/widgets/cards/social_card.dart';
 
 class Support extends StatelessWidget {
-  const Support({Key? key}) : super(key: key);
+  const Support({super.key});
 
   @override
   Widget build(BuildContext context) {

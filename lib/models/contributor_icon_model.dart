@@ -15,11 +15,10 @@ limitations under the License.
 */
 
 class ContributorIconModel {
-  final String name;
-  final String description;
-
   ContributorIconModel({
     required this.name,
     required this.description,
   });
+  final String name;
+  final String description;
 }

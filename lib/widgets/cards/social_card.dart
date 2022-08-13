@@ -23,8 +23,8 @@ class SocialCard extends StatelessWidget {
     this.name,
     this.imageName,
     this.link, {
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
   final String name;
   final String imageName;
   final Uri link;

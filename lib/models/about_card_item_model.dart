@@ -17,13 +17,12 @@ limitations under the License.
 import 'package:flutter/material.dart';
 
 class AboutCardItem {
-  final String name;
-  final String description;
-  final IconData icon;
-
   const AboutCardItem(
     this.name,
     this.description,
     this.icon,
   );
+  final String name;
+  final String description;
+  final IconData icon;
 }

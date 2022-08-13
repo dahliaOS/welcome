@@ -18,7 +18,7 @@ import 'package:flutter/material.dart';
 import 'package:welcome/utils/utils.dart';
 
 class Software extends StatelessWidget {
-  const Software({Key? key}) : super(key: key);
+  const Software({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -51,29 +51,29 @@ class Software extends StatelessWidget {
                   size: 30,
                 ),
                 title: Text(
-                  "Licenses",
+                  'Licenses',
                   style: Theme.of(context).textTheme.headline2,
                 ),
                 subtitle: Text(
-                  "Show third party licenses",
+                  'Show third party licenses',
                   style: Theme.of(context).textTheme.subtitle2,
                 ),
                 onTap: () => showLicensePage(
                   context: context,
-                  applicationName: "Welcome",
+                  applicationName: 'Welcome',
                   applicationIcon: Padding(
                     padding: EdgeInsets.symmetric(
                       vertical: MediaQuery.of(context).size.height / 40,
                       horizontal: MediaQuery.of(context).size.width / 20,
                     ),
                     child: Image.asset(
-                      "assets/logos/dahliaOS/logomark.png",
+                      'assets/logos/dahliaOS/logomark.png',
                       height: 64,
                       width: 64,
                       package: isDebug ? null : 'welcome',
                     ),
                   ),
-                  applicationLegalese: "Apache-2.0 License",
+                  applicationLegalese: 'Apache-2.0 License',
                 ),
               )
             ],

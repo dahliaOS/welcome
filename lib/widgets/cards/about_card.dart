@@ -17,16 +17,15 @@ limitations under the License.
 import 'package:flutter/material.dart';
 
 class AboutCard extends StatelessWidget {
-  final String name;
-  final String description;
-  final IconData icon;
-
   const AboutCard(
     this.name,
     this.description,
     this.icon, {
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
+  final String name;
+  final String description;
+  final IconData icon;
 
   @override
   Widget build(BuildContext context) {

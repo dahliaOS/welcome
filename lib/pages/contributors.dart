@@ -32,7 +32,7 @@ final _contributorsList = <ContributorIconModel>[
 ];
 
 class Contributors extends StatelessWidget {
-  const Contributors({Key? key}) : super(key: key);
+  const Contributors({super.key});
 
   @override
   Widget build(BuildContext context) {

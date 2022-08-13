@@ -32,14 +32,14 @@ void main() {
 }
 
 class Welcome extends StatelessWidget {
-  const Welcome({Key? key}) : super(key: key);
+  const Welcome({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider<ThemeProvider>.value(
-          value: ThemeProvider(lightTheme, false),
+          value: ThemeProvider(themeData: lightTheme, themeSwitched: false),
         ),
       ],
       child: const WelcomeHome(),
@@ -48,7 +48,7 @@ class Welcome extends StatelessWidget {
 }
 
 class WelcomeHome extends StatelessWidget {
-  const WelcomeHome({Key? key}) : super(key: key);
+  const WelcomeHome({super.key});
 
   @override
   Widget build(BuildContext context) {

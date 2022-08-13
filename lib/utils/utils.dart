@@ -1,5 +1,5 @@
 bool get isDebug {
   bool inDebugMode = false;
-  assert(inDebugMode = true);
+  assert(inDebugMode = true, 'Debug mode');
   return inDebugMode;
 }

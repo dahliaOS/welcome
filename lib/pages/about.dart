@@ -19,7 +19,7 @@ import 'package:welcome/models/about_card_item_model.dart';
 import 'package:welcome/widgets/cards/about_card.dart';
 
 class About extends StatelessWidget {
-  const About({Key? key}) : super(key: key);
+  const About({super.key});
 
   static const _systemInformationList = <AboutCardItem>[
     AboutCardItem(

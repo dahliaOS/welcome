@@ -18,7 +18,7 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Feedback extends StatefulWidget {
-  const Feedback({Key? key}) : super(key: key);
+  const Feedback({super.key});
 
   @override
   State<Feedback> createState() => _FeedbackState();

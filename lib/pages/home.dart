@@ -19,14 +19,14 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:welcome/utils/utils.dart';
 
 class Home extends StatelessWidget {
-  const Home({Key? key}) : super(key: key);
+  const Home({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Image.asset(
-          "assets/logos/dahliaOS/logotype-light.png",
+          'assets/logos/dahliaOS/logotype-light.png',
           height: 25,
           package: isDebug ? null : 'welcome',
         ),
@@ -55,7 +55,7 @@ class Home extends StatelessWidget {
                       width: 10,
                     ),
                     Image.asset(
-                      "assets/logos/dahliaOS/logotype-light.png",
+                      'assets/logos/dahliaOS/logotype-light.png',
                       height: MediaQuery.of(context).size.width / 30,
                       package: isDebug ? null : 'welcome',
                     ),
