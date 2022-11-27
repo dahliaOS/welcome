@@ -1,4 +1,8 @@
 <p align="center">
+  <img src="https://raw.githubusercontent.com/dahliaOS/icons/b9b49601327995ae62ce27a8147464d6dc1fb4dc/icons/plastic/svg/Welcome.svg" />
+</p>
+
+<p align="center">
 <a href="https://dahliaos.io">Website</a> •
 <a href="https://dahliaos.io/discord">Discord</a> •
 <a href="https://dahliaos.io/download">Releases</a> •
